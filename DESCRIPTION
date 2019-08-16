@@ -1,0 +1,19 @@
+Package: jsspInstancesAndResults
+Type: Package
+Title: A repository with a data set including instances and results from literature for the Job Shop Scheduling Problem (JSSP)
+Version: 0.8.0
+Author: Dr. Thomas Weise <tweise@hfuu.edu.cn>
+Maintainer: Dr. Thomas Weise <tweise@hfuu.edu.cn>
+Description: With this package, we evaluate the JSSP results.
+License: GPL-3
+Encoding: UTF-8
+Suggests: devtools (>= 2.0.2),
+          literatureAndResultsGen (>= 0.8.0),
+          roxygen2 (>= 6.1.1),
+          testthat (>= 2.1.1),
+          usethis (>= 1.5.0)
+Remotes: github::thomasWeise/literatureAndResultsGen
+Depends: R (>= 3.5.0)
+ByteCompile: true
+LazyData: true
+RoxygenNote: 6.1.1
