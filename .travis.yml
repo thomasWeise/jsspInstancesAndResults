@@ -1,0 +1,17 @@
+##
+## Build with Travis.CI
+##
+language: r
+cache: packages
+sudo: false
+r:
+  - oldrel
+  - release
+  - devel
+jobs:
+  include:
+    - stage: deploy
+      script:
+        - |
+          R -e 'if(require("jsspInstancesAndResults")) { remove.packages("jsspInstancesAndResults"); }; r <- devtools::install_github("thomasWeise/jsspInstancesAndResults"); if(r == "jsspInstancesAndResults") { cat("OK\n"); q(save="no", status=0); } else { cat("error: ", r, "\n", sep="", collapse=""); q(save="no", status=1); }'
+
