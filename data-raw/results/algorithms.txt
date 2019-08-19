@@ -1,0 +1,2 @@
+algo.id,ref.id,system.cpu.name,system.cpu.cores,system.cpu.threads,system.cpu.mhz,system.memory.mb,system.os.name,system.vm.name,system.compiler.name,system.programming.language.name,system.external.tools.list
+UPLA,P2019ATLMAFTJSSP,Intel Core i5 M580,2,4,2670,6144,NA,NA,NA,C#,NA

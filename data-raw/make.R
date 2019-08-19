@@ -25,11 +25,14 @@ source(file.path(dir.data.raw, "bibliography", "make_bibliography.R"));
 stopifnot(is.data.frame(jssp.bibliography));
 
 source(file.path(dir.data.raw, "instances", "make_instances.R"));
-#stopifnot(is.data.frame(jssp.instances));
+stopifnot(is.data.frame(jssp.instances));
+
+source(file.path(dir.data.raw, "results", "make_results.R"));
 
 # store the data
 use_data(jssp.bibliography,
          jssp.instances,
+         jssp.results,
          compress="xz", version=3L, overwrite = TRUE);
 
 rm("dir.data.raw");

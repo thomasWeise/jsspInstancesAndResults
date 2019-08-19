@@ -93,4 +93,46 @@ stopifnot(is.data.frame(jssp.instances),
           all(!is.na(jssp.instances$inst.opt.bound.lower.ref)),
           all(nchar(jssp.instances$inst.opt.bound.lower.ref) > 0));
 
-logger("finished loading jssp instances");
+logger("finished loading jssp instances, now generating documentation");
+
+stopifnot(dir.exists(dir.R));
+jssp.instances.docu <- file.path(dir.R, "data_jssp_instances.R");
+if(file.exists(jssp.instances.docu)) {
+  file.remove(jssp.instances.docu);
+}
+stopifnot(!file.exists(jssp.instances.docu));
+
+writeLines(text=unname(unlist(c(
+  "#' The Instance Data for the Common Benchmark Instances of the Job Shop Scheduling Problem",
+  "#'",
+  "#' Here we provide baseline data about the benchmark instances that are commonly used in research",
+  "#' on the Job Shop Scheduling Problem.",
+  "#' Data has in particular been taken from van Hoorn's great website <http://jobshop.jjvh.nl>.",
+  "#'",
+  "#' @docType data",
+  "#'",
+  "#' @usage data(jssp.instances)",
+  "#'",
+  "#' @format A data frame with the basic information about the JSSP instances",
+  "#' \\describe{",
+  "#'   \\item{inst.id}{the unique id identifying the instance}",
+  "#'   \\item{inst.ref}{the id of the reference of the paper proposing the instance, which points into a row of \\code{jssp.bibliography}}",
+  "#'   \\item{inst.jobs}{the number of jobs in the instance}",
+  "#'   \\item{inst.machines}{the number of machines in the instance}",
+  "#'   \\item{inst.opt.bound.lower}{the lower bound for the optimal solution quality}",
+  "#'   \\item{inst.opt.bound.lower.ref}{the id of the reference of the source where this lower bound has been published, which points into a row of \\code{jssp.bibliography}}",
+  "#'}",
+  "#'",
+  "#' @keywords Job Shop Scheduling, JSSP, instances",
+  "#'",
+  make.r.doc.references(list("vH2015JSIAS", jssp.instances$inst.ref, jssp.instances$inst.opt.bound.lower.ref),
+                        jssp.bibliography,
+                        logger),
+  "#'",
+  "#' @examples",
+  "#' data(jssp.instances)",
+  "#' print(jssp.instances)",
+  "\"jssp.instances\""))),
+  con=jssp.instances.docu);
+
+stopifnot(file.exists(jssp.instances.docu));

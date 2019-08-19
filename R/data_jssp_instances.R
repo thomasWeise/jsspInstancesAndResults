@@ -2,12 +2,13 @@
 #'
 #' Here we provide baseline data about the benchmark instances that are commonly used in research
 #' on the Job Shop Scheduling Problem.
+#' Data has in particular been taken from van Hoorn's great website <http://jobshop.jjvh.nl>.
 #'
 #' @docType data
 #'
 #' @usage data(jssp.instances)
 #'
-#' @format A data frame with the bibliographic references
+#' @format A data frame with the basic information about the JSSP instances
 #' \describe{
 #'   \item{inst.id}{the unique id identifying the instance}
 #'   \item{inst.ref}{the id of the reference of the paper proposing the instance, which points into a row of \code{jssp.bibliography}}
@@ -18,6 +19,59 @@
 #'}
 #'
 #' @keywords Job Shop Scheduling, JSSP, instances
+#'
+#' @references  Adams J, Balas E, Zawack D (1988). “The Shifting Bottleneck Procedure for Job Shop Scheduling.” Management Science, 34(3), 391-401. doi: 10.1287/mnsc.34.3.391 (URL: http://doi.org/10.1287/mnsc.34.3.391).
+#' 
+#' Applegate DL, Cook WJ (1991). “A Computational Study of the Job-Shop Scheduling Problem.” ORSA Journal on Computing, 3(2), 149-156. doi: 10.1287/ijoc.3.2.149 (URL: http://doi.org/10.1287/ijoc.3.2.149), the JSSP instances used were generated in Bonn in 1986.
+#' 
+#' Brinkkötter W, Brucker P (2001). “Solving Open Benchmark Instances for the Job-Shop Problem by Parallel Head-Tail Adjustments.” Journal of Scheduling, 4(1), 53-64. doi: 10.1002/1099-1425(200101/02)4:1<53::AID-JOS59>3.0.CO;2-Y (URL: http://doi.org/10.1002/1099-1425(200101/02)4:1<53::AID-JOS59>3.0.CO;2-Y).
+#' 
+#' Balas E, Vazacopoulos A (1994). “Guided Local Search with Shifting Bottleneck for Job Shop Scheduling.” Technical Report MSSR–609, Graduate School of Industrial Administration, Carnegie Mellon University, Pittsburgh, PA, USA.
+#' 
+#' Carlier J, Pinson É (1989). “An Algorithm for Solving the Job-Shop Problem.” Management Science, 35(2), 164-176. doi: 10.1287/mnsc.35.2.164 (URL: http://doi.org/10.1287/mnsc.35.2.164), jstor: 2631909.
+#' 
+#' Carlier J, Pinson É (1990). “A Practical Use of Jackson's Preemptive Schedule for Solving the Job Shop Problem.” Annals of Operations Research, 26(1-4), 269-287.
+#' 
+#' Demirkol E, Mehta SV, Uzsoy R (1996). “Benchmarking for Shop Scheduling Problems.” Technical Report 96-4, School of Industrial Engineering, Purdue University, West Lafayette, IN, USA.
+#' 
+#' Demirkol E, Mehta SV, Uzsoy R (1998). “Benchmarks for Shop Scheduling Problems.” European Journal of Operational Research (EJOR), 109(1), 137-141. doi: 10.1016/S0377-2217(97)00019-2 (URL: http://doi.org/10.1016/S0377-2217(97)00019-2).
+#' 
+#' Fisher H, Thompson GL (1963). “Probabilistic Learning Combinations of Local Job-Shop Scheduling Rules.” In Muth JF, Thompson GL (eds.), Industrial Scheduling, 225-251. Prentice-Hall, Englewood Cliffs, NJ, USA.
+#' 
+#' Florian M, Trepant P, McMahon G (1971). “An Implicit Enumeration Algorithm for the Machine Sequencing Problem.” Management Science, 17(12), B-782-B-792. doi: 10.1287/mnsc.17.12.B782 (URL: http://doi.org/10.1287/mnsc.17.12.B782), jstor: 2629469.
+#' 
+#' Gharbi A, Labidi M (2010). “Extending the Single Machine-Based Relaxation Scheme for the Job Shop Scheduling Problem.” Electronic Notes in Discrete Mathematics, 36, 1057-1064. doi: 10.1016/j.endm.2010.05.134 (URL: http://doi.org/10.1016/j.endm.2010.05.134), this algorithm was used to solve several JSSP instances of the OR Library.
+#' 
+#' Jain AS, Meeran S (1999). “Deterministic Job-Shop Scheduling: Past, Present and Future.” European Journal of Operational Research (EJOR), 113(2), 390-434. doi: 10.1016/S0377-2217(98)00113-1 (URL: http://doi.org/10.1016/S0377-2217(98)00113-1).
+#' 
+#' Koshimura M, Nabeshima H, Fujita H, Hasegawa R (2010). “Solving Open Job-Shop Scheduling Problems by SAT Encoding.” IEICE Transactions on Information and Systems, E93.D(8), 2316-2318. doi: 10.1587/transinf.E93.D.2316 (URL: http://doi.org/10.1587/transinf.E93.D.2316).
+#' 
+#' Lawrence SR (1984). Resource Constrained Project Scheduling: An Experimental Investigation of Heuristic Scheduling Techniques (Supplement). PhD thesis, Graduate School of Industrial Administration (GSIA), Carnegie-Mellon University, Pittsburgh, PA, USA.
+#' 
+#' Martin PD (1996). A Time-Oriented Approach to Computing Optimal Schedules for the Job-Shop Scheduling Problem. PhD thesis, School of Operations Research and Industrial Engineering, Cornell University, Ithaca, NY, USA. oclc: 64683112.
+#' 
+#' McMahon G, Florian M (1975). “On Scheduling with Ready Times and Due Dates to Minimize Maximum Lateness.” Operations Research, 23(3), 475-482. doi: 10.1287/opre.23.3.475 (URL: http://doi.org/10.1287/opre.23.3.475), jstor: 169697.
+#' 
+#' Schilham R (2000). “Results listed on Éric Taillard's page.” see also http://jobshop.jjvh.nl/, <URL: http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html>.
+#' 
+#' Storer RH, Wu SD, Vaccari R (1992). “New Search Spaces for Sequencing Problems with Application to Job Shop Scheduling.” Management Science, 38(10), 1495-1509. doi: 10.1287/mnsc.38.10.1495 (URL: http://doi.org/10.1287/mnsc.38.10.1495).
+#' 
+#' Taillard ÉD (1993). “Benchmarks for Basic Scheduling Problems.” European Journal of Operational Research (EJOR), 64(2), 278-285. doi: 10.1016/0377-2217(93)90182-M (URL: http://doi.org/10.1016/0377-2217(93)90182-M).
+#' 
+#' Vaessens RJM (1995). “Results listed on Éric Taillard's page.” see also http://jobshop.jjvh.nl/, <URL: http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html>.
+#' 
+#' Vaessens RJM (1996). “Addition to John Edward Beasley's OR Library.” see also http://jobshop.jjvh.nl/, <URL: http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/jobshop1.txt>.
+#' 
+#' Vaessens RJM, Aarts EHL, Lenstra JK (1996). “Job Shop Scheduling by Local Search.” INFORMS Journal on Computing, 8(3), 302-317. doi: 10.1287/ijoc.8.3.302 (URL: http://doi.org/10.1287/ijoc.8.3.302).
+#' 
+#' van Hoorn JJ (2015). “Job Shop Instances and Solutions.” <URL: http://jobshop.jjvh.nl>.
+#' 
+#' van Hoorn JJ (2016). Dynamic Programming for Routing and Scheduling: Optimizing Sequences of Decisions. PhD thesis, Vrije Universiteit Amsterdam, Amsterdam, The Netherlands. <URL: http://jobshop.jjvh.nl/dissertation>.
+#' 
+#' Vilím P, Laborie P, Shaw P (2015). “Failure-Directed Search for Constraint-Based Scheduling.” In Michel L (ed.), International Conference Integration of AI and OR Techniques in Constraint Programming: Proceedings of 12th International Conference on AI and OR Techniques in Constriant Programming for Combinatorial Optimization Problems (CPAIOR'2015), May 18-22, 2015, Barcelona, Spain, volume 9075 series Lecture Notes in Computer Science (LNCS) and Theoretical Computer Science and General Issues book sub series (LNTCS), 437-453. ISBN 978-3-319-18007-6, doi: 10.1007/978-3-319-18008-3_30 (URL: http://doi.org/10.1007/978-3-319-18008-3_30).
+#' 
+#' Yamada T, Nakano R (1992). “A Genetic Algorithm Applicable to Large-Scale Job-Shop Instances.” In Männer R, Manderick B (eds.), Proceedings of Parallel Problem Solving from Nature 2 (PPSN II), September 28-30, 1992, Brussels, Belgium, 281-290.
+#' 
 #'
 #' @examples
 #' data(jssp.instances)
