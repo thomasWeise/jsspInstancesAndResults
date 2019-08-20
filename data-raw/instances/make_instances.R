@@ -61,6 +61,7 @@ for(i in jssp.instances$inst.ref) {
 for(i in jssp.instances$inst.opt.bound.lower.ref) {
   .finder(i);
 }
+rm("i");
 rm(".finder");
 
 stopifnot(is.data.frame(jssp.instances),
@@ -136,3 +137,4 @@ writeLines(text=unname(unlist(c(
   con=jssp.instances.docu);
 
 stopifnot(file.exists(jssp.instances.docu));
+rm("jssp.instances.docu");

@@ -37,6 +37,7 @@ use_data(jssp.bibliography,
 
 rm("dir.data.raw");
 rm("dir.R");
+rm("jssp.results");
 rm("jssp.bibliography");
 rm("jssp.instances");
 
