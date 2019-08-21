@@ -1,0 +1,3 @@
+inst.id,n.runs,best.f.min,total.time.min
+ft06,1,58,60000
+la26,1,1347,82000
