@@ -16,6 +16,104 @@ cols.meta <- create.standard.meta.columns(
                 are.objective.values.ints = are.objective.values.ints,
                 objective.value.lower.bound = objective.value.lower.bound,
                 objective.value.upper.bound = objective.value.upper.bound);
+
+index <- vapply(cols.meta$columns, function(f) f$title == "algo.desc", FALSE);
+stopifnot(sum(index) == 1L);
+index <- which(index);
+stopifnot(length(index) == 1L,
+          index > 0L,
+          index <= length(cols.meta$columns));
+col <- cols.meta$columns[[index]]
+stopifnot(is.list(col),
+          length(col) == 3L,
+          names(col) == c("title", "description", "type"));
+
+col <- create.column(col$title,
+                     paste0(col$description, ", where the following abbreviations can be used\n#' \\describe{\n#' ",
+                            "\\item{ABC}{Artificial Bee Colony algorithm}\n#' ",
+                            "\\item{ACO}{Ant Colony Optimization}\n#' ",
+                            "\\item{AIS}{Artificial Immune System}\n#' ",
+                            "\\item{BA}{Bat Algorithm}\n#' ",
+                            "\\item{BBO}{Biogeography-based optimization}\n#' ",
+                            "\\item{CP}{constraint programming}\n#' ",
+                            "\\item{CRO}{Coral Reef Optimization}\n#' ",
+                            "\\item{DES}{discrete event simulation}\n#' ",
+                            "\\item{EA}{evolutionary algorithm}\n#' ",
+                            "\\item{FA}{Firefly Algorithm}\n#' ",
+                            "\\item{forcing}{an improvement step that will try to move jobs in the Gantt chart to the left, if possible, first used by Nakano/Yamada}\n#' ",
+                            "\\item{GT}{Giffler and Thompson (GT) procedure}\n#' ",
+                            "\\item{GWO}{Grey wolf optimization}\n#' ",
+                            "\\item{LP}{linear programming}\n#' ",
+                            "\\item{LS}{a local search}\n#' ",
+                            "\\item{PSO}{particle swarm optimization}\n#' ",
+                            "\\item{SA}{simulated annealing}\n#' ",
+                            "\\item{SE}{seach economics}\n#' ",
+                            "\\item{TLBO}{teaching-learning based optimization}\n#' ",
+                            "\\item{TS}{tabu search}\n#' ",
+                            "\\item{VNS}{variable neighborhood search}\n#' ",
+                            "}"),
+                     col$type);
+cols.meta$columns[[index]] <- col;
+rm("col");
+
+cols.more <- create.columns(columns=list(
+                 create.column("algo.representation",
+                               paste0("the representation used for encoding solutions, if any, where the following abbreviations can be used\n#' \\describe{\n#' ",
+                                      "\\item{JB}{job-based: the jobs are assigned to machines in the order in which they occur in the string}\n#' ",
+                                      "\\item{MB}{machine-based: the encoding is the order in which the machines are used as bottlenecks in a heuristic such as the Shifting Bottleneck Method}\n#' ",
+                                      "\\item{OB}{operation-based: each job is represented by m genes with the same value and the chromosome is processed from front to end by assigning jobs to machines at the earliest starting times, following their occurence}\n#' ",
+                                      "\\item{OO}{the overall order of all operations is given, infeasible solutions may occur and need to be discarted or repaired}\n#' ",
+                                      "\\item{PL}{priority-list: the job order for each machine is given and infeasible schedules are discarted or repaired if needed}\n#' ",
+                                      "\\item{PM}{a priority matrix where each job-machine combination has a priority value from which the feasible schedules are constructed}\n#' ",
+                                      "\\item{PR}{priority-rules: priorities of dispatching rules to be applied, e.g., in the Giffler and Thompson algorithm}\n#' ",
+                                      "\\item{RK}{random keys: real-valued encoding which is translated to an integer encoding by replacing each value by its index in the sorted list of values, usually combined with another integer encoding}\n#' ",
+                                      "}"),
+                               "character"),
+                 create.column("algo.operator.unary",
+                               paste0("the unary operator used in the algorithm, if any, where the following abbreviations can be used\n#' \\describe{\n#' ",
+                                      "\\item{insert}{extracts one value and inserts it somewhere else, shifting the other values appropriately}\n#' ",
+                                      "\\item{N1}{neighborhood function N1 (Van Laarhoven et al., 1992) that performs the permutation of pairs of adjacent operations which belong to the critical path generated in the individual}\n#' ",
+                                      "\\item{N5}{N5 critical path-based move operator (Nowicki and Smutnicki, 1996)}\n#' ",
+                                      "\\item{N7}{N7 neightborhood (Zhang et al., 2008)}\n#' ",
+                                      "\\item{reverse}{reverse the order of a sub-sequence of values}\n#' ",
+                                      "\\item{RRN}{random reverse neighborhood: select multiple pairs of operations and reverse them}\n#' ",
+                                      "\\item{RWN}{random whole neighborhood: consider all permutations of lambda genes, by Cheng (1997)}\n#' ",
+                                      "\\item{shift}{extracts a sub-list of values and inserts it somewhere else, shifting the other values appropriately}\n#' ",
+                                      "\\item{swap}{swap two values, also known as reciprocal exchange mutation}\n#' ",
+                                      "}"),
+                               "character"),
+                 create.column("algo.operator.binary",
+                               paste0("the binary operator used in the algorithm, if any, where the following abbreviations can be used\n#' \\describe{\n#' ",
+                                      "\\item{none}{no binary operator (such as crossover) is applied in algorithms that would permit doing so (as opposed to 'NA', which means that crossover is not applicable in this algorithm)}\n#' ",
+                                      "\\item{LCSX}{longest-common subsequence crossover (Cheng et al.,2016)}\n#' ",
+                                      "\\item{LOX}{linear order crossover (Falkenauer andd Bouffouix, 1991)}\n#' ",
+                                      "\\item{OX}{order-based crossover}\n#' ",
+                                      "\\item{PBX}{uniform or position-based crossover}\n#' ",
+                                      "\\item{POX}{Precedence Operation Crossover) (Zhang, Li, 2008)}\n#' ",
+                                      "\\item{PMX}{partial-mapped crossover}\n#' ",
+                                      "\\item{PUX}{parameterized uniform crossover (DeJong and Spears, 1991)}\n#' ",
+                                      "}"),
+                               "character")),
+                conditions=c(
+                  "all(is.character(x$algo.representation))",
+                  "all(is.na(x$algo.representation) | (nchar(x$algo.representation) > 0L))",
+                  "all(is.character(x$algo.operator.unary))",
+                  "all(is.na(x$algo.operator.unary) | (nchar(x$algo.operator.unary) > 0L))",
+                  "all(is.character(x$algo.operator.binary))",
+                  "all(is.na(x$algo.operator.binary) | (nchar(x$algo.operator.binary) > 0L))"
+                ));
+
+cols.meta$columns <- unlist(list(cols.meta$columns[seq.int(from=1L, to=index)],
+                                 cols.more$columns,
+                                 cols.meta$columns[seq.int(from=(index+1L), to=length(cols.meta$columns))]),
+                            recursive = FALSE);
+rm("index");
+cols.meta$conditions <- unlist(c(cols.meta$conditions, cols.more$conditions));
+rm("cols.more");
+cols.meta <- create.columns(cols.meta$columns,
+                            cols.meta$conditions,
+                            cols.meta$mergers);
+
 cols.stat <- create.standard.result.columns(
                 are.objective.values.ints = are.objective.values.ints,
                 is.time.int = TRUE,

@@ -7,6 +7,64 @@
 \format{A data frame with the result data sets
 \describe{
 \item{algo.id}{the ID or short name of the algorithm used to solve the problem instance}
+\item{algo.desc}{a short description of the algorithm, where the following abbreviations can be used
+\describe{
+\item{ABC}{Artificial Bee Colony algorithm}
+\item{ACO}{Ant Colony Optimization}
+\item{AIS}{Artificial Immune System}
+\item{BA}{Bat Algorithm}
+\item{BBO}{Biogeography-based optimization}
+\item{CP}{constraint programming}
+\item{CRO}{Coral Reef Optimization}
+\item{DES}{discrete event simulation}
+\item{EA}{evolutionary algorithm}
+\item{FA}{Firefly Algorithm}
+\item{forcing}{an improvement step that will try to move jobs in the Gantt chart to the left, if possible, first used by Nakano/Yamada}
+\item{GT}{Giffler and Thompson (GT) procedure}
+\item{GWO}{Grey wolf optimization}
+\item{LP}{linear programming}
+\item{LS}{a local search}
+\item{PSO}{particle swarm optimization}
+\item{SA}{simulated annealing}
+\item{SE}{seach economics}
+\item{TLBO}{teaching-learning based optimization}
+\item{TS}{tabu search}
+\item{VNS}{variable neighborhood search}
+}}
+\item{algo.representation}{the representation used for encoding solutions, if any, where the following abbreviations can be used
+\describe{
+\item{JB}{job-based: the jobs are assigned to machines in the order in which they occur in the string}
+\item{MB}{machine-based: the encoding is the order in which the machines are used as bottlenecks in a heuristic such as the Shifting Bottleneck Method}
+\item{OB}{operation-based: each job is represented by m genes with the same value and the chromosome is processed from front to end by assigning jobs to machines at the earliest starting times, following their occurence}
+\item{OO}{the overall order of all operations is given, infeasible solutions may occur and need to be discarted or repaired}
+\item{PL}{priority-list: the job order for each machine is given and infeasible schedules are discarted or repaired if needed}
+\item{PM}{a priority matrix where each job-machine combination has a priority value from which the feasible schedules are constructed}
+\item{PR}{priority-rules: priorities of dispatching rules to be applied, e.g., in the Giffler and Thompson algorithm}
+\item{RK}{random keys: real-valued encoding which is translated to an integer encoding by replacing each value by its index in the sorted list of values, usually combined with another integer encoding}
+}}
+\item{algo.operator.unary}{the unary operator used in the algorithm, if any, where the following abbreviations can be used
+\describe{
+\item{insert}{extracts one value and inserts it somewhere else, shifting the other values appropriately}
+\item{N1}{neighborhood function N1 (Van Laarhoven et al., 1992) that performs the permutation of pairs of adjacent operations which belong to the critical path generated in the individual}
+\item{N5}{N5 critical path-based move operator (Nowicki and Smutnicki, 1996)}
+\item{N7}{N7 neightborhood (Zhang et al., 2008)}
+\item{reverse}{reverse the order of a sub-sequence of values}
+\item{RRN}{random reverse neighborhood: select multiple pairs of operations and reverse them}
+\item{RWN}{random whole neighborhood: consider all permutations of lambda genes, by Cheng (1997)}
+\item{shift}{extracts a sub-list of values and inserts it somewhere else, shifting the other values appropriately}
+\item{swap}{swap two values, also known as reciprocal exchange mutation}
+}}
+\item{algo.operator.binary}{the binary operator used in the algorithm, if any, where the following abbreviations can be used
+\describe{
+\item{none}{no binary operator (such as crossover) is applied in algorithms that would permit doing so (as opposed to 'NA', which means that crossover is not applicable in this algorithm)}
+\item{LCSX}{longest-common subsequence crossover (Cheng et al.,2016)}
+\item{LOX}{linear order crossover (Falkenauer andd Bouffouix, 1991)}
+\item{OX}{order-based crossover}
+\item{PBX}{uniform or position-based crossover}
+\item{POX}{Precedence Operation Crossover) (Zhang, Li, 2008)}
+\item{PMX}{partial-mapped crossover}
+\item{PUX}{parameterized uniform crossover (DeJong and Spears, 1991)}
+}}
 \item{ref.id}{the id of the bibliography entry identifying the publication where the result was taken from}
 \item{ref.year}{the year when the results were published}
 \item{inst.id}{the ID of the problem instance solved}
@@ -21,7 +79,8 @@
 \item{system.os.name}{the name of the CPU of the system on which the experiment was run}
 \item{system.compiler.name}{the name of the compiler used to compile the programs for the experiment}
 \item{system.programming.language.name}{the name of the programming language in which the program was written}
-\item{system.external.tools.list}{the name of the external tools, such as deterministic solvers or CPLEX, whatever was used in the experiments}
+\item{system.external.tools.list}{the name of the external tools, such as deterministic solvers or CPLEX, whatever was used in the experiments, separated by ';'}
+\item{notes}{additional notes}
 \item{n.runs}{the total number of repetitions / runs performed}
 \item{best.f.min}{the minimum value of the best objective value ever reached during the run}
 \item{best.f.mean}{the arithmetic mean of the best objective value ever reached during the run}
@@ -55,65 +114,65 @@ data(jssp.results)
 print(jssp.results)
 }
 \references{
-Abdelmaguid TF (2010). “Representations in Genetic Algorithm for the Job Shop Scheduling Problem: A Computational Study.” Journal of Software Engineering and Applications (JSEA), 3(12), 1155-1162. doi: 10.4236/jsea.2010.312135 (URL: http://doi.org/10.4236/jsea.2010.312135), <URL: http://www.scirp.org/journal/paperinformation.aspx?paperid=3561>.
+Abdelmaguid TF (2010). “Representations in Genetic Algorithm for the Job Shop Scheduling Problem: A Computational Study.” Journal of Software Engineering and Applications (JSEA), 3(12), 1155-1162. doi:\href{http://doi.org/10.4236/jsea.2010.312135}{10.4236/jsea.2010.312135}, \url{http://www.scirp.org/journal/paperinformation.aspx?paperid=3561}.
 
-Asadzadeh L (2015). “A Local Search Genetic Algorithm for the Job Shop Scheduling Problem with Intelligent Agents.” Computers & Industrial Engineering, 85, 376-383. doi: 10.1016/j.cie.2015.04.006 (URL: http://doi.org/10.1016/j.cie.2015.04.006).
+Asadzadeh L (2015). “A Local Search Genetic Algorithm for the Job Shop Scheduling Problem with Intelligent Agents.” Computers & Industrial Engineering, 85, 376-383. doi:\href{http://doi.org/10.1016/j.cie.2015.04.006}{10.1016/j.cie.2015.04.006}.
 
-Abdel-Kader RF (2018). “An Improved PSO Algorithm with Genetic and Neighborhood-Based Diversity Operators for the Job Shop Scheduling Problem.” Applied Artificial Intelligence - An International Journal, 32(5), 433-462. doi: 10.1080/08839514.2018.1481903 (URL: http://doi.org/10.1080/08839514.2018.1481903).
+Abdel-Kader RF (2018). “An Improved PSO Algorithm with Genetic and Neighborhood-Based Diversity Operators for the Job Shop Scheduling Problem.” Applied Artificial Intelligence - An International Journal, 32(5), 433-462. doi:\href{http://doi.org/10.1080/08839514.2018.1481903}{10.1080/08839514.2018.1481903}.
 
-Akram K, Kamal K, Zeb A (2016). “Fast Simulated Annealing Hybridized with Quenching for Solving Job Shop Scheduling Problem.” Applied Soft Computing Journal (ASOC), 49, 510-523. doi: 10.1016/j.asoc.2016.08.037 (URL: http://doi.org/10.1016/j.asoc.2016.08.037).
+Akram K, Kamal K, Zeb A (2016). “Fast Simulated Annealing Hybridized with Quenching for Solving Job Shop Scheduling Problem.” Applied Soft Computing Journal (ASOC), 49, 510-523. doi:\href{http://doi.org/10.1016/j.asoc.2016.08.037}{10.1016/j.asoc.2016.08.037}.
 
-Angel JM, Martínez MR, Castillo LRM, Solis LS (2014). “Un Modelo Híbrido de Inteligencia Computacional para Resolver el Problema de Job Shop Scheduling.” Research in Computing Science, 79(Advances in Intelligent Information Technologies), 9-20. <URL: http://www.rcs.cic.ipn.mx/2014_79/RCS_79_2014.pdf>.
+Angel JM, Martínez MR, Castillo LRM, Solis LS (2014). “Un Modelo Híbrido de Inteligencia Computacional para Resolver el Problema de Job Shop Scheduling.” Research in Computing Science, 79(Advances in Intelligent Information Technologies), 9-20. \url{http://www.rcs.cic.ipn.mx/2014_79/RCS_79_2014.pdf}.
 
-Amirghasemi M, Zamani R (2015). “An Effective Asexual Genetic Algorithm for Solving the Job Shop Scheduling Problem.” Computers & Industrial Engineering, 83, 123-138. doi: 10.1016/j.cie.2015.02.011 (URL: http://doi.org/10.1016/j.cie.2015.02.011).
+Amirghasemi M, Zamani R (2015). “An Effective Asexual Genetic Algorithm for Solving the Job Shop Scheduling Problem.” Computers & Industrial Engineering, 83, 123-138. doi:\href{http://doi.org/10.1016/j.cie.2015.02.011}{10.1016/j.cie.2015.02.011}.
 
-Bierwirth C (1995). “A Generalized Permutation Approach to Job Shop Scheduling with Genetic Algorithms.” Operations-Research-Spektrum (OR Spectrum), 17(2-3), 87-92. doi: 10.1007/BF01719250 (URL: http://doi.org/10.1007/BF01719250), <URL: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.52.7392&type=pdf>.
+Bierwirth C (1995). “A Generalized Permutation Approach to Job Shop Scheduling with Genetic Algorithms.” Operations-Research-Spektrum (OR Spectrum), 17(2-3), 87-92. doi:\href{http://doi.org/10.1007/BF01719250}{10.1007/BF01719250}, \url{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.52.7392&type=pdf}.
 
-Beck JC, Feng TK, Watson J (2011). “Combining Constraint Programming and Local Search for Job-Shop Scheduling.” INFORMS Journal on Computing, 23(1), 1-14. doi: 10.1287/ijoc.1100.0388 (URL: http://doi.org/10.1287/ijoc.1100.0388), <URL: http://cfwebprod.sandia.gov/cfdocs/CompResearch/docs/ists-sgmpcs.pdf>.
+Beck JC, Feng TK, Watson J (2011). “Combining Constraint Programming and Local Search for Job-Shop Scheduling.” INFORMS Journal on Computing, 23(1), 1-14. doi:\href{http://doi.org/10.1287/ijoc.1100.0388}{10.1287/ijoc.1100.0388}, \url{http://cfwebprod.sandia.gov/cfdocs/CompResearch/docs/ists-sgmpcs.pdf}.
 
-Cruz-Chávez MA, Cruz Rosales MH, Zavala-Díaz JC, Aguilar JAH, Rodrıguez-Leó A, Avelino JCP, Orziz MEL, Salinas OH (2019). “Hybrid Micro Genetic Multi-Population Algorithm With Collective Communication for the Job Shop Scheduling Problem.” IEEE Access, 7, 82358-82376. doi: 10.1109/ACCESS.2019.2924218 (URL: http://doi.org/10.1109/ACCESS.2019.2924218), <URL: http://ieeexplore.ieee.org/document/8743353>.
+Cruz-Chávez MA, Cruz Rosales MH, Zavala-Díaz JC, Aguilar JAH, Rodrıguez-Leó A, Avelino JCP, Orziz MEL, Salinas OH (2019). “Hybrid Micro Genetic Multi-Population Algorithm With Collective Communication for the Job Shop Scheduling Problem.” IEEE Access, 7, 82358-82376. doi:\href{http://doi.org/10.1109/ACCESS.2019.2924218}{10.1109/ACCESS.2019.2924218}, \url{http://ieeexplore.ieee.org/document/8743353}.
 
-Cheng TCE, Peng B, Lü Z (2016). “A Hybrid Evolutionary Algorithm to Solve the Job Shop Scheduling Problem.” Annals of Operations Research, 242(2), 223-237. doi: 10.1007/s10479-013-1332-5 (URL: http://doi.org/10.1007/s10479-013-1332-5).
+Cheng TCE, Peng B, Lü Z (2016). “A Hybrid Evolutionary Algorithm to Solve the Job Shop Scheduling Problem.” Annals of Operations Research, 242(2), 223-237. doi:\href{http://doi.org/10.1007/s10479-013-1332-5}{10.1007/s10479-013-1332-5}.
 
-Dao T, Pan T, Nguyen T, Pan J (2018). “Parallel Bat Algorithm for Optimizing Makespan in Job Shop Scheduling Problems.” Journal of Intelligent Manufacturing, 29(2), 451-462. doi: 10.1007/s10845-015-1121-x (URL: http://doi.org/10.1007/s10845-015-1121-x).
+Dao T, Pan T, Nguyen T, Pan J (2018). “Parallel Bat Algorithm for Optimizing Makespan in Job Shop Scheduling Problems.” Journal of Intelligent Manufacturing, 29(2), 451-462. doi:\href{http://doi.org/10.1007/s10845-015-1121-x}{10.1007/s10845-015-1121-x}.
 
-Gao L, Li X, Wen X, Lu C, Wen F (2015). “A Hybrid Algorithm based on a New Neighborhood Structure Evaluation Method for Job Shop Scheduling Problem.” Computers & Industrial Engineering, 88, 417-429. doi: 10.1016/j.cie.2015.08.002 (URL: http://doi.org/10.1016/j.cie.2015.08.002).
+Gao L, Li X, Wen X, Lu C, Wen F (2015). “A Hybrid Algorithm based on a New Neighborhood Structure Evaluation Method for Job Shop Scheduling Problem.” Computers & Industrial Engineering, 88, 417-429. doi:\href{http://doi.org/10.1016/j.cie.2015.08.002}{10.1016/j.cie.2015.08.002}.
 
-Gonçalves JF, Resende MGC (2014). “An Extended Akers Graphical Method with a Biased Random-Key Genetic Algorithm for Job-Shop Scheduling.” International Transactions on Operational Research (ITOR), 21(2), 215-246. doi: 10.1111/itor.12044 (URL: http://doi.org/10.1111/itor.12044), <URL: http://mauricio.resende.info/doc/brkga-jss2011.pdf>.
+Gonçalves JF, Resende MGC (2014). “An Extended Akers Graphical Method with a Biased Random-Key Genetic Algorithm for Job-Shop Scheduling.” International Transactions on Operational Research (ITOR), 21(2), 215-246. doi:\href{http://doi.org/10.1111/itor.12044}{10.1111/itor.12044}, \url{http://mauricio.resende.info/doc/brkga-jss2011.pdf}.
 
-Hernández-Ramírez L, Solis JF, Castilla-Valdez G, González-Barbosa JJ, Terán-Villanueva D, Morales-Rodríguez ML (2019). “A Hybrid Simulated Annealing for Job Shop Scheduling Problem.” International Journal of Combinatorial Optimization Problems and Informatics (IJCOPI), 10(1), 6-15. published 2018-08-10, <URL: http://ijcopi.org/index.php/ojs/article/view/111>.
+Hernández-Ramírez L, Solis JF, Castilla-Valdez G, González-Barbosa JJ, Terán-Villanueva D, Morales-Rodríguez ML (2019). “A Hybrid Simulated Annealing for Job Shop Scheduling Problem.” International Journal of Combinatorial Optimization Problems and Informatics (IJCOPI), 10(1), 6-15. published 2018-08-10, \url{http://ijcopi.org/index.php/ojs/article/view/111}.
 
-Jorapur V, Puranik VS, Deshpande AS, Sharma MR (2014). “Comparative Study of Different Representations in Genetic Algorithms for Job Shop Scheduling Problem.” Journal of Software Engineering and Applications (JSEA), 7(7), 571-580. doi: 10.4236/jsea.2014.77053 (URL: http://doi.org/10.4236/jsea.2014.77053), <URL: http://www.scirp.org/journal/paperinformation.aspx?paperid=46670>.
+Jorapur V, Puranik VS, Deshpande AS, Sharma MR (2014). “Comparative Study of Different Representations in Genetic Algorithms for Job Shop Scheduling Problem.” Journal of Software Engineering and Applications (JSEA), 7(7), 571-580. doi:\href{http://doi.org/10.4236/jsea.2014.77053}{10.4236/jsea.2014.77053}, \url{http://www.scirp.org/journal/paperinformation.aspx?paperid=46670}.
 
-Jiang T, Zhang C (2018). “Application of Grey Wolf Optimization for Solving Combinatorial Problems: Job Shop and Flexible Job Shop Scheduling Cases.” IEEE Access, 6, 26231-26240. doi: 10.1109/ACCESS.2018.2833552 (URL: http://doi.org/10.1109/ACCESS.2018.2833552), <URL: http://ieeexplore.ieee.org/document/8355479>.
+Jiang T, Zhang C (2018). “Application of Grey Wolf Optimization for Solving Combinatorial Problems: Job Shop and Flexible Job Shop Scheduling Cases.” IEEE Access, 6, 26231-26240. doi:\href{http://doi.org/10.1109/ACCESS.2018.2833552}{10.1109/ACCESS.2018.2833552}, \url{http://ieeexplore.ieee.org/document/8355479}.
 
-Kurdi M (2015). “A New Hybrid Island Model Genetic Algorithm for Job Shop Scheduling Problem.” Computers & Industrial Engineering, 88, 273-283. doi: 10.1016/j.cie.2015.07.015 (URL: http://doi.org/10.1016/j.cie.2015.07.015).
+Kurdi M (2015). “A New Hybrid Island Model Genetic Algorithm for Job Shop Scheduling Problem.” Computers & Industrial Engineering, 88, 273-283. doi:\href{http://doi.org/10.1016/j.cie.2015.07.015}{10.1016/j.cie.2015.07.015}.
 
-Kulkarni K, Venkateswaran J (2014). “Iterative Simulation and Optimization Approach for Job Shop Scheduling.” In Buckley SJ, Miller JA (eds.), Proceedings of the 2014 Winter Simulation Conference, December 7-10, 2014, Savannah, GA, USA, 1620-1631. doi: 10.1109/WSC.2014.7020013 (URL: http://doi.org/10.1109/WSC.2014.7020013), <URL: https://www.anylogic.com/upload/iblock/5aa/5aa2987b839049668eeef8a21c811e6b.pdf>.
+Kulkarni K, Venkateswaran J (2014). “Iterative Simulation and Optimization Approach for Job Shop Scheduling.” In Buckley SJ, Miller JA (eds.), Proceedings of the 2014 Winter Simulation Conference, December 7-10, 2014, Savannah, GA, USA, 1620-1631. doi:\href{http://doi.org/10.1109/WSC.2014.7020013}{10.1109/WSC.2014.7020013}, \url{https://www.anylogic.com/upload/iblock/5aa/5aa2987b839049668eeef8a21c811e6b.pdf}.
 
-Li L, Weng W, Fujimura S (2017). “An Improved Teaching-Learning-based Optimization Algorithm to Solve Job Shop Scheduling Problems.” In Zhu G, Yao S, Cui X, Xu S (eds.), 16th IEEE/ACIS International Conference on Computer and Information Science (ICIS'17), May 24-26, 2017, Wuhan, China, 797-801. ISBN 978-1-5090-5507-4, doi: 10.1109/ICIS.2017.7960101 (URL: http://doi.org/10.1109/ICIS.2017.7960101).
+Li L, Weng W, Fujimura S (2017). “An Improved Teaching-Learning-based Optimization Algorithm to Solve Job Shop Scheduling Problems.” In Zhu G, Yao S, Cui X, Xu S (eds.), 16th IEEE/ACIS International Conference on Computer and Information Science (ICIS'17), May 24-26, 2017, Wuhan, China, 797-801. ISBN 978-1-5090-5507-4, doi:\href{http://doi.org/10.1109/ICIS.2017.7960101}{10.1109/ICIS.2017.7960101}.
 
-Miller-Todd J, Steinhöfel K, Veenstra P (2018). “Firefly-Inspired Algorithm for Job Shop Scheduling.” In Böckenhauer H, Komm D, Unger W (eds.), Adventures Between Lower Bounds and Higher Altitudes - Essays Dedicated to Juraj Hromkovič on the Occasion of His 60th Birthday, volume 11011 series Lecture Notes in Computer Science (LNCS), 423-433. Springer. ISBN 978-3-319-98354-7, doi: 10.1007/978-3-319-98355-4_24 (URL: http://doi.org/10.1007/978-3-319-98355-4_24).
+Miller-Todd J, Steinhöfel K, Veenstra P (2018). “Firefly-Inspired Algorithm for Job Shop Scheduling.” In Böckenhauer H, Komm D, Unger W (eds.), Adventures Between Lower Bounds and Higher Altitudes - Essays Dedicated to Juraj Hromkovič on the Occasion of His 60th Birthday, volume 11011 series Lecture Notes in Computer Science (LNCS), 423-433. Springer. ISBN 978-3-319-98354-7, doi:\href{http://doi.org/10.1007/978-3-319-98355-4_24}{10.1007/978-3-319-98355-4_24}.
 
-Nguyen S, Zhang M, Johnston M, Tan KC (2013). “A Computational Study of Representations in Genetic Programming to Evolve Dispatching Rules for the Job Shop Scheduling Problem.” IEEE Transactions on Evolutionary Computation (TEVC), 17(5), 621-639. doi: 10.1109/TEVC.2012.2227326 (URL: http://doi.org/10.1109/TEVC.2012.2227326).
+Nguyen S, Zhang M, Johnston M, Tan KC (2013). “A Computational Study of Representations in Genetic Programming to Evolve Dispatching Rules for the Job Shop Scheduling Problem.” IEEE Transactions on Evolutionary Computation (TEVC), 17(5), 621-639. doi:\href{http://doi.org/10.1109/TEVC.2012.2227326}{10.1109/TEVC.2012.2227326}.
 
-Pongchairerks P (2014). “Variable Neighbourhood Search Algorithms Applied to Job-Shop Scheduling Problems.” International Journal of Mathematics in Operational Research (IJMOR), 6(6), 752-774. doi: 10.1504/IJMOR.2014.065421 (URL: http://doi.org/10.1504/IJMOR.2014.065421).
+Pongchairerks P (2014). “Variable Neighbourhood Search Algorithms Applied to Job-Shop Scheduling Problems.” International Journal of Mathematics in Operational Research (IJMOR), 6(6), 752-774. doi:\href{http://doi.org/10.1504/IJMOR.2014.065421}{10.1504/IJMOR.2014.065421}.
 
-Pongchairerks P (2019). “A Two-Level Metaheuristic Algorithm for the Job-Shop Scheduling Problem.” Complexity, 2019(8683472), 1-11. doi: 10.1155/2019/8683472 (URL: http://doi.org/10.1155/2019/8683472), <URL: http://www.hindawi.com/journals/complexity/2019/8683472/>.
+Pongchairerks P (2019). “A Two-Level Metaheuristic Algorithm for the Job-Shop Scheduling Problem.” Complexity, 2019(8683472), 1-11. doi:\href{http://doi.org/10.1155/2019/8683472}{10.1155/2019/8683472}, \url{http://www.hindawi.com/journals/complexity/2019/8683472/}.
 
-Peng B, Lü Z, Cheng TCE (2015). “A Tabu Search/Path Relinking Algorithm to Solve the Job Shop Scheduling Problem.” Computers & Operations Research, 53, 154-164. doi: 10.1016/j.cor.2014.08.006 (URL: http://doi.org/10.1016/j.cor.2014.08.006), A February 2014 preprint is available as arXiv:1402.5613v1 [cs.DS], <URL: http://arxiv.org/abs/1402.5613>.
+Peng B, Lü Z, Cheng TCE (2015). “A Tabu Search/Path Relinking Algorithm to Solve the Job Shop Scheduling Problem.” Computers & Operations Research, 53, 154-164. doi:\href{http://doi.org/10.1016/j.cor.2014.08.006}{10.1016/j.cor.2014.08.006}, A February 2014 preprint is available as arXiv:1402.5613v1 [cs.DS], \url{http://arxiv.org/abs/1402.5613}.
 
-Qiu X, Lau HYK (2014). “An AIS-based Hybrid Algorithm for Static Job Shop Scheduling Problem.” Journal of Intelligent Manufacturing, 25(3), 489-503. doi: 10.1007/s10845-012-0701-2 (URL: http://doi.org/10.1007/s10845-012-0701-2).
+Qiu X, Lau HYK (2014). “An AIS-based Hybrid Algorithm for Static Job Shop Scheduling Problem.” Journal of Intelligent Manufacturing, 25(3), 489-503. doi:\href{http://doi.org/10.1007/s10845-012-0701-2}{10.1007/s10845-012-0701-2}.
 
-Sharma N, Sharma H, Sharma A (2018). “Beer froth Artificial Bee Colony Algorithm for Job-Shop Scheduling Problem.” Applied Soft Computing Journal (ASOC), 68, 507-524. doi: 10.1016/j.asoc.2018.04.001 (URL: http://doi.org/10.1016/j.asoc.2018.04.001).
+Sharma N, Sharma H, Sharma A (2018). “Beer froth Artificial Bee Colony Algorithm for Job-Shop Scheduling Problem.” Applied Soft Computing Journal (ASOC), 68, 507-524. doi:\href{http://doi.org/10.1016/j.asoc.2018.04.001}{10.1016/j.asoc.2018.04.001}.
 
-Wang L, Cai J, Li M (2016). “An Adaptive Multi-Population Genetic Algorithm for Job-Shop Scheduling Problem.” Advances in Manufacturing, 4(2), 142-149. doi: 10.1007/s40436-016-0140-y (URL: http://doi.org/10.1007/s40436-016-0140-y).
+Wang L, Cai J, Li M (2016). “An Adaptive Multi-Population Genetic Algorithm for Job-Shop Scheduling Problem.” Advances in Manufacturing, 4(2), 142-149. doi:\href{http://doi.org/10.1007/s40436-016-0140-y}{10.1007/s40436-016-0140-y}.
 
-Wang X, Duan H (2014). “A Hybrid Biogeography-based Optimization Algorithm for Job Shop Scheduling Problem.” Computers & Industrial Engineering, 73, 96-114. doi: 10.1016/j.cie.2014.04.006 (URL: http://doi.org/10.1016/j.cie.2014.04.006), <URL: http://hbduan.buaa.edu.cn/papers/2014CAIE_Wang_Duan.pdf>.
+Wang X, Duan H (2014). “A Hybrid Biogeography-based Optimization Algorithm for Job Shop Scheduling Problem.” Computers & Industrial Engineering, 73, 96-114. doi:\href{http://doi.org/10.1016/j.cie.2014.04.006}{10.1016/j.cie.2014.04.006}, \url{http://hbduan.buaa.edu.cn/papers/2014CAIE_Wang_Duan.pdf}.
 
-Wang S, Tsai C, Chiang M (2018). “A High Performance Search Algorithm for Job-Shop Scheduling Problem.” In Shakshuki EM, Yasar A (eds.), The 9th International Conference on Emerging Ubiquitous Systems and Pervasive Networks (EUSPN'18) / The 8th International Conference on Current and Future Trends of Information and Communication Technologies in Healthcare (ICTH'18) / Affiliated Workshops, November 5-8, 2018, Leuven, Belgium, volume 141 series Procedia Computer Science, 119-126. doi: 10.1016/j.procs.2018.10.157 (URL: http://doi.org/10.1016/j.procs.2018.10.157).
+Wang S, Tsai C, Chiang M (2018). “A High Performance Search Algorithm for Job-Shop Scheduling Problem.” In Shakshuki EM, Yasar A (eds.), The 9th International Conference on Emerging Ubiquitous Systems and Pervasive Networks (EUSPN'18) / The 8th International Conference on Current and Future Trends of Information and Communication Technologies in Healthcare (ICTH'18) / Affiliated Workshops, November 5-8, 2018, Leuven, Belgium, volume 141 series Procedia Computer Science, 119-126. doi:\href{http://doi.org/10.1016/j.procs.2018.10.157}{10.1016/j.procs.2018.10.157}.
 
-Zupan H, Herakovič N, Žerovnik J (2016). “A Heuristic for the Job Shop Scheduling Problem.” In Papa G, Mernik M (eds.), The 7th International Conference on Bioinspired Optimization Methods and their Application (BIOMA'16), May 18-20, 2016, Bled, Slovenia, 187-198. ISBN 978-961-264-093-4, <URL: http://bioma.ijs.si/conference/BIOMA2016Proceedings.pdf>.
+Zupan H, Herakovič N, Žerovnik J (2016). “A Heuristic for the Job Shop Scheduling Problem.” In Papa G, Mernik M (eds.), The 7th International Conference on Bioinspired Optimization Methods and their Application (BIOMA'16), May 18-20, 2016, Bled, Slovenia, 187-198. ISBN 978-961-264-093-4, \url{http://bioma.ijs.si/conference/BIOMA2016Proceedings.pdf}.
 }
 \keyword{JSSP,}
 \keyword{Job}
