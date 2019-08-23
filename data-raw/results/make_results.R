@@ -86,6 +86,7 @@ cols.more <- create.columns(columns=list(
                  create.column("algo.operator.binary",
                                paste0("the binary operator used in the algorithm, if any, where the following abbreviations can be used\n#' \\describe{\n#' ",
                                       "\\item{none}{no binary operator (such as crossover) is applied in algorithms that would permit doing so (as opposed to 'NA', which means that crossover is not applicable in this algorithm)}\n#' ",
+                                      "\\item{JBX}{job-based crossover (Braune et al., 2005)}\n#' ",
                                       "\\item{LCSX}{longest-common subsequence crossover (Cheng et al.,2016)}\n#' ",
                                       "\\item{LOX}{linear order crossover (Falkenauer andd Bouffouix, 1991)}\n#' ",
                                       "\\item{OX}{order-based crossover}\n#' ",

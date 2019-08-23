@@ -58,6 +58,7 @@
 \item{algo.operator.binary}{the binary operator used in the algorithm, if any, where the following abbreviations can be used
 \describe{
 \item{none}{no binary operator (such as crossover) is applied in algorithms that would permit doing so (as opposed to 'NA', which means that crossover is not applicable in this algorithm)}
+\item{JBX}{job-based crossover (Braune et al., 2005)}
 \item{LCSX}{longest-common subsequence crossover (Cheng et al.,2016)}
 \item{LOX}{linear order crossover (Falkenauer andd Bouffouix, 1991)}
 \item{OX}{order-based crossover}
@@ -78,6 +79,7 @@
 \item{system.runs.are.parallel}{are the single runs making use of parallelization, i.e., do they use multiple threads?}
 \item{system.memory.mb}{the memory size of the system in MB}
 \item{system.os.name}{the name of the CPU of the system on which the experiment was run}
+\item{system.vm.name}{the name of the virtual machine used to execute the experiment, if any}
 \item{system.compiler.name}{the name of the compiler used to compile the programs for the experiment}
 \item{system.programming.language.name}{the name of the programming language in which the program was written}
 \item{system.external.tools.list}{the name of the external tools, such as deterministic solvers or CPLEX, whatever was used in the experiments, separated by ';'}
@@ -99,8 +101,12 @@
 \item{total.fes.med}{the median of the total consumed function evaluations (FEs) of the run, i.e., the total number of candidate solutions generated during the run from the beginning to its end}
 \item{total.fes.mode}{the mode, i.e., the most frequent value, of the total consumed function evaluations (FEs) of the run, i.e., the total number of candidate solutions generated during the run from the beginning to its end}
 \item{total.fes.max}{the maximum value of the total consumed function evaluations (FEs) of the run, i.e., the total number of candidate solutions generated during the run from the beginning to its end}
+\item{reach.best.f.min.runs}{the number of runs that actually discovered the best solution (best.f.min)}
 \item{reach.best.f.min.time.min}{the minimum value of the time needed by the runs which discovered the best solution among all runs (best.f.min) until they reached said solution, measured in milliseconds}
 \item{reach.best.f.min.time.mean}{the arithmetic mean of the time needed by the runs which discovered the best solution among all runs (best.f.min) until they reached said solution, measured in milliseconds}
+\item{reach.best.f.min.time.med}{the median of the time needed by the runs which discovered the best solution among all runs (best.f.min) until they reached said solution, measured in milliseconds}
+\item{reach.best.f.min.time.mode}{the mode, i.e., the most frequent value, of the time needed by the runs which discovered the best solution among all runs (best.f.min) until they reached said solution, measured in milliseconds}
+\item{reach.best.f.min.time.max}{the maximum value of the time needed by the runs which discovered the best solution among all runs (best.f.min) until they reached said solution, measured in milliseconds}
 \item{budget.fes}{the maximum number of function evaluations a run was allowed to perform until forceful termination}
 \item{budget.time}{the maximum time granted to a run until forceful termination, measured in milliseconds}
 }}
@@ -157,6 +163,8 @@ Kulkarni K, Venkateswaran J (2014). “Iterative Simulation and Optimization App
 
 Li L, Weng W, Fujimura S (2017). “An Improved Teaching-Learning-based Optimization Algorithm to Solve Job Shop Scheduling Problems.” In Zhu G, Yao S, Cui X, Xu S (eds.), 16th IEEE/ACIS International Conference on Computer and Information Science (ICIS'17), May 24-26, 2017, Wuhan, China, 797-801. ISBN 978-1-5090-5507-4, doi:\href{http://doi.org/10.1109/ICIS.2017.7960101}{10.1109/ICIS.2017.7960101}.
 
+Maqsood S, Noor S, Khan MK, Wood A (2012). “Hybrid Genetic Algorithm (GA) for Job Shop Scheduling Problems and its Sensitivity Analysis.” International Journal of Intelligent Systems Technologies and Applications (IJISTA), 11(1/2), 49-62. doi:\href{http://doi.org/10.1504/IJISTA.2012.046543}{10.1504/IJISTA.2012.046543}.
+
 Miller-Todd J, Steinhöfel K, Veenstra P (2018). “Firefly-Inspired Algorithm for Job Shop Scheduling.” In Böckenhauer H, Komm D, Unger W (eds.), Adventures Between Lower Bounds and Higher Altitudes - Essays Dedicated to Juraj Hromkovič on the Occasion of His 60th Birthday, volume 11011 series Lecture Notes in Computer Science (LNCS), 423-433. Springer. ISBN 978-3-319-98354-7, doi:\href{http://doi.org/10.1007/978-3-319-98355-4_24}{10.1007/978-3-319-98355-4_24}.
 
 Nguyen S, Zhang M, Johnston M, Tan KC (2013). “A Computational Study of Representations in Genetic Programming to Evolve Dispatching Rules for the Job Shop Scheduling Problem.” IEEE Transactions on Evolutionary Computation (TEVC), 17(5), 621-639. doi:\href{http://doi.org/10.1109/TEVC.2012.2227326}{10.1109/TEVC.2012.2227326}.
@@ -169,7 +177,9 @@ Peng B, Lü Z, Cheng TCE (2015). “A Tabu Search/Path Relinking Algorithm to So
 
 Qiu X, Lau HYK (2014). “An AIS-based Hybrid Algorithm for Static Job Shop Scheduling Problem.” Journal of Intelligent Manufacturing, 25(3), 489-503. doi:\href{http://doi.org/10.1007/s10845-012-0701-2}{10.1007/s10845-012-0701-2}.
 
-Sharma N, Sharma H, Sharma A (2018). “Beer froth Artificial Bee Colony Algorithm for Job-Shop Scheduling Problem.” Applied Soft Computing Journal (ASOC), 68, 507-524. doi:\href{http://doi.org/10.1016/j.asoc.2018.04.001}{10.1016/j.asoc.2018.04.001}.
+Sahana SK, Mukherjee I, Mahanti PK (2018). “Parallel Artificial Bee Colony (PABC) for Job Shop Scheduling Problems.” Advances in Information Sciences and Service Sciences (AISS), 10(3), 1-11. \url{http://www.globalcis.org/aiss/ppl/AISS3877PPL.pdf}.
+
+Sharma N, Sharma H, Sharma A (2018). “Beer Froth Artificial Bee Colony Algorithm for Job-Shop Scheduling Problem.” Applied Soft Computing Journal (ASOC), 68, 507-524. doi:\href{http://doi.org/10.1016/j.asoc.2018.04.001}{10.1016/j.asoc.2018.04.001}.
 
 Wang L, Cai J, Li M (2016). “An Adaptive Multi-Population Genetic Algorithm for Job-Shop Scheduling Problem.” Advances in Manufacturing, 4(2), 142-149. doi:\href{http://doi.org/10.1007/s40436-016-0140-y}{10.1007/s40436-016-0140-y}.
 
