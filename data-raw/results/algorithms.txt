@@ -11,6 +11,8 @@ CRO-WTC,WTC2018AHPSAFJSSP,CRO,OB,NA,NA,Intel Core i5 4460,1,4,4,3200,FALSE,8192,
 Delta-t1-R1,NZJT2013ACSORIGPTED,heuristic,NA,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,Java,NA,heuristics synthesized via GP running in ECJ20
 Delta-t1-R3,NZJT2013ACSORIGPTED,heuristic,NA,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,Java,NA,heuristics synthesized via GP running in ECJ20
 Delta-t2-R2,NZJT2013ACSORIGPTED,heuristic,NA,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,Java,NA,heuristics synthesized via GP running in ECJ20
+DP,GvHSGT2009,DP,NA,NA,NA,NA,1,NA,NA,2660,NA,8192,Microsoft Windows 64bit,NA,NA,C++,NA,these are exact solutions
+EAS,FGB2013AACOAFJSSP,ACO (Elitist ACS),NA,NA,NA,NA,NA,NA,NA,NA,FALSE,NA,NA,NA,NA,NA,NA,NA
 FSA-AKZ,AKZ2016FSAHWQFSJSSP,Fast-SA,OB,Nowicki-Smutnicky Neighborhood,NA,Intel Core 2 Quad,1,4,4,2400,FALSE,4096,NA,NA,Visual C#.NET,C#,NA,NA
 GA-JB-A,A2010RIGAFTJSPACS,EA,JB,swap+reverse+insert+shift,PMX+OX+PBX,Intel Pentium Core 2 Duo,1,2,2,2670,FALSE,512,NA,NA,NA,C++,NA,NA
 GA-JB-JPDS,JPDS2014CAODRIGAFJSSP,EA,JB,swap+reverse+insert+shift,PMX+OX+PBX,Intel Pentium 4,1,2,4,2060,FALSE,512,NA,NA,NA,NA,NA,NA

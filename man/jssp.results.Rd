@@ -17,6 +17,7 @@
 \item{CP}{constraint programming}
 \item{CRO}{Coral Reef Optimization}
 \item{DES}{discrete event simulation}
+\item{DP}{dynamic programming, an exact method}
 \item{EA}{evolutionary algorithm}
 \item{FA}{Firefly Algorithm}
 \item{forcing}{an improvement step that will try to move jobs in the Gantt chart to the left, if possible, first used by Nakano/Yamada}
@@ -136,9 +137,13 @@ Cheng TCE, Peng B, Lü Z (2016). “A Hybrid Evolutionary Algorithm to Solve the
 
 Dao T, Pan T, Nguyen T, Pan J (2018). “Parallel Bat Algorithm for Optimizing Makespan in Job Shop Scheduling Problems.” Journal of Intelligent Manufacturing, 29(2), 451-462. doi:\href{http://doi.org/10.1007/s10845-015-1121-x}{10.1007/s10845-015-1121-x}.
 
+Flórez E, Gómez W, Bautista L (2013). “An Ant Colony Optimization Algorithm for Job Shop Scheduling Problem.” Technical Report abs/1309.5110, arXiv. \url{https://arxiv.org/pdf/1309.5110.pdf}.
+
 Gao L, Li X, Wen X, Lu C, Wen F (2015). “A Hybrid Algorithm based on a New Neighborhood Structure Evaluation Method for Job Shop Scheduling Problem.” Computers & Industrial Engineering, 88, 417-429. doi:\href{http://doi.org/10.1016/j.cie.2015.08.002}{10.1016/j.cie.2015.08.002}.
 
 Gonçalves JF, Resende MGC (2014). “An Extended Akers Graphical Method with a Biased Random-Key Genetic Algorithm for Job-Shop Scheduling.” International Transactions on Operational Research (ITOR), 21(2), 215-246. doi:\href{http://doi.org/10.1111/itor.12044}{10.1111/itor.12044}, \url{http://mauricio.resende.info/doc/brkga-jss2011.pdf}.
+
+Gromicho JAS, van Hoorn JJ, Saldanha-da-Gama F, Timmer GT (2009). “Exponentially Better than Brute Force: Solving the Job-Shop Scheduling Problem Optimally by Dynamic Programming.” Technical Report 2009-56, Faculty of Economics and Business Administration, Vrije Universiteit Amsterdam, Amsterdam, The Netherlands. \url{http://degree.ubvu.vu.nl/repec/vua/wpaper/pdf/20090056.pdf}.
 
 Hernández-Ramírez L, Solis JF, Castilla-Valdez G, González-Barbosa JJ, Terán-Villanueva D, Morales-Rodríguez ML (2019). “A Hybrid Simulated Annealing for Job Shop Scheduling Problem.” International Journal of Combinatorial Optimization Problems and Informatics (IJCOPI), 10(1), 6-15. published 2018-08-10, \url{http://ijcopi.org/index.php/ojs/article/view/111}.
 
