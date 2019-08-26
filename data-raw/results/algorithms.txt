@@ -3,10 +3,13 @@ ACO-SA,AMCS2014UMHDICPREPDJSS,ACO+SA+TS,OO,NA,NA,Intel Core i3,1,2,4,2270,FALSE,
 AIS-PSO-hybrid,QL2014AABHAFSSSP,AIS+PSO+LS,OB,reverse+swap+PSO,NA,Intel Core 2 Quad Q9400,1,4,4,2660,FALSE,2048,Microsoft Windows XP Professional,NA,NA,NA,NA,NA
 aLSGA,A2015ALSGAFTJSSPWIA,EA+LS,OB,swap+insert+inverse,PMX,Intel Core 2 Duo,1,2,2,2930,FALSE,2048,NA,NA,NA,Java,JADE multi-agent platform, implemented in the JADE multi-agent platform
 AMGA,WCL2016AAMPGAFJSSP,multi-population EA+LS,OB,LS based on RWN for 3 indices,OX,NA,1,NA,NA,NA,FALSE,4096,NA,NA,NA,VC,NA,NA
+ANHGA,PPH2012AONNGAFMSITJSS,EA+Niching (modified sharing),OB,adaptive swap,OX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,for multimodal optimization
 BBO-WD,WD2014AHBBOAFJSSP,BBO,OB,NA,NA,Intel Core i3,1,2,4,2400,FALSE,4096,Microsoft Windows 7,NA,NA,Matlab,NA,NA
 BeFABC,SSS2018BFABCAFJSSP,ABC,RK+OB,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,NA,NA,NA
+BFO-NA,NA2012AHBFAFSJSSP,BFO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 BFW-BestHybrid,BFW2011CCPALSFJSS,TS (i-STS) + CP (SGS),NA,N5,NA,AMD Opteron 270,1,2,2,2048,FALSE,20248,Red Hat Enterprise Linux 4,NA,GCC,C++,ILOG Scheduler 6.5,NA
 BRKGA,GR2014AEAGMWABRKGAFJSS,EA+TS+Akers method,RK+OB,NA,PUX,AMD Opteron 2427,1,6,6,2200,FALSE,NA,Fedora Linux 12,NA,NA,C++,NA,NA
+CM,PPH2012AONNGAFMSITJSS,EA+Niching (classical clearing),OB,swap,OX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,for multimodal optimization
 CRO-WTC,WTC2018AHPSAFJSSP,CRO,OB,NA,NA,Intel Core i5 4460,1,4,4,3200,FALSE,8192,NA,NA,NA,NA,NA,NA
 Delta-t1-R1,NZJT2013ACSORIGPTED,heuristic,NA,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,Java,NA,heuristics synthesized via GP running in ECJ20
 Delta-t1-R3,NZJT2013ACSORIGPTED,heuristic,NA,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,Java,NA,heuristics synthesized via GP running in ECJ20
@@ -18,6 +21,10 @@ GA-JB-A,A2010RIGAFTJSPACS,EA,JB,swap+reverse+insert+shift,PMX+OX+PBX,Intel Penti
 GA-JB-JPDS,JPDS2014CAODRIGAFJSSP,EA,JB,swap+reverse+insert+shift,PMX+OX+PBX,Intel Pentium 4,1,2,4,2060,FALSE,512,NA,NA,NA,NA,NA,NA
 GA-MB-A,A2010RIGAFTJSPACS,EA,MB,swap+reverse+insert+shift,PMX+OX+PBX,Intel Pentium Core 2 Duo,1,2,2,2670,FALSE,512,NA,NA,NA,C++,NA,NA
 GA-MB-JPDS,JPDS2014CAODRIGAFJSSP,EA,MB,swap+reverse+insert+shift,PMX+OX+PBX,Intel Pentium 4,1,2,4,2060,FALSE,512,NA,NA,NA,NA,NA,NA
+GA-MC-Fc,MM2013ACSOCOFGATSTJSSP,EA,RK + (priority+delay),1 gene randomized,IR,Intel Core 2 Duo CPU T7250,1,2,2,2000,FALSE,NA,NA,NA,NA,NA,NA,NA
+GA-MC-SPc,MM2013ACSOCOFGATSTJSSP,EA,RK + (priority+delay),1 gene randomized,SPX,Intel Core 2 Duo CPU T7250,1,2,2,2000,FALSE,NA,NA,NA,NA,NA,NA,NA
+GA-MC-TPc,MM2013ACSOCOFGATSTJSSP,EA,RK + (priority+delay),1 gene randomized,TPX,Intel Core 2 Duo CPU T7250,1,2,2,2000,FALSE,NA,NA,NA,NA,NA,NA,NA
+GA-MC-Uc,MM2013ACSOCOFGATSTJSSP,EA,RK + (priority+delay),1 gene randomized,UX,Intel Core 2 Duo CPU T7250,1,2,2,2000,FALSE,NA,NA,NA,NA,NA,NA,NA
 GA-OB-A,A2010RIGAFTJSPACS,EA,OB,swap+reverse+insert+shift,PMX+OX+PBX,Intel Pentium Core 2 Duo,1,2,2,2670,FALSE,512,NA,NA,NA,C++,NA,NA
 GA-OB-JPDS,JPDS2014CAODRIGAFJSSP,EA,OB,swap+reverse+insert+shift,PMX+OX+PBX,Intel Pentium 4,1,2,4,2060,FALSE,512,NA,NA,NA,NA,NA,NA
 GA-PL-A,A2010RIGAFTJSPACS,EA,PL,swap+reverse+insert+shift,PMX+OX+PBX,Intel Pentium Core 2 Duo,1,2,2,2670,FALSE,512,NA,NA,NA,C++,NA,NA
@@ -29,6 +36,7 @@ GP-GA,B1995AGPATJSSWGA,EA+forcing+ring structure of population,OB,NA,generalized
 GPSO-AK,AK2018AIPAWGANBDOFTJSSP,discrete PSO +  genetic operators,OB,NA,NA,Intel Pentium 4,1,1,2,3000,FALSE,2048,NA,NA,NA,C++,NA,NA
 GWO-JZ,JZ2018AOGWOFSCPJSAFJSSC,discrete GWO+VNS,OB,swap+reverse+insert,POX,NA,1,NA,NA,NA,FALSE,2048,Windows XP,NA,NA,Fortran,VMWare Workstation,NA
 HBBO,WD2014AHBBOAFJSSP,BBO,OB,NA,NA,Intel Core i3,1,2,4,2400,FALSE,4096,Microsoft Windows 7,NA,NA,Matlab,NA,NA
+HBFO,NA2012AHBFAFSJSSP,BFO+ACO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 HEA,CPL2016AHEATSTJSSP,EA+TS,PL,N7,LCSX,AMD Opteron,1,NA,NA,2800,FALSE,NA,Linux,NA,G++,C++,NA,NA
 HFSAQ,AKZ2016FSAHWQFSJSSP,Fast-SA + TS + Quenching,OB,Nowicki-Smutnicky Neighborhood,NA,Intel Core 2 Quad,1,4,4,2400,FALSE,4096,NA,NA,Visual C#.NET,C#,NA,NA
 HGA,MNKW2012HGAGFJSSPAISA,EA+Heuristics,job permutation,swap adjacent,JBX,Intel Core 2 Duo,1,2,2,2000,FALSE,NA,NA,Matlab 7,Matlab 7,Matlab,NA,HybH heuristic = combination of Index-Based Values (IBH) and Finished Job-Based Heuristic (FJBH)
@@ -40,6 +48,8 @@ HIMGA-Tabu,K2015ANHIMGAFJSSP,EA with island models+TS,PL,swap+reverse+insert,OX,
 HPV,GLWLW2015AHABOANNSEMFSSP,discrete PSO+VNS,OB,RRN+RWN+swap+insert+N5,POX,Intel Core 2,1,2,2,2160,FALSE,4096,NA,NA,NA,C++,NA,NA
 improved-TLBO,LWF2017AITLBOATSJSSP,TLBO+GT+LS,PM,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,NA,NA,NA
 ISO,KV2014ISAOAFJSS,LP+DES,NA,NA,NA,IntelDual Core,1,2,2,800,NA,3072,NA,NA,NA,NA,Anylogic 6.9; Eclipse Indigo; CPLEX 12.4,NA
+MP-CA,RNK2012AKMBMPCATSJSS,multi-population CA+LS,PL variant,NA,NA,IntelIntel Core 2 Quad,1,4,4,2500,FALSE,8192,NA,Java 1.6.0.18,NA,Java,NA,NA
+NIT,PPH2012AONNGAFMSITJSS,EA+Niching (niching+sharing),OB,swap,OX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,for multimodal optimization
 NPSO-AK,AK2018AIPAWGANBDOFTJSSP,discrete PSO + neighborhood-based operators,OB,NA,NA,Intel Pentium 4,1,1,2,3000,FALSE,2048,NA,NA,NA,C++,NA,NA
 PABC,SMM2018PABCPFJSSP,Parallel ABC,path through DAG,NA,NA,Intel Core i3,1,2,4,2700,TRUE,4096,Microsoft Windows 7,NA,NA,C/C++,Code::Blocks IDE,NA
 parAntGenSA+CR,HRSCVGBTVMR2019AHSAFJSSP,ACS+SA,NA,NA,yes,Intel Xeon,1,NA,NA,2300,TRUE,65536,CentOS,NA,NA,C,OpenMP,NA
@@ -48,8 +58,12 @@ PBA,DPNP2018PBAFOMIJSSP,parallel BA,RK+OB,NA,NA,NA,1,NA,NA,NA,TRUE,NA,NA,NA,NA,N
 PSO-AK,AK2018AIPAWGANBDOFTJSSP,discrete PSO,OB,NA,NA,Intel Pentium 4,1,1,2,3000,FALSE,2048,NA,NA,NA,C++,NA,NA
 PSO-NGO,AK2018AIPAWGANBDOFTJSSP,discrete PSO + genetic operators + neighborhood-based operators,OB,NA,NA,Intel Pentium 4,1,1,2,3000,FALSE,2048,NA,NA,NA,C++,NA,NA
 PSO-WD,WD2014AHBBOAFJSSP,PSO,OB,NA,NA,Intel Core i3,1,2,4,2400,FALSE,4096,Microsoft Windows 7,NA,NA,Matlab,NA,NA
+QHFD,PPH2012AONNGAFMSITJSS,EA+Niching (Quick Hierarchical Fair Competition),OB,swap,OX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,for multimodal optimization
 RaR,ZHZ2016AHFTJSSP,LS,NA,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,NA,Siemens programming environment Plant Simulation,NA
+RCS_PSM,PPH2012AONNGAFMSITJSS,EA+Niching (Restricted Competition Selection with Pattern Search Method),OB,swap,OX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,for multimodal optimization
+RCS,PPH2012AONNGAFMSITJSS,EA+Niching (Restricted Competition Selection Method),OB,swap,OX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,for multimodal optimization
 SAFA,MTSV2018FIAFJSS,SA+FA,choice of disjunctive edges in DAG representation of the JSSP,edge flip,NA,Intel Dual-Core,1,2,NA,NA,TRUE,7680,NA,NA,NA,NA,NA,run on a cloud server
+SCGA,PPH2012AONNGAFMSITJSS,EA+Niching (Species Conserving),OB,swap,OX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,for multimodal optimization
 SEJSP,WTC2018AHPSAFJSSP,SE,OB,swap+insert+invert+'score',LOX,Intel Core i5 4460,1,4,4,3200,FALSE,8192,NA,NA,NA,NA,NA,NA
 seqAntGenSA+CR,HRSCVGBTVMR2019AHSAFJSSP,ACS+SA,NA,NA,yes,Intel Xeon,1,NA,NA,2300,FALSE,65536,CentOS,NA,NA,C,NA,NA
 seqAntGenSA-CR,HRSCVGBTVMR2019AHSAFJSSP,ACS+SA,NA,NA,none,Intel Xeon,1,NA,NA,2300,FALSE,65536,CentOS,NA,NA,C,NA,NA

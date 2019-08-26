@@ -30,9 +30,9 @@ Adams J, Balas E, Zawack D (1988). “The Shifting Bottleneck Procedure for Job 
 
 Applegate DL, Cook WJ (1991). “A Computational Study of the Job-Shop Scheduling Problem.” ORSA Journal on Computing, 3(2), 149-156. doi:\href{http://doi.org/10.1287/ijoc.3.2.149}{10.1287/ijoc.3.2.149}, the JSSP instances used were generated in Bonn in 1986.
 
-Brinkkötter W, Brucker P (2001). “Solving Open Benchmark Instances for the Job-Shop Problem by Parallel Head-Tail Adjustments.” Journal of Scheduling, 4(1), 53-64. doi:\href{http://doi.org/10.1002/1099-1425(200101/02}{10.1002/1099-1425(200101/02)4:1<53::AID-JOS59>3.0.CO;2-Y}4:1<53::AID-JOS59>3.0.CO;2-Y).
-
 Balas E, Vazacopoulos A (1994). “Guided Local Search with Shifting Bottleneck for Job Shop Scheduling.” Technical Report MSSR–609, Graduate School of Industrial Administration, Carnegie Mellon University, Pittsburgh, PA, USA.
+
+Brinkkötter W, Brucker P (2001). “Solving Open Benchmark Instances for the Job-Shop Problem by Parallel Head-Tail Adjustments.” Journal of Scheduling, 4(1), 53-64. doi:\href{http://doi.org/10.1002/1099-1425(200101/02}{10.1002/1099-1425(200101/02)4:1<53::AID-JOS59>3.0.CO;2-Y}4:1<53::AID-JOS59>3.0.CO;2-Y).
 
 Carlier J, Pinson É (1989). “An Algorithm for Solving the Job-Shop Problem.” Management Science, 35(2), 164-176. doi:\href{http://doi.org/10.1287/mnsc.35.2.164}{10.1287/mnsc.35.2.164}, jstor: 2631909.
 
