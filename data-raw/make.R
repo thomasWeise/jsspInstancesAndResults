@@ -29,6 +29,8 @@ stopifnot(is.data.frame(jssp.instances));
 
 source(file.path(dir.data.raw, "results", "make_results.R"));
 
+source(file.path(dir.data.raw, "instances", "make_instances_bks.R"));
+
 # store the data
 use_data(jssp.bibliography,
          jssp.instances,

@@ -181,7 +181,7 @@ Nguyen S, Zhang M, Johnston M, Tan KC (2013). “A Computational Study of Repres
 
 Peng B, Lü Z, Cheng TCE (2015). “A Tabu Search/Path Relinking Algorithm to Solve the Job Shop Scheduling Problem.” Computers & Operations Research, 53, 154-164. doi:\href{http://doi.org/10.1016/j.cor.2014.08.006}{10.1016/j.cor.2014.08.006}, A February 2014 preprint is available as arXiv:1402.5613v1 [cs.DS], \url{http://arxiv.org/abs/1402.5613}.
 
-Pérez E, Posada M, Herrera F (2012). “Analysis of New Niching Genetic Algorithms for Finding Multiple Solutions in the Job Shop Scheduling.” Journal of Intelligent Manufacturing, 23(3), 341-356. doi:\href{http://doi.org/10.1007/s10845-010-0385-4}{10.1007/s10845-010-0385-4}.
+Pérez E, Posada M, Herrera F (2012). “Analysis of New Niching Genetic Algorithms for Finding Multiple Solutions in the Job Shop Scheduling.” Journal of Intelligent Manufacturing, 23(3), 341-356. doi:\href{http://doi.org/10.1007/s10845-010-0385-4}{10.1007/s10845-010-0385-4}, reports result 595.97 for la03, which is below the lower bound of 597 and thus not included in our data set.
 
 Pongchairerks P (2014). “Variable Neighbourhood Search Algorithms Applied to Job-Shop Scheduling Problems.” International Journal of Mathematics in Operational Research (IJMOR), 6(6), 752-774. doi:\href{http://doi.org/10.1504/IJMOR.2014.065421}{10.1504/IJMOR.2014.065421}.
 
@@ -191,7 +191,7 @@ Qiu X, Lau HYK (2014). “An AIS-based Hybrid Algorithm for Static Job Shop Sche
 
 Raeesi N. MR, Kobti Z (2012). “A Knowledge-Migration-Based Multi-Population Cultural Algorithm to Solve Job Shop Scheduling.” In Youngblood GM, McCarthy PM (eds.), Proceedings of the Twenty-Fifth International Florida Artificial Intelligence Research Society Conference (FLAIRS'12), May 23-25, 2012, Marco Island, FL, USA. ISBN 978-1-57735-558-8, \url{http://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS12/paper/view/4378/4768}.
 
-Sahana SK, Mukherjee I, Mahanti PK (2018). “Parallel Artificial Bee Colony (PABC) for Job Shop Scheduling Problems.” Advances in Information Sciences and Service Sciences (AISS), 10(3), 1-11. \url{http://www.globalcis.org/aiss/ppl/AISS3877PPL.pdf}.
+Sahana SK, Mukherjee I, Mahanti PK (2018). “Parallel Artificial Bee Colony (PABC) for Job Shop Scheduling Problems.” Advances in Information Sciences and Service Sciences (AISS), 10(3), 1-11. reports 661 as result for abz9 which is below the lower bound 678 and thus not included in our data set, \url{http://www.globalcis.org/aiss/ppl/AISS3877PPL.pdf}.
 
 Sharma N, Sharma H, Sharma A (2018). “Beer Froth Artificial Bee Colony Algorithm for Job-Shop Scheduling Problem.” Applied Soft Computing Journal (ASOC), 68, 507-524. doi:\href{http://doi.org/10.1016/j.asoc.2018.04.001}{10.1016/j.asoc.2018.04.001}.
 
