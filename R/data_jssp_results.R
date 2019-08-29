@@ -51,6 +51,7 @@
 #' \describe{
 #' \item{insert}{extracts one value and inserts it somewhere else, shifting the other values appropriately}
 #' \item{N1}{neighborhood function N1 (Van Laarhoven et al., 1992) that performs the permutation of pairs of adjacent operations which belong to the critical path generated in the individual}
+#' \item{N4}{N4 critical operation move operator (Grabowski et al., 1988)}
 #' \item{N5}{N5 critical path-based move operator (Nowicki and Smutnicki, 1996)}
 #' \item{N7}{N7 neightborhood (Zhang et al., 2008)}
 #' \item{reverse}{reverse the order of a sub-sequence of values}
@@ -172,6 +173,8 @@
 #' Narendhar S, Amudha T (2012). “A Hybrid Bacterial Foraging Algorithm For Solving Job Shop Scheduling Problems.” International Journal of Programming Languages and Applications (IJPLA), 2(4), 1-11. doi:\href{http://doi.org/10.5121/ijpla.2012.2401}{10.5121/ijpla.2012.2401}, Also available via Computing Research Repository (CoRR) abs/1211.4971 at arXiv:1211.4971v1 [cs.NE], \url{https://arxiv.org/pdf/1211.4971.pdf}.
 #' 
 #' Nguyen S, Zhang M, Johnston M, Tan KC (2013). “A Computational Study of Representations in Genetic Programming to Evolve Dispatching Rules for the Job Shop Scheduling Problem.” IEEE Transactions on Evolutionary Computation (TEVC), 17(5), 621-639. doi:\href{http://doi.org/10.1109/TEVC.2012.2227326}{10.1109/TEVC.2012.2227326}.
+#' 
+#' Pardalos PM, Shylo OV, Vazacopoulos A (2010). “Solving Job Shop Scheduling Problems Utilizing the Properties of Backbone and ``Big Valley''.” Computational Optimization and Applications, 47(1), 61-76. doi:\href{http://doi.org/10.1007/s10589-008-9206-5}{10.1007/s10589-008-9206-5}.
 #' 
 #' Peng B, Lü Z, Cheng TCE (2015). “A Tabu Search/Path Relinking Algorithm to Solve the Job Shop Scheduling Problem.” Computers & Operations Research, 53, 154-164. doi:\href{http://doi.org/10.1016/j.cor.2014.08.006}{10.1016/j.cor.2014.08.006}, A February 2014 preprint is available as arXiv:1402.5613v1 [cs.DS], \url{http://arxiv.org/abs/1402.5613}.
 #' 

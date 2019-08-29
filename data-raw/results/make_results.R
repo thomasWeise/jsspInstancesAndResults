@@ -76,6 +76,7 @@ cols.more <- create.columns(columns=list(
                                paste0("the unary operator used in the algorithm, if any, where the following abbreviations can be used\n#' \\describe{\n#' ",
                                       "\\item{insert}{extracts one value and inserts it somewhere else, shifting the other values appropriately}\n#' ",
                                       "\\item{N1}{neighborhood function N1 (Van Laarhoven et al., 1992) that performs the permutation of pairs of adjacent operations which belong to the critical path generated in the individual}\n#' ",
+                                      "\\item{N4}{N4 critical operation move operator (Grabowski et al., 1988)}\n#' ",
                                       "\\item{N5}{N5 critical path-based move operator (Nowicki and Smutnicki, 1996)}\n#' ",
                                       "\\item{N7}{N7 neightborhood (Zhang et al., 2008)}\n#' ",
                                       "\\item{reverse}{reverse the order of a sub-sequence of values}\n#' ",

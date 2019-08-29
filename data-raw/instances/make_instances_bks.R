@@ -66,19 +66,20 @@ writeLines(text=unname(unlist(c(
   "#'",
   "#' @keywords Job Shop Scheduling, JSSP, instances",
   "#'",
-  make.r.doc.references(unlist(list("vH2015JSIAS", jssp.instances$inst.ref,
-                                   jssp.instances$inst.opt.bound.lower.ref,
-                                   lapply(unname(unlist(jssp.instances$inst.bks.ref)),
-                                          function(ref) {
-                                            if(is.na(ref)) { return(character(0)); }
-                                            ref <- unname(unlist(ref));
-                                            ref <- strsplit(ref, ";", TRUE);
-                                            stopifnot(length(ref) == 1L);
-                                            ref <- ref[[1L]];
-                                            stopifnot(length(ref) > 0L,
-                                                      is.character(ref));
-                                            return(trimws(unname(unlist(ref))));
-                                          }))),
+  make.r.doc.references(unlist(list("vH2015JSIAS", "S2019JSSPH",
+                                    jssp.instances$inst.ref,
+                                    jssp.instances$inst.opt.bound.lower.ref,
+                                    lapply(unname(unlist(jssp.instances$inst.bks.ref)),
+                                           function(ref) {
+                                             if(is.na(ref)) { return(character(0)); }
+                                             ref <- unname(unlist(ref));
+                                             ref <- strsplit(ref, ";", TRUE);
+                                             stopifnot(length(ref) == 1L);
+                                             ref <- ref[[1L]];
+                                             stopifnot(length(ref) > 0L,
+                                                       is.character(ref));
+                                             return(trimws(unname(unlist(ref))));
+                                           }))),
                         jssp.bibliography,
                         logger),
   "#'",

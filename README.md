@@ -18,3 +18,4 @@ While all data is easily accessible within the `R` package, you can also access 
 - the [raw BibTeX file with all references to literature](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/bibliography/bibliography.bib)
 
 Many of the information about the problem instances are taken from incredibly great website <http://jobshop.jjvh.nl> run by Jelke Jeroen van&nbsp;Hoorn, while the results are taken from their individual publications.
+Another shout-out to Oleg V. Shylo, who runs <http://optimizizer.com/jobshop.php>, which holds many results on the JSSP as well.
