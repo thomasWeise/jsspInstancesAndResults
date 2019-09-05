@@ -54,8 +54,6 @@
 #' 
 #' Gonçalves JF, Resende MGC (2014). “An Extended Akers Graphical Method with a Biased Random-Key Genetic Algorithm for Job-Shop Scheduling.” International Transactions on Operational Research (ITOR), 21(2), 215-246. doi:\href{http://doi.org/10.1111/itor.12044}{10.1111/itor.12044}, \url{http://mauricio.resende.info/doc/brkga-jss2011.pdf}.
 #' 
-#' Gromicho JAS, van Hoorn JJ, Saldanha-da-Gama F, Timmer GT (2009). “Exponentially Better than Brute Force: Solving the Job-Shop Scheduling Problem Optimally by Dynamic Programming.” Technical Report 2009-56, Faculty of Economics and Business Administration, Vrije Universiteit Amsterdam, Amsterdam, The Netherlands. \url{http://degree.ubvu.vu.nl/repec/vua/wpaper/pdf/20090056.pdf}.
-#' 
 #' Jain AS, Meeran S (1999). “Deterministic Job-Shop Scheduling: Past, Present and Future.” European Journal of Operational Research (EJOR), 113(2), 390-434. doi:\href{http://doi.org/10.1016/S0377-2217(98}{10.1016/S0377-2217(98)00113-1}00113-1).
 #' 
 #' Koshimura M, Nabeshima H, Fujita H, Hasegawa R (2010). “Solving Open Job-Shop Scheduling Problems by SAT Encoding.” IEICE Transactions on Information and Systems, E93.D(8), 2316-2318. doi:\href{http://doi.org/10.1587/transinf.E93.D.2316}{10.1587/transinf.E93.D.2316}.
@@ -71,6 +69,8 @@
 #' McMahon G, Florian M (1975). “On Scheduling with Ready Times and Due Dates to Minimize Maximum Lateness.” Operations Research, 23(3), 475-482. doi:\href{http://doi.org/10.1287/opre.23.3.475}{10.1287/opre.23.3.475}, jstor: 169697.
 #' 
 #' Miller-Todd J, Steinhöfel K, Veenstra P (2018). “Firefly-Inspired Algorithm for Job Shop Scheduling.” In Böckenhauer H, Komm D, Unger W (eds.), Adventures Between Lower Bounds and Higher Altitudes - Essays Dedicated to Juraj Hromkovič on the Occasion of His 60th Birthday, volume 11011 series Lecture Notes in Computer Science (LNCS), 423-433. Springer. ISBN 978-3-319-98354-7, doi:\href{http://doi.org/10.1007/978-3-319-98355-4_24}{10.1007/978-3-319-98355-4_24}.
+#' 
+#' Nowicki E, Smutnicki C (1996). “A Fast Taboo Search Algorithm for the Job Shop Problem.” Management Science, 42(6). doi:\href{http://doi.org/10.1287/mnsc.42.6.797}{10.1287/mnsc.42.6.797}, jstor: 2634595, \url{http://pacciarelli.inf.uniroma3.it/CORSI/MSP/NowickiSmutnicki96.pdf}.
 #' 
 #' Pardalos PM, Shylo OV, Vazacopoulos A (2010). “Solving Job Shop Scheduling Problems Utilizing the Properties of Backbone and ``Big Valley''.” Computational Optimization and Applications, 47(1), 61-76. doi:\href{http://doi.org/10.1007/s10589-008-9206-5}{10.1007/s10589-008-9206-5}.
 #' 
@@ -101,6 +101,8 @@
 #' van Hoorn JJ (2015). “Job Shop Instances and Solutions.” \url{http://jobshop.jjvh.nl}.
 #' 
 #' van Hoorn JJ (2016). Dynamic Programming for Routing and Scheduling: Optimizing Sequences of Decisions. PhD thesis, Vrije Universiteit Amsterdam, Amsterdam, The Netherlands. \url{http://jobshop.jjvh.nl/dissertation}.
+#' 
+#' Vilím P, Laborie P, Shaw P (2015). “Failure-Directed Search for Constraint-Based Scheduling - Detailed Experimental Results.” \url{http://vilim.eu/petr/cpaior2015-results.pdf}.
 #' 
 #' Vilím P, Laborie P, Shaw P (2015). “Failure-Directed Search for Constraint-Based Scheduling.” In Michel L (ed.), International Conference Integration of AI and OR Techniques in Constraint Programming: Proceedings of 12th International Conference on AI and OR Techniques in Constriant Programming for Combinatorial Optimization Problems (CPAIOR'2015), May 18-22, 2015, Barcelona, Spain, volume 9075 series Lecture Notes in Computer Science (LNCS) and Theoretical Computer Science and General Issues book sub series (LNTCS), 437-453. ISBN 978-3-319-18007-6, doi:\href{http://doi.org/10.1007/978-3-319-18008-3_30}{10.1007/978-3-319-18008-3_30}.
 #' 

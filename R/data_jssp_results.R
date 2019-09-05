@@ -24,10 +24,12 @@
 #' \item{DP}{dynamic programming, an exact method}
 #' \item{EA}{evolutionary algorithm}
 #' \item{FA}{Firefly Algorithm}
+#' \item{FDS}{Failure Directed Search}
 #' \item{forcing}{an improvement step that will try to move jobs in the Gantt chart to the left, if possible, first used by Nakano/Yamada}
 #' \item{GT}{Giffler and Thompson (GT) procedure}
 #' \item{GWO}{Grey wolf optimization}
 #' \item{LP}{linear programming}
+#' \item{LNS}{large neighborhood search}
 #' \item{LS}{a local search}
 #' \item{PSO}{particle swarm optimization}
 #' \item{SA}{simulated annealing}
@@ -174,6 +176,8 @@
 #' 
 #' Nguyen S, Zhang M, Johnston M, Tan KC (2013). “A Computational Study of Representations in Genetic Programming to Evolve Dispatching Rules for the Job Shop Scheduling Problem.” IEEE Transactions on Evolutionary Computation (TEVC), 17(5), 621-639. doi:\href{http://doi.org/10.1109/TEVC.2012.2227326}{10.1109/TEVC.2012.2227326}.
 #' 
+#' Nowicki E, Smutnicki C (1996). “A Fast Taboo Search Algorithm for the Job Shop Problem.” Management Science, 42(6). doi:\href{http://doi.org/10.1287/mnsc.42.6.797}{10.1287/mnsc.42.6.797}, jstor: 2634595, \url{http://pacciarelli.inf.uniroma3.it/CORSI/MSP/NowickiSmutnicki96.pdf}.
+#' 
 #' Pardalos PM, Shylo OV, Vazacopoulos A (2010). “Solving Job Shop Scheduling Problems Utilizing the Properties of Backbone and ``Big Valley''.” Computational Optimization and Applications, 47(1), 61-76. doi:\href{http://doi.org/10.1007/s10589-008-9206-5}{10.1007/s10589-008-9206-5}.
 #' 
 #' Peng B, Lü Z, Cheng TCE (2015). “A Tabu Search/Path Relinking Algorithm to Solve the Job Shop Scheduling Problem.” Computers & Operations Research, 53, 154-164. doi:\href{http://doi.org/10.1016/j.cor.2014.08.006}{10.1016/j.cor.2014.08.006}, A February 2014 preprint is available as arXiv:1402.5613v1 [cs.DS], \url{http://arxiv.org/abs/1402.5613}.
@@ -191,6 +195,8 @@
 #' Sahana SK, Mukherjee I, Mahanti PK (2018). “Parallel Artificial Bee Colony (PABC) for Job Shop Scheduling Problems.” Advances in Information Sciences and Service Sciences (AISS), 10(3), 1-11. reports 661 as result for abz9 which is below the lower bound 678 and thus not included in our data set, \url{http://www.globalcis.org/aiss/ppl/AISS3877PPL.pdf}.
 #' 
 #' Sharma N, Sharma H, Sharma A (2018). “Beer Froth Artificial Bee Colony Algorithm for Job-Shop Scheduling Problem.” Applied Soft Computing Journal (ASOC), 68, 507-524. doi:\href{http://doi.org/10.1016/j.asoc.2018.04.001}{10.1016/j.asoc.2018.04.001}.
+#' 
+#' Vilím P, Laborie P, Shaw P (2015). “Failure-Directed Search for Constraint-Based Scheduling - Detailed Experimental Results.” \url{http://vilim.eu/petr/cpaior2015-results.pdf}.
 #' 
 #' Wang L, Cai J, Li M (2016). “An Adaptive Multi-Population Genetic Algorithm for Job-Shop Scheduling Problem.” Advances in Manufacturing, 4(2), 142-149. doi:\href{http://doi.org/10.1007/s40436-016-0140-y}{10.1007/s40436-016-0140-y}.
 #' 
