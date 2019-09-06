@@ -13,6 +13,7 @@
 \item{ACO}{Ant Colony Optimization}
 \item{AIS}{Artificial Immune System}
 \item{BA}{Bat Algorithm}
+\item{BB}{Branch and Bound (an exact anytime algorithm)}
 \item{BBO}{Biogeography-based optimization}
 \item{BFO}{Bacterial Foraging Algorithm}
 \item{CA}{Cultural Algorithm}
@@ -139,6 +140,8 @@ Akram K, Kamal K, Zeb A (2016). “Fast Simulated Annealing Hybridized with Quen
 Amirghasemi M, Zamani R (2015). “An Effective Asexual Genetic Algorithm for Solving the Job Shop Scheduling Problem.” Computers & Industrial Engineering, 83, 123-138. doi:\href{http://doi.org/10.1016/j.cie.2015.02.011}{10.1016/j.cie.2015.02.011}.
 
 Angel JM, Martínez MR, Castillo LRM, Solis LS (2014). “Un Modelo Híbrido de Inteligencia Computacional para Resolver el Problema de Job Shop Scheduling.” Research in Computing Science, 79(Advances in Intelligent Information Technologies), 9-20. \url{http://www.rcs.cic.ipn.mx/2014_79/RCS_79_2014.pdf}.
+
+Applegate DL, Cook WJ (1991). “A Computational Study of the Job-Shop Scheduling Problem.” ORSA Journal on Computing, 3(2), 149-156. doi:\href{http://doi.org/10.1287/ijoc.3.2.149}{10.1287/ijoc.3.2.149}, the JSSP instances used were generated in Bonn in 1986.
 
 Asadzadeh L (2015). “A Local Search Genetic Algorithm for the Job Shop Scheduling Problem with Intelligent Agents.” Computers & Industrial Engineering, 85, 376-383. doi:\href{http://doi.org/10.1016/j.cie.2015.04.006}{10.1016/j.cie.2015.04.006}.
 
