@@ -2,7 +2,9 @@
 #'
 #' Here we provide baseline data about the benchmark instances that are commonly used in research
 #' on the Job Shop Scheduling Problem.
-#' Data has in particular been taken from van Hoorn's great website <http://jobshop.jjvh.nl>.
+#' Data on the lower bounds has in particular been taken from van Hoorn's great website \url{http://jobshop.jjvh.nl}.
+#' The data on the best-known solutions (BKS) has automatically been extracted from the per-instance results, see \link{jssp.results}.
+#' All literature referenced, on the other hand, can be found in \link{jssp.bibliography}.
 #'
 #' @docType data
 #'
@@ -22,13 +24,13 @@
 #'
 #' @keywords Job Shop Scheduling, JSSP, instances
 #'
-#' @references  Abdel-Kader RF (2018). “An Improved PSO Algorithm with Genetic and Neighborhood-Based Diversity Operators for the Job Shop Scheduling Problem.” Applied Artificial Intelligence - An International Journal, 32(5), 433-462. doi:\href{http://doi.org/10.1080/08839514.2018.1481903}{10.1080/08839514.2018.1481903}.
-#' 
-#' Adams J, Balas E, Zawack D (1988). “The Shifting Bottleneck Procedure for Job Shop Scheduling.” Management Science, 34(3), 391-401. doi:\href{http://doi.org/10.1287/mnsc.34.3.391}{10.1287/mnsc.34.3.391}.
+#' @references  Adams J, Balas E, Zawack D (1988). “The Shifting Bottleneck Procedure for Job Shop Scheduling.” Management Science, 34(3), 391-401. doi:\href{http://doi.org/10.1287/mnsc.34.3.391}{10.1287/mnsc.34.3.391}.
 #' 
 #' Applegate DL, Cook WJ (1991). “A Computational Study of the Job-Shop Scheduling Problem.” ORSA Journal on Computing, 3(2), 149-156. doi:\href{http://doi.org/10.1287/ijoc.3.2.149}{10.1287/ijoc.3.2.149}, the JSSP instances used were generated in Bonn in 1986.
 #' 
-#' Balas E, Vazacopoulos A (1994). “Guided Local Search with Shifting Bottleneck for Job Shop Scheduling.” Technical Report MSSR–609, Graduate School of Industrial Administration, Carnegie Mellon University, Pittsburgh, PA, USA.
+#' Balas E, Vazacopoulos A (1994). “Guided Local Search with Shifting Bottleneck for Job Shop Scheduling.” Technical Report MSSR–609, Graduate School of Industrial Administration (GSIA), Carnegie Mellon University, Pittsburgh, PA, USA. revised November 1995.
+#' 
+#' Balas E, Vazacopoulos A (1998). “Guided Local Search with Shifting Bottleneck for Job Shop Scheduling.” Management Science, 44(2), 262-275. doi:\href{http://doi.org/10.1287/mnsc.44.2.262}{10.1287/mnsc.44.2.262}, reports 307 as makespan for orb07, probably a typo, as the lower bound is 397.
 #' 
 #' Beck JC, Feng TK, Watson J (2011). “Combining Constraint Programming and Local Search for Job-Shop Scheduling.” INFORMS Journal on Computing, 23(1), 1-14. doi:\href{http://doi.org/10.1287/ijoc.1100.0388}{10.1287/ijoc.1100.0388}, \url{http://cfwebprod.sandia.gov/cfdocs/CompResearch/docs/ists-sgmpcs.pdf}.
 #' 
@@ -50,31 +52,25 @@
 #' 
 #' Gonçalves JF, Resende MGC (2014). “An Extended Akers Graphical Method with a Biased Random-Key Genetic Algorithm for Job-Shop Scheduling.” International Transactions on Operational Research (ITOR), 21(2), 215-246. doi:\href{http://doi.org/10.1111/itor.12044}{10.1111/itor.12044}, \url{http://mauricio.resende.info/doc/brkga-jss2011.pdf}.
 #' 
+#' Henning A (2002). Praktische Job-Shop Scheduling-Probleme. PhD thesis, Friedrich-Schiller-Universität Jena, Jena, Germany. alternate url: https://nbn-resolving.org/urn:nbn:de:gbv:27-20060809-115700-4, \url{http://www.db-thueringen.de/servlets/DocumentServlet?id=873}.
+#' 
 #' Jain AS, Meeran S (1999). “Deterministic Job-Shop Scheduling: Past, Present and Future.” European Journal of Operational Research (EJOR), 113(2), 390-434. doi:\href{http://doi.org/10.1016/S0377-2217(98}{10.1016/S0377-2217(98)00113-1}00113-1).
 #' 
 #' Koshimura M, Nabeshima H, Fujita H, Hasegawa R (2010). “Solving Open Job-Shop Scheduling Problems by SAT Encoding.” IEICE Transactions on Information and Systems, E93.D(8), 2316-2318. doi:\href{http://doi.org/10.1587/transinf.E93.D.2316}{10.1587/transinf.E93.D.2316}.
 #' 
 #' Lawrence SR (1984). Resource Constrained Project Scheduling: An Experimental Investigation of Heuristic Scheduling Techniques (Supplement). PhD thesis, Graduate School of Industrial Administration (GSIA), Carnegie-Mellon University, Pittsburgh, PA, USA.
 #' 
-#' Magalhães-Mendes J (2013). “A Comparative Study of Crossover Operators for Genetic Algorithms to Solve the Job Shop Scheduling Problem.” WSEAS Transactions on Computers, 12(4), 164-173. \url{http://www.wseas.org/multimedia/journals/computers/2013/5705-156.pdf}.
-#' 
 #' Martin PD (1996). A Time-Oriented Approach to Computing Optimal Schedules for the Job-Shop Scheduling Problem. PhD thesis, School of Operations Research and Industrial Engineering, Cornell University, Ithaca, NY, USA. oclc: 64683112.
 #' 
 #' McMahon G, Florian M (1975). “On Scheduling with Ready Times and Due Dates to Minimize Maximum Lateness.” Operations Research, 23(3), 475-482. doi:\href{http://doi.org/10.1287/opre.23.3.475}{10.1287/opre.23.3.475}, jstor: 169697.
 #' 
-#' Miller-Todd J, Steinhöfel K, Veenstra P (2018). “Firefly-Inspired Algorithm for Job Shop Scheduling.” In Böckenhauer H, Komm D, Unger W (eds.), Adventures Between Lower Bounds and Higher Altitudes - Essays Dedicated to Juraj Hromkovič on the Occasion of His 60th Birthday, volume 11011 series Lecture Notes in Computer Science (LNCS), 423-433. Springer. ISBN 978-3-319-98354-7, doi:\href{http://doi.org/10.1007/978-3-319-98355-4_24}{10.1007/978-3-319-98355-4_24}.
+#' Nowicki E, Smutnicki C (1996). “A Fast Taboo Search Algorithm for the Job Shop Problem.” Management Science, 42(6), 783-938. doi:\href{http://doi.org/10.1287/mnsc.42.6.797}{10.1287/mnsc.42.6.797}, jstor: 2634595, \url{http://pacciarelli.inf.uniroma3.it/CORSI/MSP/NowickiSmutnicki96.pdf}.
 #' 
-#' Nowicki E, Smutnicki C (1996). “A Fast Taboo Search Algorithm for the Job Shop Problem.” Management Science, 42(6). doi:\href{http://doi.org/10.1287/mnsc.42.6.797}{10.1287/mnsc.42.6.797}, jstor: 2634595, \url{http://pacciarelli.inf.uniroma3.it/CORSI/MSP/NowickiSmutnicki96.pdf}.
+#' Nowicki E, Smutnicki C (2005). “An Advanced Taboo Search Algorithm for the Job Shop Problem.” Journal of Scheduling, 8(2), 145-159. doi:\href{http://doi.org/10.1007/s10951-005-6364-5}{10.1007/s10951-005-6364-5}.
 #' 
 #' Pardalos PM, Shylo OV, Vazacopoulos A (2010). “Solving Job Shop Scheduling Problems Utilizing the Properties of Backbone and ``Big Valley''.” Computational Optimization and Applications, 47(1), 61-76. doi:\href{http://doi.org/10.1007/s10589-008-9206-5}{10.1007/s10589-008-9206-5}.
 #' 
 #' Peng B, Lü Z, Cheng TCE (2015). “A Tabu Search/Path Relinking Algorithm to Solve the Job Shop Scheduling Problem.” Computers & Operations Research, 53, 154-164. doi:\href{http://doi.org/10.1016/j.cor.2014.08.006}{10.1016/j.cor.2014.08.006}, A February 2014 preprint is available as arXiv:1402.5613v1 [cs.DS], \url{http://arxiv.org/abs/1402.5613}.
-#' 
-#' Pongchairerks P (2014). “Variable Neighbourhood Search Algorithms Applied to Job-Shop Scheduling Problems.” International Journal of Mathematics in Operational Research (IJMOR), 6(6), 752-774. doi:\href{http://doi.org/10.1504/IJMOR.2014.065421}{10.1504/IJMOR.2014.065421}.
-#' 
-#' Qiu X, Lau HYK (2014). “An AIS-based Hybrid Algorithm for Static Job Shop Scheduling Problem.” Journal of Intelligent Manufacturing, 25(3), 489-503. doi:\href{http://doi.org/10.1007/s10845-012-0701-2}{10.1007/s10845-012-0701-2}.
-#' 
-#' Sahana SK, Mukherjee I, Mahanti PK (2018). “Parallel Artificial Bee Colony (PABC) for Job Shop Scheduling Problems.” Advances in Information Sciences and Service Sciences (AISS), 10(3), 1-11. reports 661 as result for abz9 which is below the lower bound 678 and thus not included in our data set, \url{http://www.globalcis.org/aiss/ppl/AISS3877PPL.pdf}.
 #' 
 #' Schilham R (2000). “Results listed on Éric Taillard's page.” see also http://jobshop.jjvh.nl/, \url{http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html}.
 #' 
@@ -98,9 +94,9 @@
 #' 
 #' Vilím P, Laborie P, Shaw P (2015). “Failure-Directed Search for Constraint-Based Scheduling.” In Michel L (ed.), International Conference Integration of AI and OR Techniques in Constraint Programming: Proceedings of 12th International Conference on AI and OR Techniques in Constriant Programming for Combinatorial Optimization Problems (CPAIOR'2015), May 18-22, 2015, Barcelona, Spain, volume 9075 series Lecture Notes in Computer Science (LNCS) and Theoretical Computer Science and General Issues book sub series (LNTCS), 437-453. ISBN 978-3-319-18007-6, doi:\href{http://doi.org/10.1007/978-3-319-18008-3_30}{10.1007/978-3-319-18008-3_30}.
 #' 
-#' Wang X, Duan H (2014). “A Hybrid Biogeography-based Optimization Algorithm for Job Shop Scheduling Problem.” Computers & Industrial Engineering, 73, 96-114. doi:\href{http://doi.org/10.1016/j.cie.2014.04.006}{10.1016/j.cie.2014.04.006}, \url{http://hbduan.buaa.edu.cn/papers/2014CAIE_Wang_Duan.pdf}.
-#' 
 #' Yamada T, Nakano R (1992). “A Genetic Algorithm Applicable to Large-Scale Job-Shop Instances.” In Männer R, Manderick B (eds.), Proceedings of Parallel Problem Solving from Nature 2 (PPSN II), September 28-30, 1992, Brussels, Belgium, 281-290.
+#' 
+#' Zhang C, Shao X, Rao Y, Qiu H (2008). “Some New Results on Tabu Search Algorithm Applied to the Job-Shop Scheduling Problem.” In Jaziri W (ed.), Tabu Search. IntechOpen, London, England, UK. ISBN 978-3-902613-34-9, doi:\href{http://doi.org/10.5772/5593}{10.5772/5593}, \url{http://www.intechopen.com/books/tabu_search/some_new_results_on_tabu_search_algorithm_applied_to_the_job-shop_scheduling_problem}.
 #' 
 #'
 #' @examples

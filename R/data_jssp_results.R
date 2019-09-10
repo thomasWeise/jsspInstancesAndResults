@@ -1,6 +1,9 @@
 #'  Result Data from the Literature for Common JSSP Benchmark Instances
 #'
 #' Here we provide a set of results for the common instances for the Job Shop Scheduling Problem (JSSP) taken from literature.
+#' The data here is directly linked to \link{jssp.instances}, whose best-known-solution per instance will be the best solution for the instance in this table here.
+#' Also, all makespans listed are guaranteed to not be less than the lower bounds given in \link{jssp.instances}.
+#' All literature referenced, on the other hand, can be found in \link{jssp.bibliography}.
 #'
 #' @docType data
 #'
@@ -35,12 +38,14 @@
 #' \item{PSO}{particle swarm optimization}
 #' \item{SA}{simulated annealing}
 #' \item{SE}{seach economics}
+#' \item{SS}{sidestep algorithm: deterministic local search allowing to move to solutions of same objective value}
 #' \item{TLBO}{teaching-learning based optimization}
 #' \item{TS}{tabu search}
 #' \item{VNS}{variable neighborhood search}
 #' }}
-#' \item{algo.representation}{the representation used for encoding solutions, if any, where the following abbreviations can be used
+#' \item{algo.representation}{the representation used for encoding solutions, if any. Sometimes, it is not entirely clear, in which case I used what, to me, seemed to be the closest match. Thus, handle this column with special care. The following abbreviations can be used
 #' \describe{
+#' \item{DG}{instances are presented disjunctive graph, schedules as digraphs and/or solutions are selections of edges, improvements are often done by modifying blocks on the critical path}
 #' \item{JB}{job-based: the jobs are assigned to machines in the order in which they occur in the string}
 #' \item{MB}{machine-based: the encoding is the order in which the machines are used as bottlenecks in a heuristic such as the Shifting Bottleneck Method}
 #' \item{OB}{operation-based: each job is represented by m genes with the same value and the chromosome is processed from front to end by assigning jobs to machines at the earliest starting times, following their occurence}
@@ -55,8 +60,8 @@
 #' \item{insert}{extracts one value and inserts it somewhere else, shifting the other values appropriately}
 #' \item{N1}{neighborhood function N1 (Van Laarhoven et al., 1992) that performs the permutation of pairs of adjacent operations which belong to the critical path generated in the individual}
 #' \item{N4}{N4 critical operation move operator (Grabowski et al., 1988)}
-#' \item{N5}{N5 critical path-based move operator (Nowicki and Smutnicki, 1996)}
-#' \item{N7}{N7 neightborhood (Zhang et al., 2008)}
+#' \item{N5}{N5 critical path-based move operator (Nowicki and Smutnicki, 1996, NS1996AFTSAFTJSP)}
+#' \item{N7}{N7 neightborhood (Zhang et al., 2008, ZLRG2008AVFTAFTJSSP)}
 #' \item{reverse}{reverse the order of a sub-sequence of values}
 #' \item{RRN}{random reverse neighborhood: select multiple pairs of operations and reverse them}
 #' \item{RWN}{random whole neighborhood: consider all permutations of lambda genes, by Cheng (1997)}
@@ -66,6 +71,7 @@
 #' \item{algo.operator.binary}{the binary operator used in the algorithm, if any, where the following abbreviations can be used
 #' \describe{
 #' \item{none}{no binary operator (such as crossover) is applied in algorithms that would permit doing so (as opposed to 'NA', which means that crossover is not applicable in this algorithm)}
+#' \item{APX}{averaging permutations: permutations are added and the resulting number vector is translated again to a permutation by adding its values up}
 #' \item{JBX}{job-based crossover (Braune et al., 2005)}
 #' \item{IR}{intermediate recombination, also known as flat crossover}
 #' \item{LCSX}{longest-common subsequence crossover (Cheng et al.,2016)}
@@ -139,11 +145,13 @@
 #' 
 #' Asadzadeh L (2015). “A Local Search Genetic Algorithm for the Job Shop Scheduling Problem with Intelligent Agents.” Computers & Industrial Engineering, 85, 376-383. doi:\href{http://doi.org/10.1016/j.cie.2015.04.006}{10.1016/j.cie.2015.04.006}.
 #' 
+#' Balas E, Vazacopoulos A (1998). “Guided Local Search with Shifting Bottleneck for Job Shop Scheduling.” Management Science, 44(2), 262-275. doi:\href{http://doi.org/10.1287/mnsc.44.2.262}{10.1287/mnsc.44.2.262}, reports 307 as makespan for orb07, probably a typo, as the lower bound is 397.
+#' 
 #' Beck JC, Feng TK, Watson J (2011). “Combining Constraint Programming and Local Search for Job-Shop Scheduling.” INFORMS Journal on Computing, 23(1), 1-14. doi:\href{http://doi.org/10.1287/ijoc.1100.0388}{10.1287/ijoc.1100.0388}, \url{http://cfwebprod.sandia.gov/cfdocs/CompResearch/docs/ists-sgmpcs.pdf}.
 #' 
 #' Bierwirth C (1995). “A Generalized Permutation Approach to Job Shop Scheduling with Genetic Algorithms.” Operations-Research-Spektrum (OR Spectrum), 17(2-3), 87-92. doi:\href{http://doi.org/10.1007/BF01719250}{10.1007/BF01719250}, \url{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.52.7392&type=pdf}.
 #' 
-#' Cheng TCE, Peng B, Lü Z (2016). “A Hybrid Evolutionary Algorithm to Solve the Job Shop Scheduling Problem.” Annals of Operations Research, 242(2), 223-237. doi:\href{http://doi.org/10.1007/s10479-013-1332-5}{10.1007/s10479-013-1332-5}.
+#' Cheng TCE, Peng B, Lü Z (2016). “A Hybrid Evolutionary Algorithm to Solve the Job Shop Scheduling Problem.” Annals of Operations Research, 242(2), 223-237. doi:\href{http://doi.org/10.1007/s10479-013-1332-5}{10.1007/s10479-013-1332-5}, The paper reports 555 as average makespan of HEA for ft20, which is an obvious typo because the other columns have 1165, which is the lower bound.
 #' 
 #' Cruz-Chávez MA, Cruz Rosales MH, Zavala-Díaz JC, Aguilar JAH, Rodrıguez-Leó A, Avelino JCP, Orziz MEL, Salinas OH (2019). “Hybrid Micro Genetic Multi-Population Algorithm With Collective Communication for the Job Shop Scheduling Problem.” IEEE Access, 7, 82358-82376. doi:\href{http://doi.org/10.1109/ACCESS.2019.2924218}{10.1109/ACCESS.2019.2924218}, \url{http://ieeexplore.ieee.org/document/8743353}.
 #' 
@@ -156,6 +164,8 @@
 #' Gonçalves JF, Resende MGC (2014). “An Extended Akers Graphical Method with a Biased Random-Key Genetic Algorithm for Job-Shop Scheduling.” International Transactions on Operational Research (ITOR), 21(2), 215-246. doi:\href{http://doi.org/10.1111/itor.12044}{10.1111/itor.12044}, \url{http://mauricio.resende.info/doc/brkga-jss2011.pdf}.
 #' 
 #' Gromicho JAS, van Hoorn JJ, Saldanha-da-Gama F, Timmer GT (2009). “Exponentially Better than Brute Force: Solving the Job-Shop Scheduling Problem Optimally by Dynamic Programming.” Technical Report 2009-56, Faculty of Economics and Business Administration, Vrije Universiteit Amsterdam, Amsterdam, The Netherlands. \url{http://degree.ubvu.vu.nl/repec/vua/wpaper/pdf/20090056.pdf}.
+#' 
+#' Henning A (2002). Praktische Job-Shop Scheduling-Probleme. PhD thesis, Friedrich-Schiller-Universität Jena, Jena, Germany. alternate url: https://nbn-resolving.org/urn:nbn:de:gbv:27-20060809-115700-4, \url{http://www.db-thueringen.de/servlets/DocumentServlet?id=873}.
 #' 
 #' Hernández-Ramírez L, Solis JF, Castilla-Valdez G, González-Barbosa JJ, Terán-Villanueva D, Morales-Rodríguez ML (2019). “A Hybrid Simulated Annealing for Job Shop Scheduling Problem.” International Journal of Combinatorial Optimization Problems and Informatics (IJCOPI), 10(1), 6-15. published 2018-08-10, \url{http://ijcopi.org/index.php/ojs/article/view/111}.
 #' 
@@ -179,7 +189,9 @@
 #' 
 #' Nguyen S, Zhang M, Johnston M, Tan KC (2013). “A Computational Study of Representations in Genetic Programming to Evolve Dispatching Rules for the Job Shop Scheduling Problem.” IEEE Transactions on Evolutionary Computation (TEVC), 17(5), 621-639. doi:\href{http://doi.org/10.1109/TEVC.2012.2227326}{10.1109/TEVC.2012.2227326}.
 #' 
-#' Nowicki E, Smutnicki C (1996). “A Fast Taboo Search Algorithm for the Job Shop Problem.” Management Science, 42(6). doi:\href{http://doi.org/10.1287/mnsc.42.6.797}{10.1287/mnsc.42.6.797}, jstor: 2634595, \url{http://pacciarelli.inf.uniroma3.it/CORSI/MSP/NowickiSmutnicki96.pdf}.
+#' Nowicki E, Smutnicki C (1996). “A Fast Taboo Search Algorithm for the Job Shop Problem.” Management Science, 42(6), 783-938. doi:\href{http://doi.org/10.1287/mnsc.42.6.797}{10.1287/mnsc.42.6.797}, jstor: 2634595, \url{http://pacciarelli.inf.uniroma3.it/CORSI/MSP/NowickiSmutnicki96.pdf}.
+#' 
+#' Nowicki E, Smutnicki C (2005). “An Advanced Taboo Search Algorithm for the Job Shop Problem.” Journal of Scheduling, 8(2), 145-159. doi:\href{http://doi.org/10.1007/s10951-005-6364-5}{10.1007/s10951-005-6364-5}.
 #' 
 #' Pardalos PM, Shylo OV, Vazacopoulos A (2010). “Solving Job Shop Scheduling Problems Utilizing the Properties of Backbone and ``Big Valley''.” Computational Optimization and Applications, 47(1), 61-76. doi:\href{http://doi.org/10.1007/s10589-008-9206-5}{10.1007/s10589-008-9206-5}.
 #' 
@@ -206,6 +218,8 @@
 #' Wang S, Tsai C, Chiang M (2018). “A High Performance Search Algorithm for Job-Shop Scheduling Problem.” In Shakshuki EM, Yasar A (eds.), The 9th International Conference on Emerging Ubiquitous Systems and Pervasive Networks (EUSPN'18) / The 8th International Conference on Current and Future Trends of Information and Communication Technologies in Healthcare (ICTH'18) / Affiliated Workshops, November 5-8, 2018, Leuven, Belgium, volume 141 series Procedia Computer Science, 119-126. doi:\href{http://doi.org/10.1016/j.procs.2018.10.157}{10.1016/j.procs.2018.10.157}.
 #' 
 #' Wang X, Duan H (2014). “A Hybrid Biogeography-based Optimization Algorithm for Job Shop Scheduling Problem.” Computers & Industrial Engineering, 73, 96-114. doi:\href{http://doi.org/10.1016/j.cie.2014.04.006}{10.1016/j.cie.2014.04.006}, \url{http://hbduan.buaa.edu.cn/papers/2014CAIE_Wang_Duan.pdf}.
+#' 
+#' Zhang C, Shao X, Rao Y, Qiu H (2008). “Some New Results on Tabu Search Algorithm Applied to the Job-Shop Scheduling Problem.” In Jaziri W (ed.), Tabu Search. IntechOpen, London, England, UK. ISBN 978-3-902613-34-9, doi:\href{http://doi.org/10.5772/5593}{10.5772/5593}, \url{http://www.intechopen.com/books/tabu_search/some_new_results_on_tabu_search_algorithm_applied_to_the_job-shop_scheduling_problem}.
 #' 
 #' Zupan H, Herakovič N, Žerovnik J (2016). “A Heuristic for the Job Shop Scheduling Problem.” In Papa G, Mernik M (eds.), The 7th International Conference on Bioinspired Optimization Methods and their Application (BIOMA'16), May 18-20, 2016, Bled, Slovenia, 187-198. ISBN 978-961-264-093-4, \url{http://bioma.ijs.si/conference/BIOMA2016Proceedings.pdf}.
 #' 

@@ -23,6 +23,8 @@ Delta-t1-R1,NZJT2013ACSORIGPTED,heuristic,NA,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,
 Delta-t1-R3,NZJT2013ACSORIGPTED,heuristic,NA,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,Java,NA,heuristics synthesized via GP running in ECJ20
 Delta-t2-R2,NZJT2013ACSORIGPTED,heuristic,NA,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,Java,NA,heuristics synthesized via GP running in ECJ20
 DP,GvHSGT2009,DP,NA,NA,NA,NA,1,NA,NA,2660,NA,8192,Microsoft Windows 64bit,NA,NA,C++,NA,these are exact solutions
+EA+SS,H2002PJSSP,EA+(SS via N1),DG+OB,N1+N2+N3+N4,APX,Intel Pentium 3,1,1,1,1000,FALSE,NA,NA,NA,NA,C,Glib 1.2,NA
+EA+SS-or-TS,H2002PJSSP,EA+((SS via N1) OR  (TS via N5)),DG+OB,N1+N2+N3+N4,APX,Intel Pentium 3,1,1,1,1000,FALSE,NA,NA,NA,NA,C,Glib 1.2,NA
 EAS,FGB2013AACOAFJSSP,ACO (Elitist ACS),NA,NA,NA,NA,NA,NA,NA,NA,FALSE,NA,NA,NA,NA,NA,NA,NA
 FDS+LNS,VLS2015FDSFCBSDER,FDS+LNS,NA,NA,NA,Intel Core i7,1,4,8,2600,TRUE,16384,NA,NA,NA,NA,ILOG CP Optimizer 12.6.1,NA
 FSA-AKZ,AKZ2016FSAHWQFSJSSP,Fast-SA,OB,Nowicki-Smutnicky Neighborhood,NA,Intel Core 2 Quad,1,4,4,2400,FALSE,4096,NA,NA,Visual C#.NET,C#,NA,NA
@@ -41,6 +43,7 @@ GA-PR-A,A2010RIGAFTJSPACS,EA,PR,swap+reverse+insert+shift,PMX+OX+PBX,Intel Penti
 GA-PR-JPDS,JPDS2014CAODRIGAFJSSP,EA,PR,swap+reverse+insert+shift,PMX+OX+PBX,Intel Pentium 4,1,2,4,2060,FALSE,512,NA,NA,NA,NA,NA,NA
 GA-RK-A,A2010RIGAFTJSPACS,EA,RK+OB,swap+reverse+insert+shift,PMX+OX+PBX,Intel Pentium Core 2 Duo,1,2,2,2670,FALSE,512,NA,NA,NA,C++,NA,NA
 GA-WTC,WTC2018AHPSAFJSSP,EA,OB,NA,NA,Intel Core i5 4460,1,4,4,3200,FALSE,8192,NA,NA,NA,NA,NA,NA
+GLS1,BV1998GLSWSBFJSS,LS,PL,interchange of critical operation pair,NA,SUN SPARCstation 330,1,1,1,30,FALSE,NA,NA,NA,NA,C,NA,experiments on SUN SPARCstation 330; but times reported as Computer-Independent CPU Time
 GP-GA,B1995AGPATJSSWGA,EA+forcing+ring structure of population,OB,NA,generalized OX,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,C,Distributed genetic optimization environment 'Parnet',NA
 GPSO-AK,AK2018AIPAWGANBDOFTJSSP,discrete PSO +  genetic operators,OB,NA,NA,Intel Pentium 4,1,1,2,3000,FALSE,2048,NA,NA,NA,C++,NA,NA
 GWO-JZ,JZ2018AOGWOFSCPJSAFJSSC,discrete GWO+VNS,OB,swap+reverse+insert,POX,NA,1,NA,NA,NA,FALSE,2048,Windows XP,NA,NA,Fortran,VMWare Workstation,NA
@@ -56,14 +59,15 @@ HIMGA-Random,K2015ANHIMGAFJSSP,EA with island models+TS,PL,swap+reverse+insert,O
 HIMGA-Tabu,K2015ANHIMGAFJSSP,EA with island models+TS,PL,swap+reverse+insert,OX,Intel Core i7-3770,1,4,8,3400,FALSE,8192,NA,NA,NA,C++,NA,NA
 HPV,GLWLW2015AHABOANNSEMFSSP,discrete PSO+VNS,OB,RRN+RWN+swap+insert+N5,POX,Intel Core 2,1,2,2,2160,FALSE,4096,NA,NA,NA,C++,NA,NA
 improved-TLBO,LWF2017AITLBOATSJSSP,TLBO+GT+LS,PM,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,NA,NA,NA
-INSA,NS1996AFTSAFTJSP,heuristic,PL,NA,NA,AT 386DX,1,1,1,40,FALSE,NA,NA,NA,NA,PASCAL + C,NA,heuristic used as starting point of TSAB
+INSA,NS1996AFTSAFTJSP,heuristic,DG,NA,NA,AT 386DX,1,1,1,40,FALSE,NA,NA,NA,NA,PASCAL + C,NA,heuristic used as starting point of TSAB
 ISO,KV2014ISAOAFJSS,LP+DES,NA,NA,NA,IntelDual Core,1,2,2,800,NA,3072,NA,NA,NA,NA,Anylogic 6.9; Eclipse Indigo; CPLEX 12.4,NA
+i-TSAB,NS2005AATSAFTJSP,initial heuristic (INSA) + iteratively pick start solutions (NIS) +TS (TSAB),PL+DG,NA,NA,Intel Pentium 3,1,1,1,900,FALSE,NA,NA,NA,NA,NA,NA,NA
 MP-CA,RNK2012AKMBMPCATSJSS,multi-population CA+LS,PL variant,NA,NA,IntelIntel Core 2 Quad,1,4,4,2500,FALSE,8192,NA,Java 1.6.0.18,NA,Java,NA,NA
 NIT,PPH2012AONNGAFMSITJSS,EA+Niching (niching+sharing),OB,swap,OX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,for multimodal optimization
 NPSO-AK,AK2018AIPAWGANBDOFTJSSP,discrete PSO + neighborhood-based operators,OB,NA,NA,Intel Pentium 4,1,1,2,3000,FALSE,2048,NA,NA,NA,C++,NA,NA
-PABC,SMM2018PABCPFJSSP,Parallel ABC,path through DAG,NA,NA,Intel Core i3,1,2,4,2700,TRUE,4096,Microsoft Windows 7,NA,NA,C/C++,Code::Blocks IDE,NA
-parAntGenSA+CR,HRSCVGBTVMR2019AHSAFJSSP,ACS+SA,NA,NA,yes,Intel Xeon,1,NA,NA,2300,TRUE,65536,CentOS,NA,NA,C,OpenMP,NA
-parAntGenSA-CR,HRSCVGBTVMR2019AHSAFJSSP,ACS+SA,NA,NA,none,Intel Xeon,1,NA,NA,2300,TRUE,65536,CentOS,NA,NA,C,OpenMP,NA
+PABC,SMM2018PABCPFJSSP,Parallel ABC,DG,NA,NA,Intel Core i3,1,2,4,2700,TRUE,4096,Microsoft Windows 7,NA,NA,C/C++,Code::Blocks IDE,NA
+parAntGenSA+CR,HRSCVGBTVMR2019AHSAFJSSP,ACS+SA,DG,NA,yes,Intel Xeon,1,NA,NA,2300,TRUE,65536,CentOS,NA,NA,C,OpenMP,NA
+parAntGenSA-CR,HRSCVGBTVMR2019AHSAFJSSP,ACS+SA,DG,NA,none,Intel Xeon,1,NA,NA,2300,TRUE,65536,CentOS,NA,NA,C,OpenMP,NA
 PBA,DPNP2018PBAFOMIJSSP,parallel BA,RK+OB,NA,NA,NA,1,NA,NA,NA,TRUE,NA,NA,NA,NA,NA,NA,NA
 PSO-AK,AK2018AIPAWGANBDOFTJSSP,discrete PSO,OB,NA,NA,Intel Pentium 4,1,1,2,3000,FALSE,2048,NA,NA,NA,C++,NA,NA
 PSO-NGO,AK2018AIPAWGANBDOFTJSSP,discrete PSO + genetic operators + neighborhood-based operators,OB,NA,NA,Intel Pentium 4,1,1,2,3000,FALSE,2048,NA,NA,NA,C++,NA,NA
@@ -72,18 +76,24 @@ QHFD,PPH2012AONNGAFMSITJSS,EA+Niching (Quick Hierarchical Fair Competition),OB,s
 RaR,ZHZ2016AHFTJSSP,LS,NA,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,NA,Siemens programming environment Plant Simulation,NA
 RCS,PPH2012AONNGAFMSITJSS,EA+Niching (Restricted Competition Selection Method),OB,swap,OX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,for multimodal optimization
 RCS_PSM,PPH2012AONNGAFMSITJSS,EA+Niching (Restricted Competition Selection with Pattern Search Method),OB,swap,OX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,for multimodal optimization
-SAFA,MTSV2018FIAFJSS,SA+FA,choice of disjunctive edges in DAG representation of the JSSP,edge flip,NA,Intel Dual-Core,1,2,NA,NA,TRUE,7680,NA,NA,NA,NA,NA,run on a cloud server
+SAFA,MTSV2018FIAFJSS,SA+FA,DG,edge flip,NA,Intel Dual-Core,1,2,NA,NA,TRUE,7680,NA,NA,NA,NA,NA,run on a cloud server
+SB-GLS1,BV1998GLSWSBFJSS,Shifting Bottleneck using Guided LS,DG,interchange of critical operation pair,NA,SUN SPARCstation 331,1,1,1,30,FALSE,NA,NA,NA,NA,C,NA,experiments on SUN SPARCstation 330; but times reported as Computer-Independent CPU Time
+SB-GLS2,BV1998GLSWSBFJSS,Shifting Bottleneck using Guided LS,DG,interchange of critical operation pair,NA,SUN SPARCstation 332,1,1,1,30,FALSE,NA,NA,NA,NA,C,NA,experiments on SUN SPARCstation 330; but times reported as Computer-Independent CPU Time
+SB-RGLS1,BV1998GLSWSBFJSS,Shifting Bottleneck using Guided LS,DG,interchange of critical operation pair,NA,SUN SPARCstation 334,1,1,1,30,FALSE,NA,NA,NA,NA,C,NA,experiments on SUN SPARCstation 330; but times reported as Computer-Independent CPU Time
+SB-RGLS2,BV1998GLSWSBFJSS,Shifting Bottleneck using Guided LS,DG,interchange of critical operation pair,NA,SUN SPARCstation 335,1,1,1,30,FALSE,NA,NA,NA,NA,C,NA,experiments on SUN SPARCstation 330; but times reported as Computer-Independent CPU Time
+SB-RGLS5,BV1998GLSWSBFJSS,Shifting Bottleneck using Guided LS,DG,interchange of critical operation pair,NA,SUN SPARCstation 335,1,1,1,30,FALSE,NA,NA,NA,NA,C,NA,experiments on SUN SPARCstation 330; but times reported as Computer-Independent CPU Time
 SCGA,PPH2012AONNGAFMSITJSS,EA+Niching (Species Conserving),OB,swap,OX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,for multimodal optimization
 SEJSP,WTC2018AHPSAFJSSP,SE,OB,swap+insert+invert+'score',LOX,Intel Core i5 4460,1,4,4,3200,FALSE,8192,NA,NA,NA,NA,NA,NA
-seqAntGenSA+CR,HRSCVGBTVMR2019AHSAFJSSP,ACS+SA,NA,NA,yes,Intel Xeon,1,NA,NA,2300,FALSE,65536,CentOS,NA,NA,C,NA,NA
-seqAntGenSA-CR,HRSCVGBTVMR2019AHSAFJSSP,ACS+SA,NA,NA,none,Intel Xeon,1,NA,NA,2300,FALSE,65536,CentOS,NA,NA,C,NA,NA
-SequentialABC,SMM2018PABCPFJSSP,ABC,path through DAG,NA,NA,Intel Core i3,1,2,4,2700,FALSE,4096,Microsoft Windows 7,NA,NA,C/C++,Code::Blocks IDE,NA
-TGA,AZ2015AEAGAFSTJSSP,EA+TS+GT,PL,NA,none,NA,1,NA,NA,2200,FALSE,8192,NA,NA,GCC,C++,NA,NA
+seqAntGenSA+CR,HRSCVGBTVMR2019AHSAFJSSP,ACS+SA,DG,NA,yes,Intel Xeon,1,NA,NA,2300,FALSE,65536,CentOS,NA,NA,C,NA,NA
+seqAntGenSA-CR,HRSCVGBTVMR2019AHSAFJSSP,ACS+SA,DG,NA,none,Intel Xeon,1,NA,NA,2300,FALSE,65536,CentOS,NA,NA,C,NA,NA
+SequentialABC,SMM2018PABCPFJSSP,ABC,DG,NA,NA,Intel Core i3,1,2,4,2700,FALSE,4096,Microsoft Windows 7,NA,NA,C/C++,Code::Blocks IDE,NA
+TGA,AZ2015AEAGAFSTJSSP,EA+TS+GT,DG,NA,none,NA,1,NA,NA,2200,FALSE,8192,NA,NA,GCC,C++,NA,NA
 TLBO,LWF2017AITLBOATSJSSP,TLBO+GT,PM,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,NA,NA,NA
-TSAB,NS1996AFTSAFTJSP,TS,PL,H,NA,AT 386DX,1,1,1,40,FALSE,NA,NA,NA,NA,PASCAL + C,NA,NA
-TSABb,NS1996AFTSAFTJSP,TS,PL,H,NA,AT 386DX,1,1,1,40,FALSE,NA,NA,NA,NA,PASCAL + C,NA,2 runs of TSAB with different settings
-TSABprime,NS1996AFTSAFTJSP,TS,PL,H,NA,AT 386DX,1,1,1,40,FALSE,NA,NA,NA,NA,PASCAL + C,NA,3 runs of TSAB with different settings
+TSAB,NS1996AFTSAFTJSP,initial heuristic (INSA) + TS,PL+DG,H,NA,AT 386DX,1,1,1,40,FALSE,NA,NA,NA,NA,PASCAL + C,NA,NA
+TSABb,NS1996AFTSAFTJSP,initial heuristic (INSA) + TS,PL+DG,H,NA,AT 386DX,1,1,1,40,FALSE,NA,NA,NA,NA,PASCAL + C,NA,2 runs of TSAB with different settings
+TSABprime,NS1996AFTSAFTJSP,initial heuristic (INSA) + TS,PL+DG,H,NA,AT 386DX,1,1,1,40,FALSE,NA,NA,NA,NA,PASCAL + C,NA,3 runs of TSAB with different settings
 TS-PR,PLC2015ATSPRATSTJSSP,EA+TS,PL,swap,path relinking,Quad-Core AMD Athlon,1,4,4,3000,FALSE,2048,Microsoft Windows 7,NA,NA,C++,NA,NA
+TSSA,ZSRQ2008SNROTSAATTJSSP,TS+SA,DG,N6 / own,NA,Intel Pentium 4,1,2,4,3000,NA,NA,NA,NA,Visual C++,C++,NA,NA
 UPLA,P2019ATLMAFTJSSP,population-based metaheuristic optimizing the parameters of a lower-level LS,OB,swap+insert,NA,Intel Core i5 M580,1,2,4,2670,FALSE,6144,NA,NA,NA,C#,NA,NA
 VNS-IIII-IS,P2014VNSAATJSSP,VNS,OB,insert+swap,NA,Intel Core2 Duo,1,2,2,2000,FALSE,NA,Microsoft Windows,NA,NA,C#,NA,NA
 VNS-IIII-SI,P2014VNSAATJSSP,VNS,OB,insert+swap,NA,Intel Core2 Duo,1,2,2,2000,FALSE,NA,Microsoft Windows,NA,NA,C#,NA,NA
