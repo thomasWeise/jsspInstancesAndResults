@@ -76,7 +76,7 @@ The rows have the following meaning:
 - `bks ref` the reference to the earliest publication(s) in this survey that mentioned the bks
 
 |id|ref|jobs|machines|lb|lb ref|bks|bks ref|
-|--:|-:-|--:|--:|--:|-:-|--:|-:-|
+|---:|:---:|---:|---:|---:|:---:|---:|:---:|
 |abz5|<a href="#ABZ">ABZ</a>|10|10|1234|<a href="#AC">AC</a>|1234|<a href="#AC">AC</a>|
 |abz6|<a href="#ABZ">ABZ</a>|10|10|943|<a href="#AC">AC</a>|943|<a href="#AC">AC</a>|
 |abz7|<a href="#ABZ">ABZ</a>|20|15|656|<a href="#M">M</a>|656|<a href="#H">H</a>|

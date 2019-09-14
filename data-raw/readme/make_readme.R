@@ -211,7 +211,7 @@ table <- unname(unlist(c(
   "- `bks ref` the reference to the earliest publication(s) in this survey that mentioned the bks",
   "",
   "|id|ref|jobs|machines|lb|lb ref|bks|bks ref|",
-  "|--:|-:-|--:|--:|--:|-:-|--:|-:-|",
+  "|---:|:---:|---:|---:|---:|:---:|---:|:---:|",
   table)));
 
 logger("got all readme components, now merging text.");
