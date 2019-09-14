@@ -37,6 +37,7 @@ col <- create.column(col$title,
                             "\\item{BB}{Branch and Bound (an exact anytime algorithm)}\n#' ",
                             "\\item{BBO}{Biogeography-based optimization}\n#' ",
                             "\\item{BFO}{Bacterial Foraging Algorithm}\n#' ",
+                            "\\item{BS}{Beam Search}\n#' ",
                             "\\item{CA}{Cultural Algorithm}\n#' ",
                             "\\item{CP}{constraint programming}\n#' ",
                             "\\item{CRO}{Coral Reef Optimization}\n#' ",
@@ -66,6 +67,7 @@ rm("col");
 cols.more <- create.columns(columns=list(
                  create.column("algo.representation",
                                paste0("the representation used for encoding solutions, if any. Sometimes, it is not entirely clear, in which case I used what, to me, seemed to be the closest match. Thus, handle this column with special care. The following abbreviations can be used\n#' \\describe{\n#' ",
+                                      "\\item{CT}{the completion time of each operation, somewhat similar to OO}\n#' ",
                                       "\\item{DG}{instances are presented disjunctive graph, schedules as digraphs and/or solutions are selections of edges, improvements are often done by modifying blocks on the critical path}\n#' ",
                                       "\\item{JB}{job-based: the jobs are assigned to machines in the order in which they occur in the string}\n#' ",
                                       "\\item{MB}{machine-based: the encoding is the order in which the machines are used as bottlenecks in a heuristic such as the Shifting Bottleneck Method}\n#' ",
@@ -81,7 +83,7 @@ cols.more <- create.columns(columns=list(
                                paste0("the unary operator used in the algorithm, if any, where the following abbreviations can be used\n#' \\describe{\n#' ",
                                       "\\item{insert}{extracts one value and inserts it somewhere else, shifting the other values appropriately}\n#' ",
                                       "\\item{N1}{neighborhood function N1 (Van Laarhoven et al., 1992) that performs the permutation of pairs of adjacent operations which belong to the critical path generated in the individual}\n#' ",
-                                      "\\item{N4}{N4 critical operation move operator (Grabowski et al., 1988)}\n#' ",
+                                      "\\item{N4}{N4 critical operation move operator (Grabowski et al., 1988; Blazewicz et al., 1996)}\n#' ",
                                       "\\item{N5}{N5 critical path-based move operator (Nowicki and Smutnicki, 1996, NS1996AFTSAFTJSP)}\n#' ",
                                       "\\item{N7}{N7 neightborhood (Zhang et al., 2008, ZLRG2008AVFTAFTJSSP)}\n#' ",
                                       "\\item{reverse}{reverse the order of a sub-sequence of values}\n#' ",
@@ -168,6 +170,7 @@ rm("jssp.results.loader.autogen");
 single.jssp.results.dir <- file.path(jssp.results.dir, "single");
 single.jssp.results.dir <- normalizePath(single.jssp.results.dir, mustWork = TRUE);
 stopifnot(dir.exists(single.jssp.results.dir));
+stopifnot(startsWith(single.jssp.results.dir, jssp.results.dir));
 
 jssp.index.file <- file.path(jssp.results.dir, "algorithms.txt");
 jssp.index.file <- normalizePath(jssp.index.file, mustWork = TRUE);

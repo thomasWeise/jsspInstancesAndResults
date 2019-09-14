@@ -1,0 +1,49 @@
+# jsspInstancesAndResults: Results and Data on Instances of the Job Shop Scheduling Problem
+
+[<img alt="Travis CI Build Status" src="http://img.shields.io/travis/thomasWeise/jsspInstancesAndResults/master.svg" height="20"/>](http://travis-ci.org/thomasWeise/jsspInstancesAndResults/)
+
+{toc}
+
+## Introduction
+
+This is a repository with a data set including instances and results from literature on the Job Shop Scheduling Problem (JSSP).
+Many papers on the JSSP include tables of result statistics.
+Here we try to provide such results from many papers in one central location, in order to make it easier to compare new works with the existing ones.
+
+The data is presented both as text files as well as in form of an `R` package.
+This means you can either read it using your favorite programming language or by loading and processing it directly via `R`.
+We link all the data presented here directly with BibTeX entries and present the results for the different algorithms all together as well as summarize the state-of-the-art.
+Since the summarization and joining of data is done automatically, we can always easily add more information.
+If you published a paper on the JSSP, just send it to me and I will add the results.
+
+Our goal is to have an update-able archive of the state-of-the-art results, directly linked with BibTeX entries and the functionality to generate result tables and to compare algorithms with said state-of-the-art.
+Currently, this project is just a preliminary version.
+I begun searching papers from 2019 backwards and also include papers referenced by similar repositories and some papers I found (more or less randomly), so many important works are probably still missing.
+
+## Installing the `R` Package
+
+You can easily install the `R` by executing the following script in `R`:
+
+```
+if(!require("devtools")) {
+  install.packages("devtools");
+  library("devtools");
+}
+ install_github("thomasWeise/jsspInstancesAndResults")
+```
+
+## Provided Data
+
+While all data is easily accessible within the `R` package, you can also access the raw data in form of comma-separated-values (CSV) text files as follows:
+
+- All the [results from our literature survey](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/results/all_results.txt) as CSV file, equivalent to loaind `jssp.results` in the `R` package.
+- the [instance information file with the best-known solutions **from the papers analyzed in the study above**](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/instances/instances_with_bks.txt), equivalent to loaing `jssp.instances` in the `R` package.
+- the [raw BibTeX file with all references to literature](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/bibliography/bibliography.bib), equivalent to loaind `jssp.bibliography` in the `R` package. All the references in the results and instances data refere to keys in this bibliography.
+- the [plain instance information](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/instances/instances.txt) as CSV file, mainly with infos from Jelke Jeroen van&nbsp;Hoorn's website <http://jobshop.jjvh.nl>
+- the [instances from ORLib](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/instances/instance_data_orlib.txt)
+
+Of course, such a survey can never be complete.
+Thus, please expect that some data may be missing.
+Also, we try to provide some meta-data on the algorithms applied as well as the systems on which the experiments were run.
+Here, it is very easy to mis-interpret something or to make a mistake.
+If you have additional papers from which we can include results or wish to correct an error, contact me anytime.

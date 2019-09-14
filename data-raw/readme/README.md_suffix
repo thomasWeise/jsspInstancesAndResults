@@ -1,0 +1,41 @@
+
+## Repository Structure
+
+In the folder `data-raw`, we provide the `R` scripts used to generate the data frames in the package, the complete data CSV files, and this README.
+The idea is that we maintain a central [BibTeX](data-raw/bibliography/bibliography.bib) file and a [list of algorithms](data-raw/results/algorithms.txt) as well as a [list of basic instance information](data-raw/instances/instances.txt).
+For each algorithm, a CSV text file is included with the results of that algorithm in the corresponding publication.
+The scripts then merge all this information into one [central CSV file with all the results](data-raw/results/all_results.txt).
+From these results, we then automatically update the instance information and obtain an [instance information file with best-known solutions](data-raw/instances/instances_with_bks.txt).
+This is then used together with the bibliography to build our `README.md`.
+This structure allows us to easily update the repository with new results, while providing the full table of all data from literature.
+All the data is provided as data frames if you install this repository as `R` package (see before), which will provide `jssp.bibliography`, `jssp.results`, and `jssp.instances`.
+
+## Other Useful Resources
+
+### Overviews of Results
+
+Besides our repository, the following sources in the web provide useful information about the state-of-the-art on the JSSP:
+
+- Many of the information about the problem instances are taken from incredibly great website <http://jobshop.jjvh.nl> run by Jelke Jeroen van&nbsp;Hoorn, while the results are taken from their individual publications.
+- The websites <http://optimizizer.com/jobshop.php> run by Oleg V. Shylo, which holds many results on the JSSP as well.
+- Érick Taillard's page <http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html>
+
+### Benchmark Instances
+
+- [OR-Library](http://people.brunel.ac.uk/~mastjjb/jeb/orlib/jobshopinfo.html)
+- A repository with instances of the JSSP can be found at <http://github.com/tamy0612/JSPLIB>.
+
+## License
+
+Any content in this repository which originates from other sources is licensed under the licensing conditions of the respective owners.
+This includes the results of works published in literature as well as the benchmarking instances.
+Any of the above which permits me setting a license and any content contributed by myself is under the GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007.
+
+## Contact
+
+If you have any questions or suggestions, please contact
+[Prof. Dr. Thomas Weise](http://iao.hfuu.edu.cn/team/director) of the
+[Institute of Applied Optimization](http://iao.hfuu.edu.cn/) at
+[Hefei University](http://www.hfuu.edu.cn) in
+Hefei, Anhui, China via
+email to [tweise@hfuu.edu.cn](mailto:tweise@hfuu.edu.cn) and [tweise@gmx.de](mailto:tweise@gmx.de).

@@ -1,0 +1,8 @@
+inst.id,best.f.min,n.runs,reach.best.f.min.runs,total.time.mean,best.f.mean
+ft06,55,600,4,600000,NA
+ft10,930,NA,NA,NA,NA
+ft20,1184,NA,NA,NA,NA
+yn1,967,NA,NA,10,979
+yn2,945,NA,NA,10,953
+yn3,951,NA,NA,10,957
+yn4,1052,NA,NA,10,1060

@@ -1,0 +1,2 @@
+inst.id,best.f.min
+ta32,1784
