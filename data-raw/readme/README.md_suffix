@@ -22,7 +22,9 @@ Besides our repository, the following sources in the web provide useful informat
 
 ### Benchmark Instances
 
-- [OR-Library](http://people.brunel.ac.uk/~mastjjb/jeb/orlib/jobshopinfo.html)
+- [OR-Library](http://people.brunel.ac.uk/~mastjjb/jeb/orlib/jobshopinfo.html) with the `abz*`. `la*`, `orb*`, `swv*`, and `yn*` instances
+- Oleg V. Shylo's page (http://optimizizer.com/DMU.php) with the `dmu*` instances
+- Érick Taillard's page <http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html> with the `ta*` instances
 - A repository with instances of the JSSP can be found at <http://github.com/tamy0612/JSPLIB>.
 
 ## License
