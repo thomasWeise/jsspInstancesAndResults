@@ -36,11 +36,11 @@ if(!require("devtools")) {
 
 While all data is easily accessible within the `R` package, you can also access the raw data in form of comma-separated-values (CSV) text files as follows:
 
-- All the [results from our literature survey](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/results/all_results.txt) as CSV file, equivalent to loaind `jssp.results` in the `R` package.
-- the [instance information file with the best-known solutions **from the papers analyzed in the study above**](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/instances/instances_with_bks.txt), equivalent to loaing `jssp.instances` in the `R` package.
-- the [raw BibTeX file with all references to literature](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/bibliography/bibliography.bib), equivalent to loaind `jssp.bibliography` in the `R` package. All the references in the results and instances data refere to keys in this bibliography.
+- All the [results from our literature survey](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/results/all_results.txt) as CSV file, equivalent to loading `jssp.results` in the `R` package.
+- the [instance information with the best-known solutions **from the papers analyzed in the study above**](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/instances/instances_with_bks.txt), equivalent to loading `jssp.instances` in the `R` package.
+- the [raw BibTeX file with all references to literature](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/bibliography/bibliography.bib), equivalent to loading `jssp.bibliography` in the `R` package. All the references in the results and instances data refere to keys in this bibliography.
+- the OR Library format of all instances in the study [in a single file](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/instances-data/instance_data.txt), equivalent to loading `jssp.instance.data` in the `R` package
 - the [plain instance information](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/instances/instances.txt) as CSV file, mainly with infos from Jelke Jeroen van&nbsp;Hoorn's website <http://jobshop.jjvh.nl>
-- the [instances from ORLib](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/instances/instance_data_orlib.txt)
 
 Of course, such a survey can never be complete.
 Thus, please expect that some data may be missing.

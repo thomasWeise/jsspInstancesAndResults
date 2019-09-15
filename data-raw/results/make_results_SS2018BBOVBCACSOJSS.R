@@ -125,7 +125,7 @@ rm(".git.clone");
   rcmax_20_20_6='dmu06',
   rcmax_20_20_4='dmu07',
   rcmax_20_20_7='dmu08',
-  rcmax_20_20_8='dmu9',
+  rcmax_20_20_8='dmu09',
   rcmax_20_20_5='dmu10',
   rcmax_30_15_9='dmu11',
   rcmax_30_15_10='dmu12',

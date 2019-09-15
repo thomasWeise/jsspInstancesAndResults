@@ -122,8 +122,7 @@ references <- make.references.text(refs=NULL,
                                                nchar(ref) > 0L,
                                                length(ref) == 1L,
                                                !is.na(ref));
-                                     return(paste0("<dt name=\"", ref, "\" id=\"", ref, "\">",
-                                                   ref, "</dt><dd>"));
+                                     return(paste0("<dt id=\"", ref, "\">", ref, "</dt><dd>"));
                                    },
                                    make.text.after=NULL,
                                    normal.line.start=NULL,
@@ -136,10 +135,10 @@ stopifnot(is.character(references),
           length(references) > 0L);
 references <- unname(unlist(c(paste0("## Literature Sources"),
                               "",
-                              "The data has been taken from the following literature sources.",
+                              "The data in this study has been taken from the following literature sources.",
                               "We used <http://jobshop.jjvh.nl> as starting point for the search, but included additional papers.",
                               "You can find the full BibTeX entries for the below references in our [bibliography](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/bibliography/bibliography.bib).",
-                              "The bibliography keys there will start with the same mnemonic used here, but here we shortened these keys for the sake of brevity.",
+                              "The bibliography keys there will start with the same mnemonic as used here, but here we shortened these keys for the sake of brevity.",
                               "",
                               "<dl>",
                               references,

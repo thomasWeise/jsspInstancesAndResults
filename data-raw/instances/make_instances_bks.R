@@ -42,13 +42,14 @@ if(file.exists(jssp.instances.docu)) {
 stopifnot(!file.exists(jssp.instances.docu));
 
 writeLines(text=unname(unlist(c(
-  "#' The Instance Data for the Common Benchmark Instances of the Job Shop Scheduling Problem",
+  "#' The Instance Meta-Data for the Common Benchmark Instances of the Job Shop Scheduling Problem",
   "#'",
   "#' Here we provide baseline data about the benchmark instances that are commonly used in research",
   "#' on the Job Shop Scheduling Problem.",
   "#' Data on the lower bounds has in particular been taken from van Hoorn's great website \\url{http://jobshop.jjvh.nl}.",
   "#' The data on the best-known solutions (BKS) has automatically been extracted from the per-instance results, see \\link{jssp.results}.",
   "#' All literature referenced, on the other hand, can be found in \\link{jssp.bibliography}.",
+  "#' The benchmark instances themselves are provided in \\link{jssp.instance.data}.",
   "#'",
   "#' @docType data",
   "#'",

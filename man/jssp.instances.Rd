@@ -3,7 +3,7 @@
 \docType{data}
 \name{jssp.instances}
 \alias{jssp.instances}
-\title{The Instance Data for the Common Benchmark Instances of the Job Shop Scheduling Problem}
+\title{The Instance Meta-Data for the Common Benchmark Instances of the Job Shop Scheduling Problem}
 \format{A data frame with the basic information about the JSSP instances
 \describe{
   \item{inst.id}{the unique id identifying the instance}
@@ -24,6 +24,7 @@ on the Job Shop Scheduling Problem.
 Data on the lower bounds has in particular been taken from van Hoorn's great website \url{http://jobshop.jjvh.nl}.
 The data on the best-known solutions (BKS) has automatically been extracted from the per-instance results, see \link{jssp.results}.
 All literature referenced, on the other hand, can be found in \link{jssp.bibliography}.
+The benchmark instances themselves are provided in \link{jssp.instance.data}.
 }
 \examples{
 data(jssp.instances)
@@ -84,7 +85,7 @@ Schilham R (2000). “Results listed on Éric Taillard's page.” see also http:
 
 Shylo OV (2019). “Job Shop Scheduling (Personal Homepage).” \url{http://optimizizer.com/jobshop.php}.#' 
 
-Shylo OV, Shams H (2018). “Boosting Binary Optimization via Binary Classification: A Case Study of Job Shop Scheduling.” Technical Report abs/1808.10813, arXiv. Many results are available in the GitHub repository https://github.com/quasiquasar/gta-jobshop-data. We just use a subset (namely, samples after 3, 5, 30, and 60 minutes, and the end results) to compute statistics. The paper reports some new bks for which the creating runs are not contained in the GitHub repository, verified via email with the authors, as well as bound 6196 for both dmu74 and dmu75. Other results have been published on Prof. Shylo's website http://optimizizer.com/DMU.php for the same paper (including dmu17)., \url{https://arxiv.org/pdf/1808.10813}.#' 
+Shylo OV, Shams H (2018). “Boosting Binary Optimization via Binary Classification: A Case Study of Job Shop Scheduling.” Technical Report abs/1808.10813, arXiv. Many results are available in the GitHub repository https://github.com/quasiquasar/gta-jobshop-data. We just use a subset (namely, samples after 3, 5, 30, and 60 minutes, and the end results) to compute statistics. The paper reports some new bks for which the creating runs are not contained in the GitHub repository, verified via email with the authors, as well as bound 6196 for both dmu74 and dmu75. Other results have been published on Prof. Shylo's website http://optimizizer.com/DMU.php for the same paper (including dmu17), \url{https://arxiv.org/pdf/1808.10813}.#' 
 
 Storer RH, Wu SD, Vaccari R (1992). “New Search Spaces for Sequencing Problems with Application to Job Shop Scheduling.” Management Science, 38(10), 1495-1509. doi:\href{http://doi.org/10.1287/mnsc.38.10.1495}{10.1287/mnsc.38.10.1495}.#' 
 

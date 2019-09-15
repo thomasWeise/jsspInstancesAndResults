@@ -33,10 +33,13 @@ source(file.path(dir.data.raw, "instances", "make_instances_bks.R"));
 
 source(file.path(dir.data.raw, "readme", "make_readme.R"));
 
+source(file.path(dir.data.raw, "instance-data", "make_instance_data.R"));
+
 # store the data
 use_data(jssp.bibliography,
          jssp.instances,
          jssp.results,
+         jssp.instance.data,
          compress="xz", version=3L, overwrite = TRUE);
 
 rm("dir.data.raw");
@@ -44,6 +47,7 @@ rm("dir.R");
 rm("jssp.results");
 rm("jssp.bibliography");
 rm("jssp.instances");
+rm("jssp.instance.data");
 
 logger("all done.");
 rm("logger");
