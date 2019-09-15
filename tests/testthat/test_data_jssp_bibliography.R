@@ -2,9 +2,9 @@ library("jsspInstancesAndResults");
 library("testthat");
 context("jssp.bibliography");
 
-test_that("Test the bibliography", {
-  data(jssp.bibliography);
+data("jssp.bibliography");
 
+test_that("Test the bibliography", {
   expect_true(is.data.frame(jssp.bibliography));
   expect_gt(nrow(jssp.bibliography), 0L);
   expect_identical(ncol(jssp.bibliography), 5L);

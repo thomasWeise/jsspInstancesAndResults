@@ -51,7 +51,7 @@ stopifnot(length(unique(jssp.instances.ids)) == nrow(jssp.instances))
 
 jssp.instances <- jssp.instances[order(jssp.instances.ids), ];
 rm("jssp.instances.ids");
-jssp.instances$inst.id <- as.factor(unname(unlist(jssp.instances$inst.id)));
+#jssp.instances$inst.id <- as.factor(unname(unlist(jssp.instances$inst.id)));
 
 .finder <- function(i) {
   stopifnot(!is.na(i));
@@ -89,8 +89,9 @@ stopifnot(is.data.frame(jssp.instances),
           all(jssp.instances$inst.opt.bound.lower > 0L),
           all(is.finite(jssp.instances$inst.opt.bound.lower)),
           all(is.integer(jssp.instances$inst.opt.bound.lower)),
-          all(is.factor(jssp.instances$inst.id)),
+          all(is.character(jssp.instances$inst.id)),
           all(!is.na(jssp.instances$inst.id)),
+          all(nchar(jssp.instances$inst.id) > 0L),
           all(is.character(jssp.instances$inst.ref)),
           all(!is.na(jssp.instances$inst.ref)),
           all(nchar(jssp.instances$inst.ref) > 0),
