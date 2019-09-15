@@ -167,7 +167,7 @@ Beck JC, Feng TK, Watson J (2011). “Combining Constraint Programming and Local
 
 Bierwirth C (1995). “A Generalized Permutation Approach to Job Shop Scheduling with Genetic Algorithms.” Operations-Research-Spektrum (OR Spectrum), 17(2-3), 87-92. doi:\href{http://doi.org/10.1007/BF01719250}{10.1007/BF01719250}, \url{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.52.7392&type=pdf}.#' 
 
-Caldeira JP (2003). “Private Communication of Result 2869 for ta62 to Éric Taillard, listed on Éric Taillard's page.” \url{http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/jobshop.dir/best_lb_up.txt}.#' 
+Caldeira JP (2003). “Private Communication of Result 2869 for ta62 to Éric D. Taillard, listed on Éric Taillard's Page.” \url{http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/jobshop.dir/best_lb_up.txt}.#' 
 
 Cheng TCE, Peng B, Lü Z (2016). “A Hybrid Evolutionary Algorithm to Solve the Job Shop Scheduling Problem.” Annals of Operations Research, 242(2), 223-237. doi:\href{http://doi.org/10.1007/s10479-013-1332-5}{10.1007/s10479-013-1332-5}, The paper reports 555 as average makespan of HEA for ft20, which is an obvious typo because the other columns have 1165, which is the lower bound.#' 
 

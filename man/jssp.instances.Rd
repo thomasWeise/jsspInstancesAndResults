@@ -43,7 +43,7 @@ Beck JC, Feng TK, Watson J (2011). “Combining Constraint Programming and Local
 
 Brinkkötter W, Brucker P (2001). “Solving Open Benchmark Instances for the Job-Shop Problem by Parallel Head-Tail Adjustments.” Journal of Scheduling, 4(1), 53-64. doi:\href{http://doi.org/10.1002/1099-1425(200101/02}{10.1002/1099-1425(200101/02)4:1<53::AID-JOS59>3.0.CO;2-Y}4:1<53::AID-JOS59>3.0.CO;2-Y).#' 
 
-Caldeira JP (2003). “Private Communication of Result 2869 for ta62 to Éric Taillard, listed on Éric Taillard's page.” \url{http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/jobshop.dir/best_lb_up.txt}.#' 
+Caldeira JP (2003). “Private Communication of Result 2869 for ta62 to Éric D. Taillard, listed on Éric Taillard's Page.” \url{http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/jobshop.dir/best_lb_up.txt}.#' 
 
 Carlier J, Pinson É (1989). “An Algorithm for Solving the Job-Shop Problem.” Management Science, 35(2), 164-176. doi:\href{http://doi.org/10.1287/mnsc.35.2.164}{10.1287/mnsc.35.2.164}, jstor: 2631909.#' 
 
@@ -81,7 +81,7 @@ Pardalos PM, Shylo OV, Vazacopoulos A (2010). “Solving Job Shop Scheduling Pro
 
 Peng B, Lü Z, Cheng TCE (2015). “A Tabu Search/Path Relinking Algorithm to Solve the Job Shop Scheduling Problem.” Computers & Operations Research, 53, 154-164. doi:\href{http://doi.org/10.1016/j.cor.2014.08.006}{10.1016/j.cor.2014.08.006}, A February 2014 preprint is available as arXiv:1402.5613v1 [cs.DS], \url{http://arxiv.org/abs/1402.5613}.#' 
 
-Schilham R (2000). “Results listed on Éric Taillard's page.” see also http://jobshop.jjvh.nl/, \url{http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html}.#' 
+Schilham R (2000). “Results listed on Éric Taillard's Page.” see also http://jobshop.jjvh.nl/, \url{http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html}.#' 
 
 Shylo OV (2019). “Job Shop Scheduling (Personal Homepage).” \url{http://optimizizer.com/jobshop.php}.#' 
 
@@ -91,7 +91,7 @@ Storer RH, Wu SD, Vaccari R (1992). “New Search Spaces for Sequencing Problems
 
 Taillard ÉD (1993). “Benchmarks for Basic Scheduling Problems.” European Journal of Operational Research (EJOR), 64(2), 278-285. doi:\href{http://doi.org/10.1016/0377-2217(93}{10.1016/0377-2217(93)90182-M}90182-M).#' 
 
-Vaessens RJM (1995). “Results listed on Éric Taillard's page.” see also http://jobshop.jjvh.nl/, \url{http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html}.#' 
+Vaessens RJM (1995). “Results listed on Éric Taillard's Page.” see also http://jobshop.jjvh.nl/, \url{http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html}.#' 
 
 Vaessens RJM (1996). “Addition to John Edward Beasley's OR Library.” see also http://jobshop.jjvh.nl/, \url{http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/jobshop1.txt}.#' 
 

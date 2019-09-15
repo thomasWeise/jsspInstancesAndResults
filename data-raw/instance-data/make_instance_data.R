@@ -567,7 +567,7 @@ text <- unname(unlist(c(
           "The original data of these instances stem from: ",
           "- OR-Library (http://people.brunel.ac.uk/~mastjjb/jeb/orlib/jobshopinfo.html) [the abz*, la*, orb*, and yn* instances]",
           "- Oleg V. Shylo's page (http://optimizizer.com/DMU.php) [the dmu* instances]",
-          "- Érick Taillard's page (http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html) [the ta* instaces]",
+          "- Éric Taillard's Page (http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html) [the ta* instaces]",
           "",
           unname(unlist(lapply(unique(jssp.instances$inst.ref),
                   function(ref) {

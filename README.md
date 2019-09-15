@@ -340,7 +340,7 @@ The bibliography keys there will start with the same mnemonic as used here, but 
 <dt id="BFW">BFW</dt><dd>Beck JC, Feng TK, Watson J (2011). “Combining Constraint Programming and Local Search for Job-Shop Scheduling.” INFORMS Journal on Computing, 23(1), 1-14. doi:<a href="http://doi.org/10.1287/ijoc.1100.0388">10.1287/ijoc.1100.0388</a>, <a href="http://cfwebprod.sandia.gov/cfdocs/CompResearch/docs/ists-sgmpcs.pdf">http://cfwebprod.sandia.gov/cfdocs/CompResearch/docs/ists-sgmpcs.pdf</a>.</li>
 <dt id="BV">BV</dt><dd>Balas E, Vazacopoulos A (1994). “Guided Local Search with Shifting Bottleneck for Job Shop Scheduling.” Technical Report MSSR–609, Graduate School of Industrial Administration (GSIA), Carnegie Mellon University, Pittsburgh, PA, USA. revised November 1995.</li>
 <dt id="BV1">BV1</dt><dd>Balas E, Vazacopoulos A (1998). “Guided Local Search with Shifting Bottleneck for Job Shop Scheduling.” Management Science, 44(2), 262-275. doi:<a href="http://doi.org/10.1287/mnsc.44.2.262">10.1287/mnsc.44.2.262</a>, reports 307 as makespan for orb07, probably a typo, as the lower bound is 397.</li>
-<dt id="C">C</dt><dd>Caldeira JP (2003). “Private Communication of Result 2869 for ta62 to Éric Taillard, listed on Éric Taillard's page.” <a href="http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/jobshop.dir/best_lb_up.txt">http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/jobshop.dir/best_lb_up.txt</a>.</li>
+<dt id="C">C</dt><dd>Caldeira JP (2003). “Private Communication of Result 2869 for ta62 to Éric D. Taillard, listed on Éric Taillard's Page.” <a href="http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/jobshop.dir/best_lb_up.txt">http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/jobshop.dir/best_lb_up.txt</a>.</li>
 <dt id="CCC">CCC</dt><dd>Cruz-Chávez MA, Cruz Rosales MH, Zavala-Díaz JC, Aguilar JAH, Rodrıguez-Leó A, Avelino JCP, Orziz MEL, Salinas OH (2019). “Hybrid Micro Genetic Multi-Population Algorithm With Collective Communication for the Job Shop Scheduling Problem.” IEEE Access, 7, 82358-82376. doi:<a href="http://doi.org/10.1109/ACCESS.2019.2924218">10.1109/ACCESS.2019.2924218</a>, <a href="http://ieeexplore.ieee.org/document/8743353">http://ieeexplore.ieee.org/document/8743353</a>.</li>
 <dt id="CP">CP</dt><dd>Carlier J, Pinson É (1989). “An Algorithm for Solving the Job-Shop Problem.” Management Science, 35(2), 164-176. doi:<a href="http://doi.org/10.1287/mnsc.35.2.164">10.1287/mnsc.35.2.164</a>, jstor: 2631909.</li>
 <dt id="CP1">CP1</dt><dd>Carlier J, Pinson É (1990). “A Practical Use of Jackson's Preemptive Schedule for Solving the Job Shop Problem.” Annals of Operations Research, 26(1-4), 269-287.</li>
@@ -383,7 +383,7 @@ The bibliography keys there will start with the same mnemonic as used here, but 
 <dt id="PSV">PSV</dt><dd>Pardalos PM, Shylo OV, Vazacopoulos A (2010). “Solving Job Shop Scheduling Problems Utilizing the Properties of Backbone and "Big Valley".” Computational Optimization and Applications, 47(1), 61-76. doi:<a href="http://doi.org/10.1007/s10589-008-9206-5">10.1007/s10589-008-9206-5</a>.</li>
 <dt id="QL">QL</dt><dd>Qiu X, Lau HYK (2014). “An AIS-based Hybrid Algorithm for Static Job Shop Scheduling Problem.” Journal of Intelligent Manufacturing, 25(3), 489-503. doi:<a href="http://doi.org/10.1007/s10845-012-0701-2">10.1007/s10845-012-0701-2</a>.</li>
 <dt id="RNK">RNK</dt><dd>Raeesi N. MR, Kobti Z (2012). “A Knowledge-Migration-Based Multi-Population Cultural Algorithm to Solve Job Shop Scheduling.” In Youngblood GM, McCarthy PM (eds.), Proceedings of the Twenty-Fifth International Florida Artificial Intelligence Research Society Conference (FLAIRS'12), May 23-25, 2012, Marco Island, FL, USA. ISBN 978-1-57735-558-8, <a href="http://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS12/paper/view/4378/4768">http://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS12/paper/view/4378/4768</a>.</li>
-<dt id="S">S</dt><dd>Schilham R (2000). “Results listed on Éric Taillard's page.” see also http://jobshop.jjvh.nl/, <a href="http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html">http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html</a>.</li>
+<dt id="S">S</dt><dd>Schilham R (2000). “Results listed on Éric Taillard's Page.” see also http://jobshop.jjvh.nl/, <a href="http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html">http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html</a>.</li>
 <dt id="S2">S2</dt><dd>Shylo OV (2019). “Job Shop Scheduling (Personal Homepage).” <a href="http://optimizizer.com/jobshop.php">http://optimizizer.com/jobshop.php</a>.</li>
 <dt id="SB">SB</dt><dd>Sabuncuoğlu İ, Bayiz M (1999). “Job Shop Scheduling with Beam Search.” European Journal of Operational Research (EJOR), 118(2), 390-412. doi:<a href="http://doi.org/10.1016/S0377-2217(98">10.1016/S0377-2217(98)00319-1</a>00319-1), <a href="http://yoksis.bilkent.edu.tr/doi_getpdf/articles/10.1016-S0377-2217(98)00319-1.pdf">http://yoksis.bilkent.edu.tr/doi_getpdf/articles/10.1016-S0377-2217(98)00319-1.pdf</a>.</li>
 <dt id="SMM">SMM</dt><dd>Sahana SK, Mukherjee I, Mahanti PK (2018). “Parallel Artificial Bee Colony (PABC) for Job Shop Scheduling Problems.” Advances in Information Sciences and Service Sciences (AISS), 10(3), 1-11. reports 661 as result for abz9 which is below the lower bound 678 and thus not included in our data set, <a href="http://www.globalcis.org/aiss/ppl/AISS3877PPL.pdf">http://www.globalcis.org/aiss/ppl/AISS3877PPL.pdf</a>.</li>
@@ -391,7 +391,7 @@ The bibliography keys there will start with the same mnemonic as used here, but 
 <dt id="SSS">SSS</dt><dd>Sharma N, Sharma H, Sharma A (2018). “Beer Froth Artificial Bee Colony Algorithm for Job-Shop Scheduling Problem.” Applied Soft Computing Journal (ASOC), 68, 507-524. doi:<a href="http://doi.org/10.1016/j.asoc.2018.04.001">10.1016/j.asoc.2018.04.001</a>.</li>
 <dt id="SWV">SWV</dt><dd>Storer RH, Wu SD, Vaccari R (1992). “New Search Spaces for Sequencing Problems with Application to Job Shop Scheduling.” Management Science, 38(10), 1495-1509. doi:<a href="http://doi.org/10.1287/mnsc.38.10.1495">10.1287/mnsc.38.10.1495</a>.</li>
 <dt id="T">T</dt><dd>Taillard ÉD (1993). “Benchmarks for Basic Scheduling Problems.” European Journal of Operational Research (EJOR), 64(2), 278-285. doi:<a href="http://doi.org/10.1016/0377-2217(93">10.1016/0377-2217(93)90182-M</a>90182-M).</li>
-<dt id="V">V</dt><dd>Vaessens RJM (1995). “Results listed on Éric Taillard's page.” see also http://jobshop.jjvh.nl/, <a href="http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html">http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html</a>.</li>
+<dt id="V">V</dt><dd>Vaessens RJM (1995). “Results listed on Éric Taillard's Page.” see also http://jobshop.jjvh.nl/, <a href="http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html">http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html</a>.</li>
 <dt id="V1">V1</dt><dd>Vaessens RJM (1996). “Addition to John Edward Beasley's OR Library.” see also http://jobshop.jjvh.nl/, <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/jobshop1.txt">http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/jobshop1.txt</a>.</li>
 <dt id="VAL">VAL</dt><dd>Vaessens RJM, Aarts EHL, Lenstra JK (1996). “Job Shop Scheduling by Local Search.” INFORMS Journal on Computing, 8(3), 302-317. doi:<a href="http://doi.org/10.1287/ijoc.8.3.302">10.1287/ijoc.8.3.302</a>.</li>
 <dt id="vH">vH</dt><dd>van Hoorn JJ (2015). “Job Shop Instances and Solutions.” <a href="http://jobshop.jjvh.nl">http://jobshop.jjvh.nl</a>.</li>
@@ -410,15 +410,19 @@ The bibliography keys there will start with the same mnemonic as used here, but 
 ## 6. Repository Structure
 
 In the folder `data-raw`, we provide the `R` scripts used to generate the data frames in the package, the complete data CSV files, and this README.
-The idea is that we maintain a central [BibTeX](data-raw/bibliography/bibliography.bib) file and a [list of algorithms](data-raw/results/algorithms.txt) as well as a [list of basic instance information](data-raw/instances/instances.txt).
+The idea is that we maintain a central [BibTeX](data-raw/bibliography/bibliography.bib) file (reflected in data frame `jssp.bibliography`) and a [list of algorithms](data-raw/results/algorithms.txt) as well as a [list of basic instance information](data-raw/instances/instances.txt).
 For each algorithm, a CSV text file is included with the results of that algorithm in the corresponding publication.
-The scripts then merge all this information into one [central CSV file with all the results](data-raw/results/all_results.txt).
-From these results, we then automatically update the instance information and obtain an [instance information file with best-known solutions](data-raw/instances/instances_with_bks.txt).
+The scripts then merge all this information into one [central CSV file with all the results](data-raw/results/all_results.txt) and provide the data as data frame `jssp.results`.
+From these results, we then automatically update the instance information and obtain an [instance information file with best-known solutions](data-raw/instances/instances_with_bks.txt), reflected in data frame `jssp.instances`.
 This is then used together with the bibliography to build our `README.md`.
 This structure allows us to easily update the repository with new results, while providing the full table of all data from literature.
-All the data is provided as data frames if you install this repository as `R` package (see before), which will provide `jssp.bibliography`, `jssp.results`, and `jssp.instances`.
+Finally, we generate a single, [OR-Library compatible file](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/instance-data/instance_data.txt) with all of the JSSP instances in this study, such that you can easily load them and do your own experiments.
+The data from this file is provided as the list `jssp.instance.data` in the `R` package.
+In summary, all the data is provided both as text files for processing with arbitary tools and as as data frames/lists `jssp.bibliography`, `jssp.results`, `jssp.instances`, and `jssp.instance.data` if you install this repository as `R` package (see above).
 
 ## 7. Other Useful Resources
+
+Many of the data in this package are gathered from different sources in the internet, which were our starting point to explore and add results from quite a few publications.
 
 ### 7.1. Overviews of Results
 
@@ -426,13 +430,13 @@ Besides our repository, the following sources in the web provide useful informat
 
 - Many of the information about the problem instances are taken from incredibly great website <http://jobshop.jjvh.nl> run by Jelke Jeroen van&nbsp;Hoorn, while the results are taken from their individual publications.
 - The websites <http://optimizizer.com/jobshop.php> run by Oleg V. Shylo, which holds many results on the JSSP as well.
-- Érick Taillard's page <http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html>
+- Éric Taillard's Page <http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html>
 
 ### 7.2. Benchmark Instances
 
 - [OR-Library](http://people.brunel.ac.uk/~mastjjb/jeb/orlib/jobshopinfo.html) with the `abz*`. `la*`, `orb*`, `swv*`, and `yn*` instances
-- Oleg V. Shylo's page (http://optimizizer.com/DMU.php) with the `dmu*` instances
-- Érick Taillard's page <http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html> with the `ta*` instances
+- Oleg V. Shylo's website (http://optimizizer.com/DMU.php) with the `dmu*` instances
+- Éric Taillard's Page <http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html> with the `ta*` instances
 - A repository with instances of the JSSP can be found at <http://github.com/tamy0612/JSPLIB>.
 
 ## 8. License

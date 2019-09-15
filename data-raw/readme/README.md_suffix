@@ -2,15 +2,19 @@
 ## Repository Structure
 
 In the folder `data-raw`, we provide the `R` scripts used to generate the data frames in the package, the complete data CSV files, and this README.
-The idea is that we maintain a central [BibTeX](data-raw/bibliography/bibliography.bib) file and a [list of algorithms](data-raw/results/algorithms.txt) as well as a [list of basic instance information](data-raw/instances/instances.txt).
+The idea is that we maintain a central [BibTeX](data-raw/bibliography/bibliography.bib) file (reflected in data frame `jssp.bibliography`) and a [list of algorithms](data-raw/results/algorithms.txt) as well as a [list of basic instance information](data-raw/instances/instances.txt).
 For each algorithm, a CSV text file is included with the results of that algorithm in the corresponding publication.
-The scripts then merge all this information into one [central CSV file with all the results](data-raw/results/all_results.txt).
-From these results, we then automatically update the instance information and obtain an [instance information file with best-known solutions](data-raw/instances/instances_with_bks.txt).
+The scripts then merge all this information into one [central CSV file with all the results](data-raw/results/all_results.txt) and provide the data as data frame `jssp.results`.
+From these results, we then automatically update the instance information and obtain an [instance information file with best-known solutions](data-raw/instances/instances_with_bks.txt), reflected in data frame `jssp.instances`.
 This is then used together with the bibliography to build our `README.md`.
 This structure allows us to easily update the repository with new results, while providing the full table of all data from literature.
-All the data is provided as data frames if you install this repository as `R` package (see before), which will provide `jssp.bibliography`, `jssp.results`, and `jssp.instances`.
+Finally, we generate a single, [OR-Library compatible file](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/instance-data/instance_data.txt) with all of the JSSP instances in this study, such that you can easily load them and do your own experiments.
+The data from this file is provided as the list `jssp.instance.data` in the `R` package.
+In summary, all the data is provided both as text files for processing with arbitary tools and as as data frames/lists `jssp.bibliography`, `jssp.results`, `jssp.instances`, and `jssp.instance.data` if you install this repository as `R` package (see above).
 
 ## Other Useful Resources
+
+Many of the data in this package are gathered from different sources in the internet, which were our starting point to explore and add results from quite a few publications.
 
 ### Overviews of Results
 
@@ -18,13 +22,13 @@ Besides our repository, the following sources in the web provide useful informat
 
 - Many of the information about the problem instances are taken from incredibly great website <http://jobshop.jjvh.nl> run by Jelke Jeroen van&nbsp;Hoorn, while the results are taken from their individual publications.
 - The websites <http://optimizizer.com/jobshop.php> run by Oleg V. Shylo, which holds many results on the JSSP as well.
-- Érick Taillard's page <http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html>
+- Éric Taillard's Page <http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html>
 
 ### Benchmark Instances
 
 - [OR-Library](http://people.brunel.ac.uk/~mastjjb/jeb/orlib/jobshopinfo.html) with the `abz*`. `la*`, `orb*`, `swv*`, and `yn*` instances
-- Oleg V. Shylo's page (http://optimizizer.com/DMU.php) with the `dmu*` instances
-- Érick Taillard's page <http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html> with the `ta*` instances
+- Oleg V. Shylo's website (http://optimizizer.com/DMU.php) with the `dmu*` instances
+- Éric Taillard's Page <http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html> with the `ta*` instances
 - A repository with instances of the JSSP can be found at <http://github.com/tamy0612/JSPLIB>.
 
 ## License
