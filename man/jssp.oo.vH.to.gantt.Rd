@@ -18,7 +18,7 @@ the input, it is automatically detected). By default, this is \code{1L},
 but sometimes you may want to use \code{0L}.}
 
 \item{get.inst.data}{a function obtaining the instance data for a given
-instance id, by default \link{jssp.get.insidxtance.data}}
+instance id, by default \link{jssp.get.instance.data}}
 }
 \value{
 the Gantt chart
