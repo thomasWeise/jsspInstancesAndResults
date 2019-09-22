@@ -32,7 +32,10 @@ jssp.evaluate.gantt <- function(gantt, inst.id,
             is.matrix(data$inst.data),
             nrow(data$inst.data) == data$inst.jobs,
             ncol(data$inst.data) == (2L * data$inst.machines),
-            identical(data$inst.machines, length(gantt)));
+            identical(data$inst.machines, length(gantt)),
+            is.integer(data$inst.opt.bound.lower),
+            is.finite(data$inst.opt.bound.lower),
+            data$inst.opt.bound.lower > 0L);
 
   min.job.id <- min(unlist(lapply(gantt, function(row) {
                     vapply(row, function(ops) {
@@ -79,6 +82,7 @@ jssp.evaluate.gantt <- function(gantt, inst.id,
   stopifnot(is.integer(makespan),
             is.finite(makespan),
             makespan > 0L,
-            makespan <= .Machine$integer.max);
+            makespan <= .Machine$integer.max,
+            makespan <= data$inst.opt.bound.lower);
   return(makespan);
 }
