@@ -125,7 +125,7 @@ jssp.ob.to.gantt <- function(data.ob, inst.id,
 #'   operation of the \code{n} jobs, and so on. So operation \code{i} is the
 #'   \code{k}'th operation of job \code{j}, where \code{k = ceil(i/n)} and
 #'   \code{j = i mod n}.
-#' @param data.oo.vH the operation-based representation of the solution
+#' @param data.oo the overall-order based representation of the solution
 #' @param inst.id the instance id
 #' @param min.job.id the integer minimum job id to be used in the output (for
 #'   the input, it is automatically detected). By default, this is \code{1L},
@@ -133,13 +133,13 @@ jssp.ob.to.gantt <- function(data.ob, inst.id,
 #' @param get.inst.data a function obtaining the instance data for a given
 #'   instance id, by default \link{jssp.get.instance.data}
 #' @return the Gantt chart
-#' @export jssp.oo.vH.to.gantt
-jssp.oo.vH.to.gantt <- function(data.oo.vH, inst.id,
+#' @export jssp.oo.to.gantt
+jssp.oo.to.gantt <- function(data.oo, inst.id,
                                 min.job.id=1L,
                                 get.inst.data=jssp.get.instance.data) {
-  stopifnot(is.integer(data.oo.vH),
-            is.vector(data.oo.vH),
-            all(is.finite(data.oo.vH)));
+  stopifnot(is.integer(data.oo),
+            is.vector(data.oo),
+            all(is.finite(data.oo)));
 
   instance <- get.inst.data(inst.id);
   stopifnot(is.list(instance),
@@ -149,18 +149,18 @@ jssp.oo.vH.to.gantt <- function(data.oo.vH, inst.id,
                   "inst.data") %in% names(instance)),
             identical(instance$inst.id, inst.id));
 
-  data.oo.vH <- as.integer((data.oo.vH - min(data.oo.vH)) + 1L);
-  stopifnot(length(data.oo.vH) == (instance$inst.jobs * instance$inst.machines),
+  data.oo <- as.integer((data.oo - min(data.oo)) + 1L);
+  stopifnot(length(data.oo) == (instance$inst.jobs * instance$inst.machines),
             all(vapply(seq.int(from=1L,
                                to=(instance$inst.jobs * instance$inst.machines)),
-                       function(i) sum(data.oo.vH == i) == 1L,
+                       function(i) sum(data.oo == i) == 1L,
                        FALSE)));
 
   job.index <- rep.int(0L, instance$inst.jobs);
   data.ob   <- integer(instance$inst.jobs * instance$inst.machines);
 
-  for(idx in seq_along(data.oo.vH)) {
-    i <- data.oo.vH[[idx]];
+  for(idx in seq_along(data.oo)) {
+    i <- data.oo[[idx]];
 
     op <- as.integer(ceiling(i/instance$inst.jobs));
     stopifnot(is.integer(op),
@@ -190,6 +190,53 @@ jssp.oo.vH.to.gantt <- function(data.oo.vH, inst.id,
                              min.job.id = min.job.id,
                              get.inst.data=function(x) {
                                stopifnot(identical(x, inst.id));
-                               instance });
+                               return(instance); });
+  result <- force(result);
+
+  return(result);
+}
+
+
+#' @title Transform a Solution Represented in the van-Hoorn Solution-Start
+#'   Method to a Gantt Chart
+#' @description The solution start file gives a matrix with row per per job and
+#'   a column per machine, the values in this matrix give the start times for
+#'   the operations. If the second row starts with a 10, this indicates that the
+#'   operation of job 2 on machine 1 starts at time 10.
+#' @param data.solution.start the solution-start representation
+#' @param inst.id the instance id
+#' @param min.job.id the integer minimum job id to be used in the output (for
+#'   the input, it is automatically detected). By default, this is \code{1L},
+#'   but sometimes you may want to use \code{0L}.
+#' @param get.inst.data a function obtaining the instance data for a given
+#'   instance id, by default \link{jssp.get.instance.data}
+#' @return the Gantt chart
+#' @export jssp.solution.start.to.gantt
+jssp.solution.start.to.gantt <- function(data.solution.start, inst.id,
+                                         min.job.id=1L,
+                                         get.inst.data=jssp.get.instance.data) {
+  instance <- get.inst.data(inst.id);
+  stopifnot(is.list(instance),
+            all(c("inst.id",
+                  "inst.machines",
+                  "inst.jobs") %in% names(instance)),
+            identical(instance$inst.id, inst.id));
+
+  data.solution.start <- unname(unlist(c(data.solution.start)));
+  stopifnot(is.integer(data.solution.start),
+            all(is.finite(data.solution.start)),
+            all(data.solution.start >= 0L));
+
+  data.ob <- unname(unlist(lapply(seq_len(instance$inst.jobs),
+                               function(i) rep(i, instance$inst.machines))));
+  data.ob <- data.ob[order(data.solution.start)];
+  result <- jssp.ob.to.gantt(data.ob=data.ob, inst.id=inst.id,
+                          min.job.id = min.job.id,
+                          get.inst.data = function(x) {
+                            stopifnot(identical(x, inst.id));
+                            return(instance);
+                          });
+  result <- force(result);
+# we need to do some more checks, but for now, that is ok
   return(result);
 }

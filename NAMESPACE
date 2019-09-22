@@ -3,4 +3,5 @@
 export(jssp.evaluate.gantt)
 export(jssp.get.instance.data)
 export(jssp.ob.to.gantt)
-export(jssp.oo.vH.to.gantt)
+export(jssp.oo.to.gantt)
+export(jssp.solution.start.to.gantt)
