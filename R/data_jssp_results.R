@@ -50,8 +50,8 @@
 #' \item{DG}{instances are presented disjunctive graph, schedules as digraphs and/or solutions are selections of edges, improvements are often done by modifying blocks on the critical path}
 #' \item{JB}{job-based: the jobs are assigned to machines in the order in which they occur in the string}
 #' \item{MB}{machine-based: the encoding is the order in which the machines are used as bottlenecks in a heuristic such as the Shifting Bottleneck Method}
-#' \item{OB}{operation-based: each job is represented by m genes with the same value and the chromosome is processed from front to end by assigning jobs to machines at the earliest starting times, following their occurence}
-#' \item{OO}{the overall order of all operations is given, infeasible solutions may occur and need to be discarted or repaired}
+#' \item{OB}{operation-based: each job is represented by \code{m} genes with the same value and the chromosome is processed from front to end by assigning jobs to machines at the earliest starting times, following their occurence order. See \link{jssp.ob.to.gantt}}
+#' \item{OO}{the overall order of all operations is given, infeasible solutions may occur and need to be discarted or repaired. See \link{jssp.oo.to.gantt}}
 #' \item{PL}{priority-list: the job order for each machine is given and infeasible schedules are discarted or repaired if needed}
 #' \item{PM}{a priority matrix where each job-machine combination has a priority value from which the feasible schedules are constructed}
 #' \item{PR}{priority-rules: priorities of dispatching rules to be applied, e.g., in the Giffler and Thompson algorithm}
@@ -59,7 +59,7 @@
 #' }}
 #' \item{algo.operator.unary}{the unary operator used in the algorithm, if any, where the following abbreviations can be used
 #' \describe{
-#' \item{insert}{extracts one value and inserts it somewhere else, shifting the other values appropriately}
+#' \item{insert}{extracts one value and inserts it somewhere else, shifting the other values appropriately (also called Position-based Mutation, PBM)}
 #' \item{N1}{neighborhood function N1 (Van Laarhoven et al., 1992) that performs the permutation of pairs of adjacent operations which belong to the critical path generated in the individual}
 #' \item{N4}{N4 critical operation move operator (Grabowski et al., 1988; Blazewicz et al., 1996)}
 #' \item{N5}{N5 critical path-based move operator (Nowicki and Smutnicki, 1996, NS1996AFTSAFTJSP)}

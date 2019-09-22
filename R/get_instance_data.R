@@ -8,15 +8,18 @@ jssp.get.instance.data <- function(inst.id) {
   stopifnot(is.character(inst.id),
             length(inst.id) == 1L,
             nchar(inst.id) > 0L);
-  found <- (names(jssp.instance.data) == inst.id);
-  stopifnot(length(found) == length(jssp.instance.data),
+  .data <- jsspInstancesAndResults::jssp.instance.data;
+  stopifnot(is.list(.data),
+            length(.data) > 0L);
+  found <- (names(.data) == inst.id);
+  stopifnot(length(found) == length(.data),
             sum(found) == 1L);
   found <- which(found);
   stopifnot(is.integer(found) == 1L,
             is.finite(found),
             found >= 1L,
-            found <= length(jssp.instance.data));
-  data <- jssp.instance.data[[found]];
+            found <= length(.data));
+  data <- .data[[found]];
   data <- force(data);
   stopifnot(identical(data$inst.id, inst.id),
             is.integer(data$inst.machines),
