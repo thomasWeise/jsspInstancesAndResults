@@ -17,3 +17,11 @@ Depends: R (>= 3.5.0)
 ByteCompile: true
 LazyData: true
 RoxygenNote: 6.1.1
+Collate: 
+    'data_jssp_bibliography.R'
+    'data_jssp_instance_data.R'
+    'data_jssp_instances.R'
+    'data_jssp_results.R'
+    'get_instance_data.R'
+    'evaluate_gantt.R'
+    'to_gantt.R'

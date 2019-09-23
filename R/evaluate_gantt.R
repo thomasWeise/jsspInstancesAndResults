@@ -10,6 +10,7 @@
 #'   instance id, by default \link{jssp.get.instance.data}
 #' @return the evaluation result
 #' @export jssp.evaluate.gantt
+#' @include get_instance_data.R
 jssp.evaluate.gantt <- function(gantt, inst.id,
                                 get.inst.data=jssp.get.instance.data) {
   stopifnot(is.character(inst.id),

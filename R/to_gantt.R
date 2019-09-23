@@ -14,6 +14,7 @@
 #'   instance id, by default \link{jssp.get.instance.data}
 #' @return the Gantt chart
 #' @export jssp.ob.to.gantt
+#' @include get_instance_data.R
 jssp.ob.to.gantt <- function(data.ob, inst.id,
                              min.job.id=1L,
                              get.inst.data=jssp.get.instance.data) {
@@ -135,8 +136,8 @@ jssp.ob.to.gantt <- function(data.ob, inst.id,
 #' @return the Gantt chart
 #' @export jssp.oo.to.gantt
 jssp.oo.to.gantt <- function(data.oo, inst.id,
-                                min.job.id=1L,
-                                get.inst.data=jssp.get.instance.data) {
+                             min.job.id=1L,
+                             get.inst.data=jssp.get.instance.data) {
   stopifnot(is.integer(data.oo),
             is.vector(data.oo),
             all(is.finite(data.oo)));
@@ -196,6 +197,52 @@ jssp.oo.to.gantt <- function(data.oo, inst.id,
   return(result);
 }
 
+# transform the input data array to either a matrix or a vector,
+# regardless whether it is given as matrix, data frame, or vector
+# all vectors are presented row-by-row, meaning first all elements
+# of the first row, then all elements of the second row, and so on
+.make.matrix.or.vector <- function(data, nrow, ncol, to.vector=FALSE,
+                                   normalize.by.min=FALSE) {
+  stopifnot(is.integer(nrow),
+            length(nrow) == 1L,
+            is.finite(nrow),
+            is.integer(ncol),
+            length(ncol) == 1L,
+            is.finite(ncol),
+            is.logical(to.vector),
+            length(to.vector) == 1L,
+            !is.na(to.vector),
+            is.matrix(data) || is.data.frame(data) || is.vector(data) || is.list(data));
+
+  data.n <- unname(unlist(c(data)));
+  stopifnot(is.integer(data.n),
+            all(is.finite(data.n)),
+            length(data.n) == (nrow*ncol));
+
+  if(normalize.by.min) {
+    data.n <- as.integer(data.n - (min(data.n)));
+    stopifnot(is.integer(data.n),
+              all(is.finite(data.n)),
+              all(data.n >= 0L),
+              length(data.n) == (nrow*ncol));
+  }
+
+  if(is.matrix(data) || is.data.frame(data)) {
+    data.n <- matrix(data.n, nrow=nrow, ncol=ncol, byrow=FALSE);
+  } else {
+    data.n <- matrix(data.n, nrow=nrow, ncol=ncol, byrow=TRUE);
+  }
+  stopifnot(nrow(data.n) == nrow,
+            ncol(data.n) == ncol);
+  if(to.vector) {
+    data.n <- unname(unlist(c(lapply(seq_len(nrow), function(i) data.n[i, ]))));
+    stopifnot(length(data.n) == (nrow*ncol));
+  }
+
+  data.n <- force(data.n);
+  data.n <- do.call(force, list(data.n));
+  return(data.n);
+}
 
 #' @title Transform a Solution Represented in the van-Hoorn Solution-Start
 #'   Method to a Gantt Chart
@@ -222,7 +269,11 @@ jssp.solution.start.to.gantt <- function(data.solution.start, inst.id,
                   "inst.jobs") %in% names(instance)),
             identical(instance$inst.id, inst.id));
 
-  data.solution.start <- unname(unlist(c(data.solution.start)));
+  data.solution.start <- .make.matrix.or.vector(data=data.solution.start,
+                                                nrow=instance$inst.jobs,
+                                                ncol=instance$inst.machines,
+                                                to.vector = TRUE,
+                                                normalize.by.min = FALSE);
   stopifnot(is.integer(data.solution.start),
             all(is.finite(data.solution.start)),
             all(data.solution.start >= 0L));
