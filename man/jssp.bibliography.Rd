@@ -21,7 +21,9 @@ the results for the Job Shop Scheduling Problem.
 }
 \examples{
 data(jssp.bibliography)
+\dontrun{
 print(jssp.bibliography)
+}
 }
 \keyword{JSSP,}
 \keyword{Job}

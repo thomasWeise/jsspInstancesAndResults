@@ -22,7 +22,9 @@ provide the instances themselves.
 }
 \examples{
 data(jssp.instance.data)
+\dontrun{
 print(jssp.instance.data)
+}
 }
 \keyword{JSSP,}
 \keyword{Job}

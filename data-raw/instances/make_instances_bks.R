@@ -88,7 +88,9 @@ writeLines(text=unname(unlist(c(
   "#'",
   "#' @examples",
   "#' data(jssp.instances)",
+  "#' \\dontrun{",
   "#' print(jssp.instances)",
+  "#' }",
   "\"jssp.instances\""))),
   con=jssp.instances.docu);
 

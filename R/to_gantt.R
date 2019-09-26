@@ -299,32 +299,33 @@ jssp.solution.start.to.gantt <- function(data.solution.start, inst.id,
                                                 normalize.by.min = TRUE);
 
   for(job in seq_len(instance$inst.jobs)) {
-    job.id <- (job + min.job.id);
+    job.id <- (job - 1L + min.job.id);
     for(machine in seq_len(instance$inst.machines)) {
       start <- data.solution.start[job, machine];
-    }
-    row <- result[[machine]];
-    real <- -1L;
-    for(l in row) {
-      stopifnot(length(l) == 3L,
-                is.integer(l$job),
-                length(l$job) == 1L,
-                is.finite(l$job),
-                l$job >= min.job.id,
-                is.integer(l$start),
-                length(l$start) == 1L,
-                is.finite(l$start),
-                l$start >= 0L,
-                is.integer(l$end),
-                length(l$end) == 1L,
-                is.finite(l$end),
-                l$end >= l$start);
-      if(l$job == job.id) {
-        stopifnot(real == -1L);
-        real <- l$start;
+
+      row <- result[[machine]];
+      real <- -1L;
+      for(l in row) {
+        stopifnot(length(l) == 3L,
+                  is.integer(l$job),
+                  length(l$job) == 1L,
+                  is.finite(l$job),
+                  l$job >= min.job.id,
+                  is.integer(l$start),
+                  length(l$start) == 1L,
+                  is.finite(l$start),
+                  l$start >= 0L,
+                  is.integer(l$end),
+                  length(l$end) == 1L,
+                  is.finite(l$end),
+                  l$end >= l$start);
+        if(l$job == job.id) {
+          stopifnot(real == -1L);
+          real <- l$start;
+        }
       }
+      stopifnot(real == start);
     }
-    stopifnot(real == start);
   }
 
   return(result);

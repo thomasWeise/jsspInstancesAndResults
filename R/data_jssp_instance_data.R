@@ -21,5 +21,7 @@
 #'
 #' @examples
 #' data(jssp.instance.data)
+#' \dontrun{
 #' print(jssp.instance.data)
+#' }
 "jssp.instance.data"

@@ -244,7 +244,9 @@ writeLines(text=unname(unlist(c(
   "#'",
   "#' @examples",
   "#' data(jssp.results)",
+  "#' \\dontrun{",
   "#' print(jssp.results)",
+  "#' }",
   "\"jssp.results\""))),
   con=jssp.results.docu);
 

@@ -250,5 +250,7 @@
 #'
 #' @examples
 #' data(jssp.results)
+#' \dontrun{
 #' print(jssp.results)
+#' }
 "jssp.results"

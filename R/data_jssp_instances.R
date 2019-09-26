@@ -106,5 +106,7 @@
 #'
 #' @examples
 #' data(jssp.instances)
+#' \dontrun{
 #' print(jssp.instances)
+#' }
 "jssp.instances"

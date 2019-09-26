@@ -20,5 +20,7 @@
 #'
 #' @examples
 #' data(jssp.bibliography)
+#' \dontrun{
 #' print(jssp.bibliography)
+#' }
 "jssp.bibliography"

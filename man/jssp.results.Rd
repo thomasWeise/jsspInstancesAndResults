@@ -144,7 +144,9 @@ All literature referenced, on the other hand, can be found in \link{jssp.bibliog
 }
 \examples{
 data(jssp.results)
+\dontrun{
 print(jssp.results)
+}
 }
 \references{
 Abdel-Kader RF (2018). “An Improved PSO Algorithm with Genetic and Neighborhood-Based Diversity Operators for the Job Shop Scheduling Problem.” Applied Artificial Intelligence - An International Journal, 32(5), 433-462. doi:\href{http://doi.org/10.1080/08839514.2018.1481903}{10.1080/08839514.2018.1481903}.

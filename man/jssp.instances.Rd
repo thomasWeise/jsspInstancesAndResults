@@ -28,7 +28,9 @@ The benchmark instances themselves are provided in \link{jssp.instance.data}.
 }
 \examples{
 data(jssp.instances)
+\dontrun{
 print(jssp.instances)
+}
 }
 \references{
 Adams J, Balas E, Zawack D (1988). “The Shifting Bottleneck Procedure for Job Shop Scheduling.” Management Science, 34(3), 391-401. doi:\href{http://doi.org/10.1287/mnsc.34.3.391}{10.1287/mnsc.34.3.391}.

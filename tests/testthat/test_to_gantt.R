@@ -5,10 +5,10 @@ context("jssp.to.gantt");
 data("jssp.instance.data");
 
 test_that("Test the to-Gantt methods ft06", {
-  data.oo <- c(1L,3L,2L,9L,4L,8L,6L,10L,15L,12L,5L,14L,11L,21L,16L,18L,7L,22L,17L,13L,27L,28L,20L,24L,23L,19L,33L,25L,30L,26L,36L,29L,32L,35L,31L,34L);
   inst.id <- "ft06";
   opt.f <- 55L;
 
+  data.oo <- c(1L,3L,2L,9L,4L,8L,6L,10L,15L,12L,5L,14L,11L,21L,16L,18L,7L,22L,17L,13L,27L,28L,20L,24L,23L,19L,33L,25L,30L,26L,36L,29L,32L,35L,31L,34L);
   expect_identical(jssp.evaluate.gantt(
     jssp.oo.to.gantt(data.oo, inst.id),
     inst.id), opt.f);
@@ -22,10 +22,10 @@ test_that("Test the to-Gantt methods ft06", {
 
 
 test_that("Test the to-Gantt methods orb07", {
-  data.oo <- c(2L,8L,10L,12L,7L,20L,18L,1L,6L,11L,17L,9L,28L,5L,30L,19L,21L,38L,22L,3L,40L,15L,48L,13L,31L,27L,37L,16L,58L,41L,50L,32L,25L,23L,47L,4L,68L,60L,29L,39L,51L,26L,42L,35L,33L,49L,57L,70L,36L,45L,61L,14L,55L,67L,78L,43L,71L,88L,53L,52L,80L,77L,59L,63L,24L,81L,46L,87L,90L,100L,73L,62L,65L,56L,34L,98L,44L,75L,69L,66L,79L,54L,72L,83L,89L,82L,76L,64L,91L,74L,93L,99L,86L,92L,84L,85L,97L,96L,95L,94L);
   inst.id <- "orb07";
   opt.f <- 397L;
 
+  data.oo <- c(2L,8L,10L,12L,7L,20L,18L,1L,6L,11L,17L,9L,28L,5L,30L,19L,21L,38L,22L,3L,40L,15L,48L,13L,31L,27L,37L,16L,58L,41L,50L,32L,25L,23L,47L,4L,68L,60L,29L,39L,51L,26L,42L,35L,33L,49L,57L,70L,36L,45L,61L,14L,55L,67L,78L,43L,71L,88L,53L,52L,80L,77L,59L,63L,24L,81L,46L,87L,90L,100L,73L,62L,65L,56L,34L,98L,44L,75L,69L,66L,79L,54L,72L,83L,89L,82L,76L,64L,91L,74L,93L,99L,86L,92L,84L,85L,97L,96L,95L,94L);
   expect_identical(jssp.evaluate.gantt(
     jssp.oo.to.gantt(data.oo, inst.id),
     inst.id), opt.f);
