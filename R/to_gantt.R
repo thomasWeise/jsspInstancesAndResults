@@ -248,8 +248,9 @@ jssp.oo.to.gantt <- function(data.oo, inst.id,
 #'   Method to a Gantt Chart
 #' @description The solution start file gives a matrix with row per per job and
 #'   a column per machine, the values in this matrix give the start times for
-#'   the operations. If the second row starts with a 10, this indicates that the
-#'   operation of job 2 on machine 1 starts at time 10.
+#'   the operations. If the second row starts with a \code{10}, this indicates
+#'   that the operation of job \code{2} on machine \code{1} starts at time
+#'   \code{10}.
 #' @param data.solution.start the solution-start representation
 #' @param inst.id the instance id
 #' @param min.job.id the integer minimum job id to be used in the output (for
@@ -288,6 +289,43 @@ jssp.solution.start.to.gantt <- function(data.solution.start, inst.id,
                             return(instance);
                           });
   result <- force(result);
-# we need to do some more checks, but for now, that is ok
+
+# now validate
+
+  data.solution.start <- .make.matrix.or.vector(data=data.solution.start,
+                                                nrow=instance$inst.jobs,
+                                                ncol=instance$inst.machines,
+                                                to.vector = FALSE,
+                                                normalize.by.min = TRUE);
+
+  for(job in seq_len(instance$inst.jobs)) {
+    job.id <- (job + min.job.id);
+    for(machine in seq_len(instance$inst.machines)) {
+      start <- data.solution.start[job, machine];
+    }
+    row <- result[[machine]];
+    real <- -1L;
+    for(l in row) {
+      stopifnot(length(l) == 3L,
+                is.integer(l$job),
+                length(l$job) == 1L,
+                is.finite(l$job),
+                l$job >= min.job.id,
+                is.integer(l$start),
+                length(l$start) == 1L,
+                is.finite(l$start),
+                l$start >= 0L,
+                is.integer(l$end),
+                length(l$end) == 1L,
+                is.finite(l$end),
+                l$end >= l$start);
+      if(l$job == job.id) {
+        stopifnot(real == -1L);
+        real <- l$start;
+      }
+    }
+    stopifnot(real == start);
+  }
+
   return(result);
 }

@@ -26,6 +26,7 @@ the Gantt chart
 \description{
 The solution start file gives a matrix with row per per job and
   a column per machine, the values in this matrix give the start times for
-  the operations. If the second row starts with a 10, this indicates that the
-  operation of job 2 on machine 1 starts at time 10.
+  the operations. If the second row starts with a \code{10}, this indicates
+  that the operation of job \code{2} on machine \code{1} starts at time
+  \code{10}.
 }
