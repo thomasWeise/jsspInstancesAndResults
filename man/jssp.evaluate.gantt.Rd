@@ -17,7 +17,11 @@ jssp.evaluate.gantt(gantt, inst.id,
 instance id, by default \link{jssp.get.instance.data}}
 }
 \value{
-the evaluation result
+the evaluation result, i.e., a list with the following components:
+\describe{
+\item{gantt}{the canonicalized gantt chart (with zero-duration jobs removed, if any)}
+\item{makespan}{the makespan}
+}
 }
 \description{
 This function accepts an instance id and a Gantt chart and

@@ -8,7 +8,11 @@
 #' @param inst.id the instance id
 #' @param get.inst.data a function obtaining the instance data for a given
 #'   instance id, by default \link{jssp.get.instance.data}
-#' @return the evaluation result
+#' @return the evaluation result, i.e., a list with the following components:
+#' \describe{
+#' \item{gantt}{the canonicalized gantt chart (with zero-duration jobs removed, if any)}
+#' \item{makespan}{the makespan}
+#' }
 #' @export jssp.evaluate.gantt
 #' @include get_instance_data.R
 jssp.evaluate.gantt <- function(gantt, inst.id,
@@ -38,6 +42,7 @@ jssp.evaluate.gantt <- function(gantt, inst.id,
             is.finite(data$inst.opt.bound.lower),
             data$inst.opt.bound.lower > 0L);
 
+# compute the minimum job id
   min.job.id <- min(unlist(lapply(gantt, function(row) {
                     vapply(row, function(ops) {
                       job <- ops$job;
@@ -50,10 +55,58 @@ jssp.evaluate.gantt <- function(gantt, inst.id,
             min.job.id >= 0L,
             is.integer(min.job.id));
 
+# delete all zero-duration jobs
+  gantt <- lapply(seq_along(gantt),
+                  function(i) {
+                    machine   <- gantt[[i]];
+
+                    sel <- vapply(seq_along(machine), function(j) {
+                      x <- machine[[j]];
+                      jj <- x$job;
+                      stopifnot(is.integer(jj),
+                                is.finite(jj),
+                                jj >= min.job.id);
+                      jj <- as.integer(jj - min.job.id + 1L);
+                      stopifnot(jj > 0L,
+                                jj <= data$inst.jobs,
+                                is.integer(x$start),
+                                is.finite(x$start),
+                                x$start >= 0L,
+                                is.integer(x$end),
+                                is.finite(x$end),
+                                x$end >= x$start);
+                      duration <- (x$end - x$start);
+                      stopifnot(is.integer(duration),
+                                is.finite(duration),
+                                duration >= 0L);
+
+                      jobdata <- data$inst.data[jj,];
+                      mi <- i - 1L;
+                      k <- which(jobdata[((2L*seq_len(data$inst.machines))-1L)] == mi);
+                      stopifnot(is.integer(k),
+                                length(k) == 1L,
+                                k > 0L,
+                                jobdata[((k*2L)-1L)] == mi,
+                                jobdata[(k*2L)] == duration);
+                      return(duration > 0L);
+                    }, FALSE);
+
+                    stopifnot(is.logical(sel),
+                              all(!is.na(sel)),
+                              any(sel));
+                    machine <- machine[sel];
+                    stopifnot(length(machine) > 0L);
+                    return(machine);
+                  });
+
+# ok, all jobs in gantt chart have the right duration
+
+# compute the makespan
   makespan <- -1L;
   for(machine.i in seq_along(gantt)) {
     machine <- gantt[[machine.i]];
-    stopifnot(length(machine) == data$inst.jobs);
+    stopifnot(length(machine) > 0L,
+              length(machine) <= data$inst.jobs);
     prev.end <- -1L;
     for(job in machine) {
       stopifnot(identical(c("job", "start", "end"), names(job)),
@@ -72,7 +125,6 @@ jssp.evaluate.gantt <- function(gantt, inst.id,
       prev.end <- job$end;
       prev.end <- force(prev.end);
       prev.end <- do.call(force, list(prev.end));
-      duration <- job$end - job$start;
     }
 
     makespan <- max(makespan, prev.end);
@@ -84,6 +136,11 @@ jssp.evaluate.gantt <- function(gantt, inst.id,
             is.finite(makespan),
             makespan > 0L,
             makespan <= .Machine$integer.max,
-            makespan <= data$inst.opt.bound.lower);
-  return(makespan);
+            makespan >= data$inst.opt.bound.lower);
+
+# make the result
+  result <- list(gantt=gantt,
+                 makespan=makespan);
+  result <- force(result);
+  return(result);
 }
