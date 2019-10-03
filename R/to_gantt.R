@@ -12,9 +12,12 @@
 #'   but sometimes you may want to use \code{0L}.
 #' @param get.inst.data a function obtaining the instance data for a given
 #'   instance id, by default \link{jssp.get.instance.data}
-#' @return the Gantt chart
+#' @return the canonicalized and evaluated Gantt chart, see
+#'   \link{jssp.evaluate.gantt}
+#' @seealso jssp.evaluate.gantt
 #' @export jssp.ob.to.gantt
 #' @include get_instance_data.R
+#' @include evaluate_gantt.R
 jssp.ob.to.gantt <- function(data.ob, inst.id,
                              min.job.id=1L,
                              get.inst.data=jssp.get.instance.data) {
@@ -114,7 +117,15 @@ jssp.ob.to.gantt <- function(data.ob, inst.id,
               is.finite(i));
   }
 
-  return(gantt);
+  result <- jssp.evaluate.gantt(gantt,
+                       inst.id,
+                       function(name) {
+                         stopifnot(identical(inst.id, name));
+                         return(instance);
+                       });
+  result <- force(result);
+
+  return(result);
 }
 
 #' @title Transform a Solution Represented in the van-Hoorn Version of \code{OO}
@@ -133,7 +144,10 @@ jssp.ob.to.gantt <- function(data.ob, inst.id,
 #'   but sometimes you may want to use \code{0L}.
 #' @param get.inst.data a function obtaining the instance data for a given
 #'   instance id, by default \link{jssp.get.instance.data}
-#' @return the Gantt chart
+#' @return the canonicalized and evaluated Gantt chart, see
+#'   \link{jssp.evaluate.gantt}
+#' @seealso jssp.evaluate.gantt
+#' @include evaluate_gantt.R
 #' @export jssp.oo.to.gantt
 jssp.oo.to.gantt <- function(data.oo, inst.id,
                              min.job.id=1L,
@@ -258,8 +272,11 @@ jssp.oo.to.gantt <- function(data.oo, inst.id,
 #'   but sometimes you may want to use \code{0L}.
 #' @param get.inst.data a function obtaining the instance data for a given
 #'   instance id, by default \link{jssp.get.instance.data}
-#' @return the Gantt chart
+#' @return the canonicalized and evaluated Gantt chart, see
+#'   \link{jssp.evaluate.gantt}
+#' @seealso jssp.evaluate.gantt
 #' @export jssp.solution.start.to.gantt
+#' @include evaluate_gantt.R
 jssp.solution.start.to.gantt <- function(data.solution.start, inst.id,
                                          min.job.id=1L,
                                          get.inst.data=jssp.get.instance.data) {
@@ -282,12 +299,13 @@ jssp.solution.start.to.gantt <- function(data.solution.start, inst.id,
   data.ob <- unname(unlist(lapply(seq_len(instance$inst.jobs),
                                function(i) rep(i, instance$inst.machines))));
   data.ob <- data.ob[order(data.solution.start)];
+  inst.f <- function(x) {
+    stopifnot(identical(x, inst.id));
+    return(instance);
+  };
   result <- jssp.ob.to.gantt(data.ob=data.ob, inst.id=inst.id,
-                          min.job.id = min.job.id,
-                          get.inst.data = function(x) {
-                            stopifnot(identical(x, inst.id));
-                            return(instance);
-                          });
+                             min.job.id = min.job.id,
+                             get.inst.data = inst.f)$gantt;
   result <- force(result);
 
 # now validate
@@ -328,6 +346,8 @@ jssp.solution.start.to.gantt <- function(data.solution.start, inst.id,
     }
   }
 
+  result <- jssp.evaluate.gantt(result, inst.id, inst.f);
+  result <- force(result);
   return(result);
 }
 
@@ -346,8 +366,11 @@ jssp.solution.start.to.gantt <- function(data.solution.start, inst.id,
 #'   but sometimes you may want to use \code{0L}.
 #' @param get.inst.data a function obtaining the instance data for a given
 #'   instance id, by default \link{jssp.get.instance.data}
-#' @return the Gantt chart
+#' @return the canonicalized and evaluated Gantt chart, see
+#'   \link{jssp.evaluate.gantt}
+#' @seealso jssp.evaluate.gantt
 #' @export jssp.pl.to.gantt
+#' @include evaluate_gantt.R
 jssp.pl.to.gantt <- function(data.pl, inst.id,
                              min.job.id=1L,
                              get.inst.data=jssp.get.instance.data) {
@@ -472,5 +495,12 @@ jssp.pl.to.gantt <- function(data.pl, inst.id,
     stopifnot(total >= 0L);
   }
 
-  return(gantt);
+  result <- jssp.evaluate.gantt(gantt,
+                                inst.id,
+                                function(name) {
+                                  stopifnot(identical(name, inst.id));
+                                  return(instance);
+                                });
+  result <- force(result);
+  return(result);
 }

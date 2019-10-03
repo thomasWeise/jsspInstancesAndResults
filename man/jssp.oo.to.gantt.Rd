@@ -21,7 +21,8 @@ but sometimes you may want to use \code{0L}.}
 instance id, by default \link{jssp.get.instance.data}}
 }
 \value{
-the Gantt chart
+the canonicalized and evaluated Gantt chart, see
+  \link{jssp.evaluate.gantt}
 }
 \description{
 A solution in the van-Hoorn version of \code{OO} is translated
@@ -31,4 +32,7 @@ A solution in the van-Hoorn version of \code{OO} is translated
   operation of the \code{n} jobs, and so on. So operation \code{i} is the
   \code{k}'th operation of job \code{j}, where \code{k = ceil(i/n)} and
   \code{j = i mod n}.
+}
+\seealso{
+jssp.evaluate.gantt
 }

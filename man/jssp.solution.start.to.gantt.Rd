@@ -21,7 +21,8 @@ but sometimes you may want to use \code{0L}.}
 instance id, by default \link{jssp.get.instance.data}}
 }
 \value{
-the Gantt chart
+the canonicalized and evaluated Gantt chart, see
+  \link{jssp.evaluate.gantt}
 }
 \description{
 The solution start file gives a matrix with row per per job and
@@ -29,4 +30,7 @@ The solution start file gives a matrix with row per per job and
   the operations. If the second row starts with a \code{10}, this indicates
   that the operation of job \code{2} on machine \code{1} starts at time
   \code{10}.
+}
+\seealso{
+jssp.evaluate.gantt
 }

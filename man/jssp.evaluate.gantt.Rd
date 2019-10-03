@@ -2,14 +2,17 @@
 % Please edit documentation in R/evaluate_gantt.R
 \name{jssp.evaluate.gantt}
 \alias{jssp.evaluate.gantt}
-\title{Check and Evaluate a Gantt Chart, i.e., A Candidate Solution for a
-  Given JSSP Instance}
+\title{Check, Evaluate, and Canonicalize a Gantt Chart, i.e., A Candidate
+  Solution for a Given JSSP Instance}
 \usage{
 jssp.evaluate.gantt(gantt, inst.id,
   get.inst.data = jssp.get.instance.data)
 }
 \arguments{
-\item{gantt}{the gantt chart}
+\item{gantt}{the gantt chart: a list that contains one sub-list for each
+machine. The machine-sub-list, in turn, contains one entry for each job,
+with at least the three elements \code{job}, \code{start}, and \code{end}.
+These entries must be ordered ascendingly according to \code{start}.}
 
 \item{inst.id}{the instance id}
 
@@ -21,6 +24,13 @@ the evaluation result, i.e., a list with the following components:
 \describe{
 \item{gantt}{the canonicalized gantt chart (with zero-duration jobs removed, if any)}
 \item{makespan}{the makespan}
+\item{flowtime}{the flow time}
+\item{job.start}{for each job, the beginning time of the first sub job}
+\item{job.end}{for each job, the end time of the last sub job}
+\item{job.time}{the total runtime of the job (not including waiting time, only raw processing time), which follows directly from the instance}
+\item{machine.start}{for each machine, the starting time of the first sub-job executed on the machine}
+\item{machine.end}{for each machine, the completion time of the last sub-job executed on the machine}
+\item{machine.time}{the total working time of the machine (not including waiting time, only raw processing time), which follows directly from the instance}
 }
 }
 \description{

@@ -20,7 +20,8 @@ but sometimes you may want to use \code{0L}.}
 instance id, by default \link{jssp.get.instance.data}}
 }
 \value{
-the Gantt chart
+the canonicalized and evaluated Gantt chart, see
+  \link{jssp.evaluate.gantt}
 }
 \description{
 A solution in the \code{OB} (operation-based) representation is
@@ -29,4 +30,7 @@ A solution in the \code{OB} (operation-based) representation is
   at the earliest starting times, following their occurence order. This
   solution is then transformed to a Gantt chart à la
   \link{jssp.evaluate.gantt}.
+}
+\seealso{
+jssp.evaluate.gantt
 }

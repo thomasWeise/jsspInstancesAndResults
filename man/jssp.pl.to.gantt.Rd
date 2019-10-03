@@ -21,10 +21,14 @@ but sometimes you may want to use \code{0L}.}
 instance id, by default \link{jssp.get.instance.data}}
 }
 \value{
-the Gantt chart
+the canonicalized and evaluated Gantt chart, see
+  \link{jssp.evaluate.gantt}
 }
 \description{
 In the priority-list (\code{PL}) representation, the job order
   for each machine is given. There is one line per machine and for each
   machine the orders of the jobs.
+}
+\seealso{
+jssp.evaluate.gantt
 }
