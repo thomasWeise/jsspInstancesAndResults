@@ -114,6 +114,14 @@ jssp.evaluate.gantt <- function(gantt, inst.id,
   machine.end   <- -machine.start;
   machine.times <- as.integer(rep.int(0L, machines));
 
+  subjobs.done <- as.integer(rep.int(0L, jobs));
+  job.intervals <- lapply(seq_len(jobs),
+                          function(i)
+                            lapply(seq_len(machines),
+                                   function(j) c(.Machine$integer.max,
+                                                 .Machine$integer.max)
+                          ));
+
 # process the gantt chart: iterate over machines
   for(machine.id in seq_len(machines)) {
     machine.data <- gantt[[machine.id]];
@@ -142,6 +150,15 @@ jssp.evaluate.gantt <- function(gantt, inst.id,
                 is.finite(job.id),
                 job.id >= 1L,
                 job.id <= jobs);
+
+      .subjobs.done <- subjobs.done[[job.id]];
+      stopifnot(is.integer(.subjobs.done),
+                is.finite(.subjobs.done),
+                .subjobs.done >= 0L,
+                .subjobs.done < machines);
+      .subjobs.done <- .subjobs.done + 1L;
+      subjobs.done[[job.id]] <- .subjobs.done;
+
       start <- job.data[[2L]];
       stopifnot(is.integer(start),
                 !is.na(start),
@@ -152,6 +169,10 @@ jssp.evaluate.gantt <- function(gantt, inst.id,
                 !is.na(end),
                 is.finite(end),
                 end >= start);
+
+      job.intervals[[job.id]][[.subjobs.done]][[1L]] <- start;
+      job.intervals[[job.id]][[.subjobs.done]][[2L]] <- end;
+
       duration <- (end - start);
       stopifnot(is.integer(duration),
                 is.finite(duration),
@@ -249,7 +270,26 @@ jssp.evaluate.gantt <- function(gantt, inst.id,
             all( (job.end - job.start) >= job.times),
             all(job.times == vapply(seq_len(jobs),
                                     function(i) sum(job.durations.on.machine[i,]),
-                                    NA_integer_)));
+                                    NA_integer_)),
+            all(is.finite(unlist(job.intervals))));
+
+# check that no sub-jobs of one job intersect
+  for(job.interval in job.intervals) {
+    job.interval <- job.interval[order(vapply(job.interval,
+                                              function(ij) ij[[2L]],
+                                              NA_integer_),
+                                       vapply(job.interval,
+                                              function(ij) ij[[1L]],
+                                              NA_integer_))];
+    interval.2 <- job.interval[[1L]];
+    for(i in seq.int(from=2L, to=machines)) {
+      interval.1 <- interval.2;
+      interval.2 <- job.interval[[i]];
+      stopifnot(interval.1[[1L]] <= interval.1[[2L]],
+                interval.1[[2L]] <= interval.2[[1L]],
+                interval.2[[1L]] <= interval.2[[2L]]);
+    }
+  }
 
 # compute metrics
   makespan <- as.integer(max(job.end) - min(job.start));
