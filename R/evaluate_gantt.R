@@ -1,4 +1,34 @@
 
+# get the job durations on the machines
+.get.job.durations.on.machine <- function(jobs, machines, job.machine.data) {
+
+  # compute the durations on the machines
+  job.durations.on.machine <- matrix(data=NA_integer_,
+                                     nrow=jobs,
+                                     ncol=machines);
+  for(job in seq_len(jobs)) {
+    for(machine.index in seq_len(machines)) {
+      machine <- job.machine.data[job, ((machine.index*2L) - 1L)];
+      stopifnot(machine >= 0L,
+                machine < machines,
+                is.integer(machine),
+                is.finite(machine));
+      time <- job.machine.data[job, machine.index*2L];
+      stopifnot(time >= 0L,
+                is.integer(time),
+                is.finite(time));
+      machine <- as.integer(machine + 1L);
+      stopifnot(is.na(job.durations.on.machine[job, machine]));
+      job.durations.on.machine[job, machine] <- time;
+      job.durations.on.machine[job, machine] <- force(job.durations.on.machine[job, machine]);
+    }
+  }
+  job.durations.on.machine <- force(job.durations.on.machine);
+  stopifnot(!any(is.na(job.durations.on.machine)));
+  return(job.durations.on.machine);
+}
+
+
 #' @title Check, Evaluate, and Canonicalize a Gantt Chart, i.e., A Candidate
 #'   Solution for a Given JSSP Instance
 #' @description This function accepts an instance id and a Gantt chart and
@@ -74,27 +104,7 @@ jssp.evaluate.gantt <- function(gantt, inst.id,
             is.integer(min.job.id));
 
 # compute the durations on the machines
-  job.durations.on.machine <- matrix(data=NA_integer_,
-                                     nrow=jobs,
-                                     ncol=machines);
-  for(job in seq_len(jobs)) {
-    for(machine.index in seq_len(machines)) {
-      machine <- job.machine.data[job, ((machine.index*2L) - 1L)];
-      stopifnot(machine >= 0L,
-                machine < machines,
-                is.integer(machine),
-                is.finite(machine));
-      time <- job.machine.data[job, machine.index*2L];
-      stopifnot(time >= 0L,
-                is.integer(time),
-                is.finite(time));
-      machine <- as.integer(machine + 1L);
-      stopifnot(is.na(job.durations.on.machine[job, machine]));
-      job.durations.on.machine[job, machine] <- time;
-      job.durations.on.machine[job, machine] <- force(job.durations.on.machine[job, machine]);
-    }
-  }
-  stopifnot(!any(is.na(job.durations.on.machine)));
+  job.durations.on.machine <- .get.job.durations.on.machine(jobs, machines, job.machine.data);
 
 # the status vectors to fill
   job.start <- as.integer(rep.int(.Machine$integer.max, jobs));
@@ -125,7 +135,7 @@ jssp.evaluate.gantt <- function(gantt, inst.id,
       stopifnot(is.integer(job.id),
                 !is.na(job.id),
                 is.finite(job.id),
-                job.id >= 0L);
+                job.id >= min.job.id);
       job.id <- as.integer(job.id - min.job.id + 1L);
       stopifnot(is.integer(job.id),
                 !is.na(job.id),

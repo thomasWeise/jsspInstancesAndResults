@@ -1,3 +1,4 @@
+
 #' @title Transform a Solution Represented in Form \code{OB} to a Gantt Chart
 #' @description A solution in the \code{OB} (operation-based) representation is
 #'   given. each job is represented by \\code{m} genes with the same value and
@@ -21,16 +22,15 @@
 jssp.ob.to.gantt <- function(data.ob, inst.id,
                              min.job.id=1L,
                              get.inst.data=jssp.get.instance.data) {
-  stopifnot(is.integer(data.ob),
-            is.vector(data.ob),
-            length(data.ob) > 0L,
-            all(is.finite(data.ob)),
-            all(data.ob >= 0L),
-            is.function(get.inst.data),
-            is.integer(min.job.id),
+  stopifnot(is.integer(min.job.id),
             is.finite(min.job.id),
-            min.job.id >= 0L);
+            min.job.id >= 0L,
+            is.function(get.inst.data),
+            is.character(inst.id),
+            !is.na(inst.id),
+            nchar(inst.id) > 0L);
 
+  # load the relevant instance data
   instance <- get.inst.data(inst.id);
   stopifnot(is.list(instance),
             all(c("inst.id",
@@ -39,22 +39,44 @@ jssp.ob.to.gantt <- function(data.ob, inst.id,
                   "inst.data") %in% names(instance)),
             identical(instance$inst.id, inst.id));
 
+  jobs <- instance$inst.jobs;
+  stopifnot(is.integer(jobs),
+            is.finite(jobs),
+            jobs > 0L);
+
+  machines <- instance$inst.machines;
+  stopifnot(is.integer(machines),
+            is.finite(machines),
+            machines > 0L);
+
+  job.machine.data <- instance$inst.data;
+  stopifnot(is.matrix(job.machine.data),
+            nrow(job.machine.data) == jobs,
+            ncol(job.machine.data) == (2L * machines));
+
+  # normalize the input data
+  data.ob <- unname(unlist(data.ob));
+  stopifnot(is.integer(data.ob),
+            all(is.finite(data.ob)),
+            length(data.ob) == (jobs*machines));
+
   data.ob <- as.integer((data.ob - min(data.ob)) + 1L);
-  stopifnot(length(data.ob) == (instance$inst.jobs * instance$inst.machines),
+
+  stopifnot(length(data.ob) == (jobs * machines),
             all(data.ob >= 1L),
-            all(data.ob <= instance$inst.jobs),
-            all(vapply(seq.int(from=1L, to=instance$inst.jobs),
-                   function(i) sum(data.ob == i),
-                   NA_integer_) == instance$inst.machines));
+            all(data.ob <= jobs),
+            all(vapply(seq.int(from=1L, to=jobs),
+                       function(i) sum(data.ob == i),
+                       NA_integer_) == machines));
 
-  job.times     <- rep.int(x=0L, times=instance$inst.jobs);
-  job.index     <- rep.int(x=0L, times=instance$inst.jobs);
-  machine.times <- rep.int(x=0L, times=instance$inst.machines);
-  machine.index <- rep.int(x=0L, times=instance$inst.machines);
+  job.times     <- rep.int(x=0L, times=jobs);
+  job.index     <- rep.int(x=0L, times=jobs);
+  machine.times <- rep.int(x=0L, times=machines);
+  machine.index <- rep.int(x=0L, times=machines);
 
-  gantt <- lapply(seq.int(from=0L, to=(instance$inst.machines-1L)),
+  gantt <- lapply(seq.int(from=0L, to=(machines-1L)),
                   function(m) {
-                    lapply(seq.int(from=0L, to=(instance$inst.jobs - 1L)),
+                    lapply(seq.int(from=0L, to=(jobs - 1L)),
                            function(j) {
                              list(job=NA_integer_,
                                   start=NA_integer_,
@@ -66,31 +88,39 @@ jssp.ob.to.gantt <- function(data.ob, inst.id,
     index <- job.index[[job]];
     index <- index + 1L;
     stopifnot(index > 0L,
-              index <= instance$inst.machines);
+              index <= machines);
     job.index[[job]] <- index;
-    machine <- instance$inst.data[job, (2L * index) - 1L] + 1L;
+    machine <- job.machine.data[job, (2L * index) - 1L] + 1L;
     stopifnot(is.integer(machine),
               is.finite(machine),
               machine > 0L,
-              machine <= instance$inst.machines);
-    time <- instance$inst.data[job, (2L * index)];
+              machine <= machines);
+    time <- job.machine.data[job, (2L * index)];
     stopifnot(is.integer(time),
-              is.finite(time)  ,
+              is.finite(time),
               time >= 0L,
               time < .Machine$integer.max);
     rm("index");
 
     job.time <- job.times[[job]];
-    stopifnot(is.finite(job.time), job.time >= 0L, job.time <= .Machine$integer.max);
+    stopifnot(is.finite(job.time),
+              job.time >= 0L,
+              job.time <= .Machine$integer.max);
 
     machine.time <- machine.times[[machine]];
-    stopifnot(is.finite(machine.time), machine.time >= 0L, machine.time <= .Machine$integer.max);
+    stopifnot(is.finite(machine.time),
+              machine.time >= 0L,
+              machine.time <= .Machine$integer.max);
 
     start <- as.integer(max(job.time, machine.time));
-    stopifnot(is.finite(start), start >= 0L, start <= .Machine$integer.max);
+    stopifnot(is.finite(start),
+              start >= 0L,
+              start <= .Machine$integer.max);
 
     end <- as.integer(start + time);
-    stopifnot(is.finite(end), end >= start, end <= .Machine$integer.max);
+    stopifnot(is.finite(end),
+              end >= start,
+              end <= .Machine$integer.max);
 
     job.times[[job]] <- end;
     machine.times[[machine]] <- end;
@@ -100,7 +130,7 @@ jssp.ob.to.gantt <- function(data.ob, inst.id,
     stopifnot(is.integer(index),
               is.finite(index),
               index > 0L,
-              index <= instance$inst.jobs);
+              index <= jobs);
     machine.index[[machine]] <- index;
 
     gantt[[machine]][[index]]$job <- as.integer((job - 1L) + min.job.id);
@@ -113,16 +143,16 @@ jssp.ob.to.gantt <- function(data.ob, inst.id,
 
   for(i in unlist(gantt)) {
     stopifnot(is.integer(i),
-              i >= 0L,
-              is.finite(i));
+              is.finite(i),
+              i >= 0L);
   }
 
   result <- jssp.evaluate.gantt(gantt,
-                       inst.id,
-                       function(name) {
-                         stopifnot(identical(inst.id, name));
-                         return(instance);
-                       });
+                                inst.id,
+                                function(name) {
+                                  stopifnot(identical(inst.id, name));
+                                  return(instance);
+                                });
   result <- force(result);
 
   return(result);
@@ -216,7 +246,8 @@ jssp.oo.to.gantt <- function(data.oo, inst.id,
 # all vectors are presented row-by-row, meaning first all elements
 # of the first row, then all elements of the second row, and so on
 .make.matrix.or.vector <- function(data, nrow, ncol, to.vector=FALSE,
-                                   normalize.by.min=FALSE) {
+                                   normalize.by.min=FALSE,
+                                   normalize.by.min.ofs=1L) {
   stopifnot(is.integer(nrow),
             length(nrow) == 1L,
             is.finite(nrow),
@@ -226,7 +257,12 @@ jssp.oo.to.gantt <- function(data.oo, inst.id,
             is.logical(to.vector),
             length(to.vector) == 1L,
             !is.na(to.vector),
-            is.matrix(data) || is.data.frame(data) || is.vector(data) || is.list(data));
+            is.matrix(data) || is.data.frame(data) || is.vector(data) || is.list(data),
+            is.logical(normalize.by.min),
+            isTRUE(normalize.by.min) || isFALSE(normalize.by.min),
+            is.integer(normalize.by.min.ofs),
+            is.finite(normalize.by.min.ofs),
+            normalize.by.min.ofs >= 0L);
 
   data.n <- unname(unlist(c(data)));
   stopifnot(is.integer(data.n),
@@ -234,10 +270,10 @@ jssp.oo.to.gantt <- function(data.oo, inst.id,
             length(data.n) == (nrow*ncol));
 
   if(normalize.by.min) {
-    data.n <- as.integer(data.n - (min(data.n)));
+    data.n <- as.integer(data.n - min(data.n) + normalize.by.min.ofs);
     stopifnot(is.integer(data.n),
               all(is.finite(data.n)),
-              all(data.n >= 0L),
+              all(data.n >= normalize.by.min.ofs),
               length(data.n) == (nrow*ncol));
   }
 
@@ -260,7 +296,7 @@ jssp.oo.to.gantt <- function(data.oo, inst.id,
 
 #' @title Transform a Solution Represented in the van-Hoorn Solution-Start
 #'   Method to a Gantt Chart
-#' @description The solution start file gives a matrix with row per per job and
+#' @description The solution start file gives a matrix with one row per job and
 #'   a column per machine, the values in this matrix give the start times for
 #'   the operations. If the second row starts with a \code{10}, this indicates
 #'   that the operation of job \code{2} on machine \code{1} starts at time
@@ -287,66 +323,81 @@ jssp.solution.start.to.gantt <- function(data.solution.start, inst.id,
                   "inst.jobs") %in% names(instance)),
             identical(instance$inst.id, inst.id));
 
+  jobs <- instance$inst.jobs;
+  stopifnot(is.integer(jobs),
+            is.finite(jobs),
+            jobs > 0L);
+
+  machines <- instance$inst.machines;
+  stopifnot(is.integer(machines),
+            is.finite(machines),
+            machines > 0L);
+
+  job.machine.data <- instance$inst.data;
+  stopifnot(is.matrix(job.machine.data),
+            nrow(job.machine.data) == jobs,
+            ncol(job.machine.data) == (2L * machines));
+
   data.solution.start <- .make.matrix.or.vector(data=data.solution.start,
-                                                nrow=instance$inst.jobs,
-                                                ncol=instance$inst.machines,
-                                                to.vector = TRUE,
+                                                nrow=jobs,
+                                                ncol=machines,
+                                                to.vector = FALSE,
                                                 normalize.by.min = FALSE);
   stopifnot(is.integer(data.solution.start),
             all(is.finite(data.solution.start)),
-            all(data.solution.start >= 0L));
+            all(data.solution.start >= 0L),
+            nrow(data.solution.start) == jobs,
+            ncol(data.solution.start) == machines);
 
-  data.ob <- unname(unlist(lapply(seq_len(instance$inst.jobs),
-                               function(i) rep(i, instance$inst.machines))));
-  data.ob <- data.ob[order(data.solution.start)];
-  inst.f <- function(x) {
-    stopifnot(identical(x, inst.id));
-    return(instance);
-  };
-  result <- jssp.ob.to.gantt(data.ob=data.ob, inst.id=inst.id,
-                             min.job.id = min.job.id,
-                             get.inst.data = inst.f)$gantt;
-  result <- force(result);
+# compute the starts of the jobs on the machines
+  machine.start <- do.call(rbind, lapply(seq_len(machines),
+                          function(machine) {
+                            vapply(seq_len(jobs),
+                                   function(job) {
+                                     data.solution.start[job, machine]
+                                   }, NA_integer_)
+                          }));
 
-# now validate
+  machine.job <- do.call(rbind, lapply(seq_len(machines),
+                                function(machine) seq.int(from=min.job.id,
+                                                          to=as.integer(min.job.id+jobs-1L))));
 
-  data.solution.start <- .make.matrix.or.vector(data=data.solution.start,
-                                                nrow=instance$inst.jobs,
-                                                ncol=instance$inst.machines,
-                                                to.vector = FALSE,
-                                                normalize.by.min = TRUE);
+# get the job durations on the machines to compute the machine end times
+  job.durations.on.machine <- .get.job.durations.on.machine(jobs, machines, job.machine.data);
+  machine.end <- do.call(rbind, lapply(seq_len(machines),
+                               function(machine) {
+                                 vapply(seq_len(jobs),
+                                        function(job) {
+                                          data.solution.start[job, machine] +
+                                            job.durations.on.machine[job, machine]
+                                        }, NA_integer_)
+                               }));
 
-  for(job in seq_len(instance$inst.jobs)) {
-    job.id <- (job - 1L + min.job.id);
-    for(machine in seq_len(instance$inst.machines)) {
-      start <- data.solution.start[job, machine];
-
-      row <- result[[machine]];
-      real <- -1L;
-      for(l in row) {
-        stopifnot(length(l) == 3L,
-                  is.integer(l$job),
-                  length(l$job) == 1L,
-                  is.finite(l$job),
-                  l$job >= min.job.id,
-                  is.integer(l$start),
-                  length(l$start) == 1L,
-                  is.finite(l$start),
-                  l$start >= 0L,
-                  is.integer(l$end),
-                  length(l$end) == 1L,
-                  is.finite(l$end),
-                  l$end >= l$start);
-        if(l$job == job.id) {
-          stopifnot(real == -1L);
-          real <- l$start;
-        }
-      }
-      stopifnot(real == start);
-    }
+# bring everything into the right order
+  for(machine in seq_len(machines)) {
+    ord <- order(machine.end[machine, ],
+                 machine.start[machine, ],
+                 machine.job[machine, ]);
+    machine.start[machine, ] <- machine.start[machine, ord];
+    machine.job[machine, ] <- machine.job[machine, ord];
+    machine.end[machine, ] <- machine.end[machine, ord];
   }
 
-  result <- jssp.evaluate.gantt(result, inst.id, inst.f);
+# transform to a gantt chart
+  result <- lapply(seq_len(machines),
+                  function(machine) {
+                    lapply(seq_len(jobs), function(job) {
+                      list(job=machine.job[machine, job],
+                           start=machine.start[machine, job],
+                           end=machine.end[machine, job])
+                    })
+                  });
+  result <- force(result);
+
+  result <- jssp.evaluate.gantt(result, inst.id, function(name) {
+    stopifnot(identical(name, inst.id));
+    return(instance);
+  });
   result <- force(result);
   return(result);
 }
@@ -392,7 +443,8 @@ jssp.pl.to.gantt <- function(data.pl, inst.id,
                                     nrow=instance$inst.machines,
                                     ncol=instance$inst.jobs,
                                     to.vector = FALSE,
-                                    normalize.by.min = TRUE) + 1L;
+                                    normalize.by.min = TRUE,
+                                    normalize.by.min.ofs = 1L);
 
   stopifnot(is.integer(data.pl),
             is.matrix(data.pl),
