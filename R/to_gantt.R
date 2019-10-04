@@ -22,7 +22,10 @@
 jssp.ob.to.gantt <- function(data.ob, inst.id,
                              min.job.id=1L,
                              get.inst.data=jssp.get.instance.data) {
-  stopifnot(is.integer(min.job.id),
+  stopifnot(is.integer(data.ob),
+            all(is.finite(data.ob)),
+            all(data.ob >= 0L),
+            is.integer(min.job.id),
             is.finite(min.job.id),
             min.job.id >= 0L,
             is.function(get.inst.data),
@@ -74,9 +77,9 @@ jssp.ob.to.gantt <- function(data.ob, inst.id,
   machine.times <- rep.int(x=0L, times=machines);
   machine.index <- rep.int(x=0L, times=machines);
 
-  gantt <- lapply(seq.int(from=0L, to=(machines-1L)),
+  gantt <- lapply(seq_len(machines),
                   function(m) {
-                    lapply(seq.int(from=0L, to=(jobs - 1L)),
+                    lapply(seq_len(jobs),
                            function(j) {
                              list(job=NA_integer_,
                                   start=NA_integer_,
@@ -184,39 +187,59 @@ jssp.oo.to.gantt <- function(data.oo, inst.id,
                              get.inst.data=jssp.get.instance.data) {
   stopifnot(is.integer(data.oo),
             is.vector(data.oo),
-            all(is.finite(data.oo)));
+            all(is.finite(data.oo)),
+            is.character(inst.id),
+            !is.na(inst.id),
+            nchar(inst.id) > 0L,
+            is.integer(min.job.id),
+            is.finite(min.job.id),
+            min.job.id >= 0L,
+            is.function(get.inst.data));
 
   instance <- get.inst.data(inst.id);
   stopifnot(is.list(instance),
             all(c("inst.id",
                   "inst.machines",
-                  "inst.jobs",
-                  "inst.data") %in% names(instance)),
+                  "inst.jobs") %in% names(instance)),
             identical(instance$inst.id, inst.id));
 
+  jobs <- instance$inst.jobs;
+  stopifnot(is.integer(jobs),
+            is.finite(jobs),
+            jobs > 0L);
+
+  machines <- instance$inst.machines;
+  stopifnot(is.integer(machines),
+            is.finite(machines),
+            machines > 0L);
+
   data.oo <- as.integer((data.oo - min(data.oo)) + 1L);
-  stopifnot(length(data.oo) == (instance$inst.jobs * instance$inst.machines),
+  stopifnot(is.integer(data.oo),
+            all(is.finite(data.oo)),
+            all(data.oo > 0L),
+            all(data.oo <= (machines * jobs)),
+            length(data.oo) == (jobs * machines),
             all(vapply(seq.int(from=1L,
-                               to=(instance$inst.jobs * instance$inst.machines)),
+                               to=(jobs * machines)),
                        function(i) sum(data.oo == i) == 1L,
                        FALSE)));
 
-  job.index <- rep.int(0L, instance$inst.jobs);
-  data.ob   <- integer(instance$inst.jobs * instance$inst.machines);
+  job.index <- rep.int(0L, jobs);
+  data.ob   <- integer(jobs * machines);
 
   for(idx in seq_along(data.oo)) {
     i <- data.oo[[idx]];
 
-    op <- as.integer(ceiling(i/instance$inst.jobs));
+    op <- as.integer(ceiling(i/jobs));
     stopifnot(is.integer(op),
               is.finite(op),
               op > 0L,
-              op <= instance$inst.machines);
-    job <- as.integer(as.integer((i - 1L) %% instance$inst.jobs) + 1L);
+              op <= machines);
+    job <- as.integer(as.integer((i - 1L) %% jobs) + 1L);
     stopifnot(is.integer(job),
               is.finite(job),
               job > 0L,
-              job <= instance$inst.jobs);
+              job <= jobs);
 
     last <- job.index[[job]];
     stopifnot(last == (op - 1L));
@@ -228,10 +251,10 @@ jssp.oo.to.gantt <- function(data.oo, inst.id,
   stopifnot(is.integer(data.ob),
             all(is.finite(data.ob)),
             all(data.ob > 0L),
-            all(data.ob <= instance$inst.jobs))
+            all(data.ob <= jobs))
 
-  result <- jssp.ob.to.gantt(data.ob=data.ob,
-                             inst.id=inst.id,
+  result <- jssp.ob.to.gantt(data.ob = data.ob,
+                             inst.id = inst.id,
                              min.job.id = min.job.id,
                              get.inst.data=function(x) {
                                stopifnot(identical(x, inst.id));
@@ -313,9 +336,18 @@ jssp.oo.to.gantt <- function(data.oo, inst.id,
 #' @seealso jssp.evaluate.gantt
 #' @export jssp.solution.start.to.gantt
 #' @include evaluate_gantt.R
-jssp.solution.start.to.gantt <- function(data.solution.start, inst.id,
+jssp.solution.start.to.gantt <- function(data.solution.start,
+                                         inst.id,
                                          min.job.id=1L,
                                          get.inst.data=jssp.get.instance.data) {
+  stopifnot(is.character(inst.id),
+            !is.na(inst.id),
+            nchar(inst.id) > 0L,
+            is.function(get.inst.data),
+            is.integer(min.job.id),
+            is.finite(min.job.id),
+            min.job.id >= 0L);
+
   instance <- get.inst.data(inst.id);
   stopifnot(is.list(instance),
             all(c("inst.id",
@@ -426,7 +458,10 @@ jssp.pl.to.gantt <- function(data.pl, inst.id,
                              min.job.id=1L,
                              get.inst.data=jssp.get.instance.data) {
 
-  stopifnot(is.function(get.inst.data),
+  stopifnot(is.character(inst.id),
+            !is.na(inst.id),
+            nchar(inst.id) > 0L,
+            is.function(get.inst.data),
             is.integer(min.job.id),
             is.finite(min.job.id),
             min.job.id >= 0L);
@@ -439,27 +474,42 @@ jssp.pl.to.gantt <- function(data.pl, inst.id,
                   "inst.data") %in% names(instance)),
             identical(instance$inst.id, inst.id));
 
+  jobs <- instance$inst.jobs;
+  stopifnot(is.integer(jobs),
+            is.finite(jobs),
+            jobs > 0L);
+
+  machines <- instance$inst.machines;
+  stopifnot(is.integer(machines),
+            is.finite(machines),
+            machines > 0L);
+
+  job.machine.data <- instance$inst.data;
+  stopifnot(is.matrix(job.machine.data),
+            nrow(job.machine.data) == jobs,
+            ncol(job.machine.data) == (2L * machines));
+
   data.pl <- .make.matrix.or.vector(data=data.pl,
-                                    nrow=instance$inst.machines,
-                                    ncol=instance$inst.jobs,
+                                    nrow=machines,
+                                    ncol=jobs,
                                     to.vector = FALSE,
                                     normalize.by.min = TRUE,
                                     normalize.by.min.ofs = 1L);
 
   stopifnot(is.integer(data.pl),
             is.matrix(data.pl),
-            nrow(data.pl)==instance$inst.machines,
-            ncol(data.pl)==instance$inst.jobs,
+            nrow(data.pl)==machines,
+            ncol(data.pl)==jobs,
             all(is.finite(data.pl)));
 
-  job.times     <- rep.int(x=0L, times=instance$inst.jobs);
-  job.index     <- rep.int(x=0L, times=instance$inst.jobs);
-  machine.times <- rep.int(x=0L, times=instance$inst.machines);
-  machine.index <- rep.int(x=0L, times=instance$inst.machines);
+  job.times     <- rep.int(x=0L, times=jobs);
+  job.index     <- rep.int(x=0L, times=jobs);
+  machine.times <- rep.int(x=0L, times=machines);
+  machine.index <- rep.int(x=0L, times=machines);
 
-  gantt <- lapply(seq.int(from=0L, to=(instance$inst.machines-1L)),
+  gantt <- lapply(seq_len(machines),
                   function(m) {
-                    lapply(seq.int(from=0L, to=(instance$inst.jobs - 1L)),
+                    lapply(seq_len(jobs),
                            function(j) {
                              list(job=NA_integer_,
                                   start=NA_integer_,
@@ -467,81 +517,98 @@ jssp.pl.to.gantt <- function(data.pl, inst.id,
                            })
                   });
 
-  total <- as.integer(instance$inst.machines * instance$inst.jobs);
+  total <- as.integer(machines * jobs);
   stopifnot(is.integer(total),
             is.finite(total),
             total > 0L);
 
+# while there are unassigned jobs left
   while(total > 0L) {
     found <- FALSE;
-    for(machine in seq_len(instance$inst.machines)) {
+# iterate over all machines
+    for(machine in seq_len(machines)) {
+# get index for machine: is there still work to do?
       machine.i <- machine.index[[machine]];
       stopifnot(is.finite(machine.i),
                 machine.i >= 0L,
-                machine.i <= instance$inst.jobs);
-      if(machine.i < instance$inst.jobs) {
+                machine.i <= jobs);
+      if(machine.i < jobs) {
+# if we get here, there is at least one job left on the machine
         machine.i <- machine.i + 1L;
+# this is the job to do next on the machine
         machine.job <- data.pl[machine, machine.i];
         stopifnot(is.finite(machine.job),
                   machine.job > 0L,
-                  machine.job <= instance$inst.jobs);
+                  machine.job <= jobs);
+# check which sub-job on this job should be done
         job.i <- job.index[[machine.job]];
+# this job cannot be completed yet: job.i <! machines
         stopifnot(is.finite(job.i),
                   job.i >= 0L,
-                  job.i <= instance$inst.machines);
-        if(job.i < instance$inst.machines) {
-          job.i <- job.i + 1L;
-          job.machine <- instance$inst.data[machine.job, 2L*job.i - 1L];
-          stopifnot(is.finite(job.machine),
-                    job.machine >= 0L,
-                    job.machine < instance$inst.machines);
-          job.machine <- (job.machine + 1L);
+                  job.i < machines);
 
-          if(job.machine == machine) {
-            job.time <- instance$inst.data[machine.job, 2L*job.i];
-            stopifnot(is.integer(job.time),
-                      is.finite(job.time),
-                      job.time >= 0L);
-            start <- as.integer(max(machine.times[[machine]], job.times[[machine.job]]));
-            stopifnot(is.integer(start),
-                      is.finite(start),
-                      start >= 0L);
-            end <- as.integer(start + job.time);
-            stopifnot(is.integer(end),
-                      is.finite(end),
-                      end >= start);
+        job.i <- job.i + 1L;
+        job.machine <- job.machine.data[machine.job, 2L*job.i - 1L];
+        stopifnot(is.finite(job.machine),
+                  job.machine >= 0L,
+                  job.machine < machines);
+        job.machine <- (job.machine + 1L);
 
-            machine.times[[machine]] <- end;
-            machine.times[[machine]] <- force(machine.times[[machine]]);
-            machine.times <- force(machine.times);
+# check if the next sub-job of the job should be on the machine
+        if(job.machine == machine) {
+# ok, we can execute it
+          job.time <- job.machine.data[machine.job, 2L*job.i];
+          stopifnot(is.integer(job.time),
+                    is.finite(job.time),
+                    job.time >= 0L);
 
-            job.times[[machine.job]] <- end;
-            job.times[[machine.job]] <- force(job.times[[machine.job]]);
-            job.times <- force(job.times);
+# compute start and end time
+          start <- as.integer(max(machine.times[[machine]],
+                                  job.times[[machine.job]]));
+          stopifnot(is.integer(start),
+                    is.finite(start),
+                    start >= 0L);
+          end <- as.integer(start + job.time);
+          stopifnot(is.integer(end),
+                    is.finite(end),
+                    end >= start);
 
-            machine.index[[machine]] <- machine.i;
-            machine.index[[machine]] <- force(machine.index[[machine]]);
-            machine.index <- force(machine.index);
+# update the start and end times
+          machine.times[[machine]] <- end;
+          machine.times[[machine]] <- force(machine.times[[machine]]);
+          machine.times <- force(machine.times);
 
-            job.index[[machine.job]] <- job.i;
-            job.index[[machine.job]] <- force(job.index[[machine.job]]);
-            job.index <- force(job.index);
+          job.times[[machine.job]] <- end;
+          job.times[[machine.job]] <- force(job.times[[machine.job]]);
+          job.times <- force(job.times);
 
-            gantt[[machine]][[machine.i]]$job <- as.integer((machine.job - 1L) + min.job.id);
-            gantt[[machine]][[machine.i]]$start <- start;
-            gantt[[machine]][[machine.i]]$end <- end;
-            gantt <- force(gantt);
+# update the indices
+          machine.index[[machine]] <- machine.i;
+          machine.index[[machine]] <- force(machine.index[[machine]]);
+          machine.index <- force(machine.index);
 
-            found <- TRUE;
-            found <- force(found);
-            break;
-          }
+          job.index[[machine.job]] <- job.i;
+          job.index[[machine.job]] <- force(job.index[[machine.job]]);
+          job.index <- force(job.index);
+
+# store the data in the gantt chart
+          gantt[[machine]][[machine.i]]$job <- as.integer((machine.job - 1L) + min.job.id);
+          gantt[[machine]][[machine.i]]$start <- start;
+          gantt[[machine]][[machine.i]]$end <- end;
+          gantt <- force(gantt);
+
+          found <- TRUE;
+          found <- force(found);
+          break;
         }
       }
+
+# jump to next iteration
       if(found) { break; }
     }
 
-    stopifnot(found);
+# found must be true, or else deadlock
+    stopifnot(isTRUE(found));
 
     total <- total - 1L;
     stopifnot(total >= 0L);

@@ -110,12 +110,12 @@ jssp.evaluate.gantt <- function(gantt, inst.id,
   job.start <- as.integer(rep.int(.Machine$integer.max, jobs));
   job.end   <- as.integer(-job.start);
   job.times <- as.integer(rep.int(0L, jobs));
-  machine.start <- job.start;
-  machine.end   <- job.end;
-  machine.times <- job.times;
+  machine.start <- as.integer(rep.int(.Machine$integer.max, machines));
+  machine.end   <- -machine.start;
+  machine.times <- as.integer(rep.int(0L, machines));
 
 # process the gantt chart: iterate over machines
-  for(machine.id in seq_along(gantt)) {
+  for(machine.id in seq_len(machines)) {
     machine.data <- gantt[[machine.id]];
     stopifnot(!is.null(machine.data),
               is.list(machine.data),
@@ -159,10 +159,12 @@ jssp.evaluate.gantt <- function(gantt, inst.id,
       if(start < job.start[[job.id]]) {
         job.start[[job.id]] <- start;
         job.start[[job.id]] <- force(job.start[[job.id]]);
+        job.start <- force(job.start);
       }
       if(end > job.end[[job.id]]) {
         job.end[[job.id]] <- end;
         job.end[[job.id]] <- force(job.end[[job.id]]);
+        job.end <- force(job.end);
       }
       if(is.na(first.start)) {
         first.start <- start;
@@ -181,7 +183,8 @@ jssp.evaluate.gantt <- function(gantt, inst.id,
       last.end <- end;
       last.end <- force(last.end);
 
-      machine.times[[machine.id]] <- as.integer(machine.times[[machine.id]] + duration);
+      machine.times[[machine.id]] <- as.integer(machine.times[[machine.id]] +
+                                                  duration);
       stopifnot(is.integer(machine.times[[machine.id]]),
                 is.finite(machine.times[[machine.id]]),
                 machine.times[[machine.id]] >= duration);
@@ -194,13 +197,23 @@ jssp.evaluate.gantt <- function(gantt, inst.id,
     }
 
     stopifnot(!is.na(first.start),
+              is.finite(first.start),
+              first.start >= 0L,
+              first.start < .Machine$integer.max,
               !is.na(last.end),
+              is.finite(last.end),
+              last.end >= first.start,
+              last.end >= 0L,
+              last.end < .Machine$integer.max,
               !any(is.na(keep)),
               any(keep));
+
     machine.start[[machine.id]] <- first.start;
     machine.start[[machine.id]] <- force(machine.start[[machine.id]]);
+    machine.start <- force(machine.start);
     machine.end[[machine.id]] <- last.end;
     machine.end[[machine.id]] <- force(machine.end[[machine.id]]);
+    machine.end <- force(machine.end);
 
 # delete superfluous jobs
     gantt[[machine.id]] <- machine.data[keep];

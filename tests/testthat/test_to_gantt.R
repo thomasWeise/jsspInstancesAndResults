@@ -42,3 +42,12 @@ test_that("Test the to-Gantt methods orb07", {
   expect_identical(g2, g3);
 })
 
+
+test_that("Test the to-Gantt methods dmu05", {
+  data.pl <- c(9L, 15L, 8L, 12L, 10L, 14L, 16L, 4L, 1L, 19L, 2L, 7L, 18L, 0L, 5L, 11L, 3L, 13L, 17L, 6L, 19L, 15L, 4L, 8L, 1L, 11L, 7L, 10L, 13L, 9L, 2L, 12L, 14L, 5L, 0L, 17L, 18L, 3L, 16L, 6L, 2L, 14L, 17L, 13L, 10L, 4L, 6L, 8L, 12L, 3L, 11L, 5L, 9L, 0L, 16L, 18L, 15L, 1L, 19L, 7L, 14L, 2L, 9L, 10L, 1L, 8L, 12L, 5L, 16L, 4L, 15L, 0L, 3L, 6L, 18L, 13L, 11L, 7L, 19L, 17L, 9L, 14L, 19L, 11L, 5L, 2L, 7L, 4L, 1L, 15L, 8L, 6L, 0L, 3L, 18L, 12L, 13L, 17L, 16L, 10L, 5L, 18L, 2L, 16L, 1L, 10L, 6L, 14L, 4L, 15L, 3L, 8L, 13L, 17L, 19L, 12L, 0L, 9L, 7L, 11L, 10L, 2L, 4L, 19L, 7L, 0L, 15L, 14L, 5L, 1L, 12L, 13L, 3L, 8L, 9L, 18L, 6L, 16L, 17L, 11L, 6L, 17L, 12L, 19L, 9L, 13L, 15L, 5L, 1L, 0L, 7L, 14L, 16L, 4L, 10L, 3L, 11L, 2L, 8L, 18L, 5L, 0L, 18L, 14L, 7L, 9L, 19L, 6L, 2L, 12L, 8L, 11L, 3L, 13L, 16L, 10L, 1L, 15L, 17L, 4L, 8L, 17L, 2L, 11L, 9L, 5L, 15L, 19L, 14L, 13L, 7L, 0L, 1L, 18L, 16L, 4L, 12L, 10L, 6L, 3L, 4L, 18L, 7L, 16L, 12L, 2L, 3L, 13L, 6L, 0L, 19L, 14L, 11L, 17L, 9L, 8L, 5L, 10L, 1L, 15L, 15L, 16L, 3L, 8L, 12L, 5L, 4L, 7L, 2L, 14L, 1L, 11L, 10L, 18L, 0L, 6L, 13L, 17L, 9L, 19L, 15L, 9L, 16L, 8L, 2L, 4L, 14L, 10L, 12L, 13L, 6L, 18L, 3L, 7L, 17L, 11L, 1L, 19L, 0L, 5L, 19L, 16L, 5L, 11L, 14L, 7L, 13L, 0L, 8L, 3L, 9L, 12L, 18L, 15L, 4L, 10L, 2L, 17L, 1L, 6L, 18L, 8L, 19L, 10L, 5L, 12L, 2L, 0L, 6L, 13L, 14L, 15L, 16L, 4L, 7L, 9L, 3L, 17L, 11L, 1L);
+  inst.id <- "dmu05";
+  opt.f <- 2749L;
+
+  g1 <- jssp.pl.to.gantt(data.pl, inst.id);
+  expect_identical(g1$makespan, opt.f);
+})
