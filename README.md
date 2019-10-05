@@ -10,11 +10,12 @@
 - [4. Instance Information and Statistics](#4-instance-information-and-statistics)
 - [5. Literature Sources](#5-literature-sources)
 - [6. Repository Structure](#6-repository-structure)
-- [7. Other Useful Resources](#7-other-useful-resources)
-  - [7.1. Overviews of Results](#71-overviews-of-results)
-  - [7.2. Benchmark Instances](#72-benchmark-instances)
-- [8. License](#8-license)
-- [9. Contact](#9-contact)
+- [7. Additional Functionality in the `R` Package](#7-additional-functionality-in-the-r-package)
+- [1. Other Useful Resources](#1-other-useful-resources)
+  - [1.1. Overviews of Results](#11-overviews-of-results)
+  - [1.2. Benchmark Instances](#12-benchmark-instances)
+- [2. License](#2-license)
+- [3. Contact](#3-contact)
 
 
 ## 1. Introduction
@@ -420,11 +421,36 @@ Finally, we generate a single, [OR-Library compatible file](https://raw.githubus
 The data from this file is provided as the list `jssp.instance.data` in the `R` package.
 In summary, all the data is provided both as text files for processing with arbitary tools and as as data frames/lists `jssp.bibliography`, `jssp.results`, `jssp.instances`, and `jssp.instance.data` if you install this repository as `R` package (see above).
 
-## 7. Other Useful Resources
+## 7. Additional Functionality in the `R` Package
+
+In the package `jsspInstancesAndResults`, we additionally provide the functionality to transform different representations for candidate solutions into Gantt charts (which are directly checked and evaluated in the process).
+Existing Gantt charts can also be evaluated, i.e., we can check whether the Gantt chart is correct and compute its makespan.
+If the [plotteR](https://github.com/thomasWeise/plotteR) package is installed, then the Gantt charts can directly be plotted.
+
+```R
+data.oo <- c( 2L,  8L, 10L, 12L,  7L, 20L, 18L,   1L,  6L, 11L,
+             17L,  9L, 28L,  5L, 30L, 19L, 21L,  38L, 22L,  3L,
+             40L, 15L, 48L, 13L, 31L, 27L, 37L,  16L, 58L, 41L,
+             50L, 32L, 25L, 23L, 47L,  4L, 68L,  60L, 29L, 39L,
+             51L, 26L, 42L, 35L, 33L, 49L, 57L,  70L, 36L, 45L,
+             61L, 14L, 55L, 67L, 78L, 43L, 71L,  53L, 52L, 80L,
+             59L, 63L, 24L, 81L, 46L, 90L, 62L, 100L, 73L, 65L,
+             88L, 56L, 72L, 77L, 34L, 87L, 44L,  98L, 69L, 66L,
+             75L, 79L, 54L, 83L, 89L, 82L, 76L,  64L, 91L, 74L,
+             99L, 93L, 92L, 86L, 84L, 85L, 96L,  95L, 97L, 94L);
+result <- jssp.oo.to.gantt(data.oo, "orb07");
+print(result$makespan);
+# [1] 397
+plotteR::plot.gantt(result$gantt);
+```
+
+![Image resulting from the above code sample.](data-raw/readme/orb07_plot.png)
+
+## 1. Other Useful Resources
 
 Many of the data in this package are gathered from different sources in the internet, which were our starting point to explore and add results from quite a few publications.
 
-### 7.1. Overviews of Results
+### 1.1. Overviews of Results
 
 Besides our repository, the following sources in the web provide useful information about the state-of-the-art on the JSSP:
 
@@ -432,20 +458,20 @@ Besides our repository, the following sources in the web provide useful informat
 - The websites <http://optimizizer.com/jobshop.php> run by Oleg V. Shylo, which holds many results on the JSSP as well.
 - Éric Taillard's Page <http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html>
 
-### 7.2. Benchmark Instances
+### 1.2. Benchmark Instances
 
 - [OR-Library](http://people.brunel.ac.uk/~mastjjb/jeb/orlib/jobshopinfo.html) with the `abz*`, `la*`, `orb*`, `swv*`, and `yn*` instances
 - Oleg V. Shylo's website (http://optimizizer.com/DMU.php) with the `dmu*` instances
 - Éric Taillard's Page <http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html> with the `ta*` instances
 - A repository with instances of the JSSP can be found at <http://github.com/tamy0612/JSPLIB>.
 
-## 8. License
+## 2. License
 
 Any content in this repository which originates from other sources is licensed under the licensing conditions of the respective owners.
 This includes the results of works published in literature as well as the benchmarking instances.
 Any of the above which permits me setting a license and any content contributed by myself is under the GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007.
 
-## 9. Contact
+## 3. Contact
 
 If you have any questions or suggestions, please contact
 [Prof. Dr. Thomas Weise](http://iao.hfuu.edu.cn/team/director) of the

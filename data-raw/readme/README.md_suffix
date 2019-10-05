@@ -12,6 +12,31 @@ Finally, we generate a single, [OR-Library compatible file](https://raw.githubus
 The data from this file is provided as the list `jssp.instance.data` in the `R` package.
 In summary, all the data is provided both as text files for processing with arbitary tools and as as data frames/lists `jssp.bibliography`, `jssp.results`, `jssp.instances`, and `jssp.instance.data` if you install this repository as `R` package (see above).
 
+## Additional Functionality in the `R` Package
+
+In the package `jsspInstancesAndResults`, we additionally provide the functionality to transform different representations for candidate solutions into Gantt charts (which are directly checked and evaluated in the process).
+Existing Gantt charts can also be evaluated, i.e., we can check whether the Gantt chart is correct and compute its makespan.
+If the [plotteR](https://github.com/thomasWeise/plotteR) package is installed, then the Gantt charts can directly be plotted.
+
+```R
+data.oo <- c( 2L,  8L, 10L, 12L,  7L, 20L, 18L,   1L,  6L, 11L,
+             17L,  9L, 28L,  5L, 30L, 19L, 21L,  38L, 22L,  3L,
+             40L, 15L, 48L, 13L, 31L, 27L, 37L,  16L, 58L, 41L,
+             50L, 32L, 25L, 23L, 47L,  4L, 68L,  60L, 29L, 39L,
+             51L, 26L, 42L, 35L, 33L, 49L, 57L,  70L, 36L, 45L,
+             61L, 14L, 55L, 67L, 78L, 43L, 71L,  53L, 52L, 80L,
+             59L, 63L, 24L, 81L, 46L, 90L, 62L, 100L, 73L, 65L,
+             88L, 56L, 72L, 77L, 34L, 87L, 44L,  98L, 69L, 66L,
+             75L, 79L, 54L, 83L, 89L, 82L, 76L,  64L, 91L, 74L,
+             99L, 93L, 92L, 86L, 84L, 85L, 96L,  95L, 97L, 94L);
+result <- jssp.oo.to.gantt(data.oo, "orb07");
+print(result$makespan);
+# [1] 397
+plotteR::plot.gantt(result$gantt);
+```
+
+![Image resulting from the above code sample.](data-raw/readme/orb07_plot.png)
+
 ## Other Useful Resources
 
 Many of the data in this package are gathered from different sources in the internet, which were our starting point to explore and add results from quite a few publications.
