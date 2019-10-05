@@ -1,0 +1,6 @@
+inst.id,best.f.min
+#ft06,53
+la01,666
+la02,655
+la03,597
+la05,593

@@ -147,6 +147,8 @@
 #'
 #' Akram K, Kamal K, Zeb A (2016). “Fast Simulated Annealing Hybridized with Quenching for Solving Job Shop Scheduling Problem.” Applied Soft Computing Journal (ASOC), 49, 510-523. doi:\href{http://doi.org/10.1016/j.asoc.2016.08.037}{10.1016/j.asoc.2016.08.037}.#' 
 #'
+#' Amaria K, Souier M, Sar Z (2014). “Artificial Bee Colony (ABC) Algorithm for the Job-Shop Scheduling Problem.” In Proceedings of the 5th International Conference on Metaheuristics and Nature Inspired Computing (META'14), October 27-31, 2014, Marrakech, Morocco. The paper reports makespan 53 for ft06, which is below the lower bound of 55 and thus is not included in our dataset., \url{https://meta2014.sciencesconf.org/42589/document}.#' 
+#'
 #' Amirghasemi M, Zamani R (2015). “An Effective Asexual Genetic Algorithm for Solving the Job Shop Scheduling Problem.” Computers & Industrial Engineering, 83, 123-138. doi:\href{http://doi.org/10.1016/j.cie.2015.02.011}{10.1016/j.cie.2015.02.011}.#' 
 #'
 #' Angel JM, Martínez MR, Castillo LRM, Solis LS (2014). “Un Modelo Híbrido de Inteligencia Computacional para Resolver el Problema de Job Shop Scheduling.” Research in Computing Science, 79(Advances in Intelligent Information Technologies), 9-20. \url{http://www.rcs.cic.ipn.mx/2014_79/RCS_79_2014.pdf}.#' 
