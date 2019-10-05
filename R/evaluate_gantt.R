@@ -1,6 +1,19 @@
 
 # get the job durations on the machines
 .get.job.durations.on.machine <- function(jobs, machines, job.machine.data) {
+  stopifnot(is.integer(jobs),
+            length(jobs) == 1L,
+            is.finite(jobs),
+            jobs > 0L,
+            is.integer(machines),
+            length(machines) == 1L,
+            is.finite(machines),
+            machines > 0L,
+            is.matrix(job.machine.data),
+            is.integer(job.machine.data),
+            nrow(job.machine.data) == jobs,
+            ncol(job.machine.data) == (2L * machines),
+            all(is.finite(job.machine.data)));
 
   # compute the durations on the machines
   job.durations.on.machine <- matrix(data=NA_integer_,
@@ -24,7 +37,8 @@
     }
   }
   job.durations.on.machine <- force(job.durations.on.machine);
-  stopifnot(!any(is.na(job.durations.on.machine)));
+  stopifnot(!any(is.na(job.durations.on.machine)),
+            all(job.durations.on.machine >= 0L));
   return(job.durations.on.machine);
 }
 
