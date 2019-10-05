@@ -24,7 +24,7 @@ I begun searching papers from 2019 backwards and also include papers referenced 
 
 You can easily install the `R` by executing the following script in `R`:
 
-```
+```R
 if(!require("devtools")) {
   install.packages("devtools");
   library("devtools");
