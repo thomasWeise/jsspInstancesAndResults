@@ -213,8 +213,48 @@ table <- unname(unlist(c(
   "|---:|:---:|---:|---:|---:|:---:|---:|:---:|",
   table)));
 
+logger("making 'cite as' text");
+
+.cite.ref <- "W2019JRDAIOTJSSP";
+.cite <- jssp.bibliography[jssp.bibliography$ref.id==.cite.ref,];
+stopifnot(is.data.frame(.cite),
+          nrow(.cite) == 1L);
+.cite.text <- unname(unlist(c(
+  "## Cite this Package as follows",
+  "",
+  paste(make.references.text(refs=.cite.ref,
+                                   bibliography = .cite,
+                                   subst.doi = "doi:<a href=\\\"\\2\\\">\\1</a>",
+                                   subst.url = "<a href=\\\"\\1\\\">\\1</a>",
+                                   first.line.as.separate.line = FALSE,
+                                   logger = logger,
+                                   first.line.start=NULL,
+                                   first.line.end=NULL,
+                                   make.text.before=NULL,
+                                   make.text.after=NULL,
+                                   normal.line.start=NULL,
+                                   normal.line.end=NULL,
+                                   between.two.lines=NULL,
+                                   after.first.line=NULL,
+                                   sort=FALSE), sep="", collapse=""),
+                "",
+                "```BibTeX",
+                strsplit(.cite$ref.as.bibtex[[1L]],
+                         "\n", fixed=TRUE),
+                "```")));
+rm(".cite");
+rm(".cite.ref");
+
 logger("got all readme components, now merging text.");
-text <- unname(unlist(c(readme.prefix, table, references, readme.suffix)));
+text <- unname(unlist(c(readme.prefix,
+                        "",
+                        table,
+                        "",
+                        references,
+                        "",
+                        .cite.text,
+                        "",
+                        readme.suffix)));
 stopifnot(is.character(text),
           all(!is.na(text)));
 rm("readme.prefix");

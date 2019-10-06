@@ -1,4 +1,4 @@
-# jsspInstancesAndResults: Results and Data on Instances of the Job Shop Scheduling Problem
+# jsspInstancesAndResults: Results, Data, and Instances of the Job Shop Scheduling Problem
 
 [<img alt="Travis CI Build Status" src="http://img.shields.io/travis/thomasWeise/jsspInstancesAndResults/master.svg" height="20"/>](http://travis-ci.org/thomasWeise/jsspInstancesAndResults/)
 
@@ -9,13 +9,14 @@
 - [3. Provided Data](#3-provided-data)
 - [4. Instance Information and Statistics](#4-instance-information-and-statistics)
 - [5. Literature Sources](#5-literature-sources)
-- [6. Repository Structure](#6-repository-structure)
-- [7. Additional Functionality in the `R` Package](#7-additional-functionality-in-the-r-package)
-- [1. Other Useful Resources](#1-other-useful-resources)
-  - [1.1. Overviews of Results](#11-overviews-of-results)
-  - [1.2. Benchmark Instances](#12-benchmark-instances)
-- [2. License](#2-license)
-- [3. Contact](#3-contact)
+- [6. Cite this Package as follows](#6-cite-this-package-as-follows)
+- [7. Repository Structure](#7-repository-structure)
+- [8. Additional Functionality in the `R` Package](#8-additional-functionality-in-the-r-package)
+- [9. Other Useful Resources](#9-other-useful-resources)
+  - [9.1. Overviews of Results](#91-overviews-of-results)
+  - [9.2. Benchmark Instances](#92-benchmark-instances)
+- [10. License](#10-license)
+- [11. Contact](#11-contact)
 
 
 ## 1. Introduction
@@ -61,6 +62,7 @@ Thus, please expect that some data may be missing.
 Also, we try to provide some meta-data on the algorithms applied as well as the systems on which the experiments were run.
 Here, it is very easy to mis-interpret something or to make a mistake.
 If you have additional papers from which we can include results or wish to correct an error, contact me anytime.
+
 ## 4. Instance Information and Statistics
 
 Computer-processable information about the JSSP instances can be found [here as CSV](https://raw.githubusercontent.com/thomasWeise/jsspInstancesAndResults/master/data-raw/instances/instances_with_bks.txt) and in the data frame `jssp.instances` in the `R` package.
@@ -320,6 +322,7 @@ The rows have the following meaning:
 |**yn2**|<a href="#YN">YN</a>|20|20|**870**|<a href="#BB">BB</a>|**904**|<a href="#GR">GR</a>|
 |**yn3**|<a href="#YN">YN</a>|20|20|**859**|<a href="#VLS">VLS</a>|**892**|<a href="#NS2">NS2</a>|
 |**yn4**|<a href="#YN">YN</a>|20|20|**929**|<a href="#VLS">VLS</a>|**968**|<a href="#H">H</a>|
+
 ## 5. Literature Sources
 
 The data in this study has been taken from the following literature sources.
@@ -400,6 +403,7 @@ The bibliography keys there will start with the same mnemonic as used here, but 
 <dt id="vH2">vH2</dt><dd>van Hoorn JJ (2016). Dynamic Programming for Routing and Scheduling: Optimizing Sequences of Decisions. PhD thesis, Vrije Universiteit Amsterdam, Amsterdam, The Netherlands. <a href="http://jobshop.jjvh.nl/dissertation">http://jobshop.jjvh.nl/dissertation</a>.</li>
 <dt id="VLS">VLS</dt><dd>Vilím P, Laborie P, Shaw P (2015). “Failure-Directed Search for Constraint-Based Scheduling.” In Michel L (ed.), International Conference Integration of AI and OR Techniques in Constraint Programming: Proceedings of 12th International Conference on AI and OR Techniques in Constriant Programming for Combinatorial Optimization Problems (CPAIOR'2015), May 18-22, 2015, Barcelona, Spain, volume 9075 series Lecture Notes in Computer Science (LNCS) and Theoretical Computer Science and General Issues book sub series (LNTCS), 437-453. ISBN 978-3-319-18007-6, doi:<a href="http://doi.org/10.1007/978-3-319-18008-3_30">10.1007/978-3-319-18008-3_30</a>.</li>
 <dt id="VLS2">VLS2</dt><dd>Vilím P, Laborie P, Shaw P (2015). “Failure-Directed Search for Constraint-Based Scheduling - Detailed Experimental Results.” The detailed experimental results of the paper "Failure-Directed Search for Constraint-Based Scheduling" by the same authors, in International Conference Integration of AI and OR Techniques in Constraint Programming: Proceedings of 12th International Conference on AI and OR Techniques in Constriant Programming for Combinatorial Optimization Problems (CPAIOR'2015), May 18-22, 2015, Barcelona, Spain, pages 437-453, doi:10.1007/978-3-319-18008-3_30., <a href="http://vilim.eu/petr/cpaior2015-results.pdf">http://vilim.eu/petr/cpaior2015-results.pdf</a>.</li>
+<dt id="W">W</dt><dd>Weise T (2019). “jsspInstancesAndResults: Results, Data, and Instances of the Job Shop Scheduling Problem.” A GitHub repository with the common benchmark instances for the Job Shop Scheduling Problem as well as results from the literature, both in form of CSV files as well as R program code to access them., <a href="https://github.com/thomasWeise/jsspInstancesAndResults">https://github.com/thomasWeise/jsspInstancesAndResults</a>.</li>
 <dt id="WCL">WCL</dt><dd>Wang L, Cai J, Li M (2016). “An Adaptive Multi-Population Genetic Algorithm for Job-Shop Scheduling Problem.” Advances in Manufacturing, 4(2), 142-149. doi:<a href="http://doi.org/10.1007/s40436-016-0140-y">10.1007/s40436-016-0140-y</a>.</li>
 <dt id="WD">WD</dt><dd>Wang X, Duan H (2014). “A Hybrid Biogeography-based Optimization Algorithm for Job Shop Scheduling Problem.” Computers & Industrial Engineering, 73, 96-114. doi:<a href="http://doi.org/10.1016/j.cie.2014.04.006">10.1016/j.cie.2014.04.006</a>, <a href="http://hbduan.buaa.edu.cn/papers/2014CAIE_Wang_Duan.pdf">http://hbduan.buaa.edu.cn/papers/2014CAIE_Wang_Duan.pdf</a>.</li>
 <dt id="WTC">WTC</dt><dd>Wang S, Tsai C, Chiang M (2018). “A High Performance Search Algorithm for Job-Shop Scheduling Problem.” In Shakshuki EM, Yasar A (eds.), The 9th International Conference on Emerging Ubiquitous Systems and Pervasive Networks (EUSPN'18) / The 8th International Conference on Current and Future Trends of Information and Communication Technologies in Healthcare (ICTH'18) / Affiliated Workshops, November 5-8, 2018, Leuven, Belgium, volume 141 series Procedia Computer Science, 119-126. doi:<a href="http://doi.org/10.1016/j.procs.2018.10.157">10.1016/j.procs.2018.10.157</a>.</li>
@@ -409,7 +413,24 @@ The bibliography keys there will start with the same mnemonic as used here, but 
 <dt id="ZSR">ZSR</dt><dd>Zhang C, Shao X, Rao Y, Qiu H (2008). “Some New Results on Tabu Search Algorithm Applied to the Job-Shop Scheduling Problem.” In Jaziri W (ed.), Tabu Search. IntechOpen, London, England, UK. ISBN 978-3-902613-34-9, doi:<a href="http://doi.org/10.5772/5593">10.5772/5593</a>, <a href="http://www.intechopen.com/books/tabu_search/some_new_results_on_tabu_search_algorithm_applied_to_the_job-shop_scheduling_problem">http://www.intechopen.com/books/tabu_search/some_new_results_on_tabu_search_algorithm_applied_to_the_job-shop_scheduling_problem</a>.</li>
 </dl>
 
-## 6. Repository Structure
+## 6. Cite this Package as follows
+
+Weise T (2019). “jsspInstancesAndResults: Results, Data, and Instances of the Job Shop Scheduling Problem.” A GitHub repository with the common benchmark instances for the Job Shop Scheduling Problem as well as results from the literature, both in form of CSV files as well as R program code to access them., <a href="https://github.com/thomasWeise/jsspInstancesAndResults">https://github.com/thomasWeise/jsspInstancesAndResults</a>.
+
+```BibTeX
+@misc{W2019JRDAIOTJSSP,
+  title = {jsspInstancesAndResults: Results, Data, and Instances of the Job Shop Scheduling Problem},
+  author = {Thomas Weise},
+  publisher = {Institute of Applied Optimization, Hefei University},
+  address = {Hefei, Anhui, China},
+  year = {2019},
+  url = {https://github.com/thomasWeise/jsspInstancesAndResults},
+  note = {A GitHub repository with the common benchmark instances for the Job Shop Scheduling Problem as well as results from the literature, both in form of CSV files as well as R program code to access them.}
+}
+```
+
+
+## 7. Repository Structure
 
 In the folder `data-raw`, we provide the `R` scripts used to generate the data frames in the package, the complete data CSV files, and this README.
 The idea is that we maintain a central [BibTeX](data-raw/bibliography/bibliography.bib) file (reflected in data frame `jssp.bibliography`) and a [list of algorithms](data-raw/results/algorithms.txt) as well as a [list of basic instance information](data-raw/instances/instances.txt).
@@ -422,7 +443,7 @@ Finally, we generate a single, [OR-Library compatible file](https://raw.githubus
 The data from this file is provided as the list `jssp.instance.data` in the `R` package.
 In summary, all the data is provided both as text files for processing with arbitary tools and as as data frames/lists `jssp.bibliography`, `jssp.results`, `jssp.instances`, and `jssp.instance.data` if you install this repository as `R` package (see above).
 
-## 7. Additional Functionality in the `R` Package
+## 8. Additional Functionality in the `R` Package
 
 In the package `jsspInstancesAndResults`, we additionally provide the functionality to transform different representations for candidate solutions into Gantt charts (which are directly checked and evaluated in the process).
 Existing Gantt charts can also be evaluated, i.e., we can check whether the Gantt chart is correct and compute its makespan.
@@ -447,11 +468,11 @@ plotteR::plot.gantt(result$gantt);
 
 ![Image resulting from the above code sample.](data-raw/readme/orb07_plot.png)
 
-## 1. Other Useful Resources
+## 9. Other Useful Resources
 
 Many of the data in this package are gathered from different sources in the internet, which were our starting point to explore and add results from quite a few publications.
 
-### 1.1. Overviews of Results
+### 9.1. Overviews of Results
 
 Besides our repository, the following sources in the web provide useful information about the state-of-the-art on the JSSP:
 
@@ -459,20 +480,20 @@ Besides our repository, the following sources in the web provide useful informat
 - The websites <http://optimizizer.com/jobshop.php> run by Oleg V. Shylo, which holds many results on the JSSP as well.
 - Éric Taillard's Page <http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html>
 
-### 1.2. Benchmark Instances
+### 9.2. Benchmark Instances
 
 - [OR-Library](http://people.brunel.ac.uk/~mastjjb/jeb/orlib/jobshopinfo.html) with the `abz*`, `la*`, `orb*`, `swv*`, and `yn*` instances
 - Oleg V. Shylo's website (http://optimizizer.com/DMU.php) with the `dmu*` instances
 - Éric Taillard's Page <http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html> with the `ta*` instances
 - A repository with instances of the JSSP can be found at <http://github.com/tamy0612/JSPLIB>.
 
-## 2. License
+## 10. License
 
 Any content in this repository which originates from other sources is licensed under the licensing conditions of the respective owners.
 This includes the results of works published in literature as well as the benchmarking instances.
 Any of the above which permits me setting a license and any content contributed by myself is under the GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007.
 
-## 3. Contact
+## 11. Contact
 
 If you have any questions or suggestions, please contact
 [Prof. Dr. Thomas Weise](http://iao.hfuu.edu.cn/team/director) of the
