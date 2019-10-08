@@ -64,6 +64,7 @@ HEA,CPL2016AHEATSTJSSP,EA+TS,PL,N7,LCSX,AMD Opteron,1,NA,NA,2800,FALSE,NA,Linux,
 HFSAQ,AKZ2016FSAHWQFSJSSP,Fast-SA + TS + Quenching,OB,Nowicki-Smutnicky Neighborhood,NA,Intel Core 2 Quad,1,4,4,2400,FALSE,4096,NA,NA,Visual C#.NET,C#,NA,NA
 HGA,MNKW2012HGAGFJSSPAISA,EA+Heuristics,job permutation,swap adjacent,JBX,Intel Core 2 Duo,1,2,2,2000,FALSE,NA,NA,Matlab 7,Matlab 7,Matlab,NA,HybH heuristic = combination of Index-Based Values (IBH) and Finished Job-Based Heuristic (FJBH)
 HGACC,CCCRZDARLAOS2019HMGMPAWCCFTJSSP,parallel EA using MPI's collective communication + SA,PL,N1,crossover-directed,Intel Xeon,8,6,12,3060,TRUE,98304,CentOS 5.5,NA,GCC,C/C++,MPI,4 nodes with 2 cores; InfiniBand 40Gb/s; each node with InfiniBand board 40Gb/s
+HGA-Z,ZRL2008AEHGAFTJSSP,EA(OB)+LS(N5),OB,reverse+insert(LS),POX,Intel Pentium 4,1,2,4,1600,FALSE,256,NA,NA,Visual C++,NA,NA,NA
 HIMGA,K2015ANHIMGAFJSSP,EA with island models+TS,PL,swap+reverse+insert,OX,Intel Core i7-3770,1,4,8,3400,FALSE,8192,NA,NA,NA,C++,NA,NA
 HIMGA-Mutation,K2015ANHIMGAFJSSP,EA with island models+TS,PL,swap+reverse+insert,OX,Intel Core i7-3770,1,4,8,3400,FALSE,8192,NA,NA,NA,C++,NA,NA
 HIMGA-Random,K2015ANHIMGAFJSSP,EA with island models+TS,PL,swap+reverse+insert,OX,Intel Core i7-3770,1,4,8,3400,FALSE,8192,NA,NA,NA,C++,NA,NA

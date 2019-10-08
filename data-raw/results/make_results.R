@@ -103,7 +103,7 @@ cols.more <- create.columns(columns=list(
                                       "\\item{LOX}{linear order crossover (Falkenauer andd Bouffouix, 1991)}\n#' ",
                                       "\\item{OX}{order-based crossover}\n#' ",
                                       "\\item{PBX}{uniform or position-based crossover}\n#' ",
-                                      "\\item{POX}{Precedence Operation Crossover) (Zhang, Li, 2008)}\n#' ",
+                                      "\\item{POX}{Precedence Operation Crossover (Zhang, Li, 2008, ZRL2008AEHGAFTJSSP)}\n#' ",
                                       "\\item{PMX}{partial-mapped crossover}\n#' ",
                                       "\\item{PUX}{parameterized uniform crossover (DeJong and Spears, 1991)}\n#' ",
                                       "\\item{SPX}{single-point crossover}\n#' ",

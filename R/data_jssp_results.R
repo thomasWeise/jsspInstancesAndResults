@@ -80,7 +80,7 @@
 #' \item{LOX}{linear order crossover (Falkenauer andd Bouffouix, 1991)}
 #' \item{OX}{order-based crossover}
 #' \item{PBX}{uniform or position-based crossover}
-#' \item{POX}{Precedence Operation Crossover) (Zhang, Li, 2008)}
+#' \item{POX}{Precedence Operation Crossover (Zhang, Li, 2008, ZRL2008AEHGAFTJSSP)}
 #' \item{PMX}{partial-mapped crossover}
 #' \item{PUX}{parameterized uniform crossover (DeJong and Spears, 1991)}
 #' \item{SPX}{single-point crossover}
@@ -244,6 +244,8 @@
 #' Wang X, Duan H (2014). “A Hybrid Biogeography-based Optimization Algorithm for Job Shop Scheduling Problem.” Computers & Industrial Engineering, 73, 96-114. doi:\href{http://doi.org/10.1016/j.cie.2014.04.006}{10.1016/j.cie.2014.04.006}, \url{http://hbduan.buaa.edu.cn/papers/2014CAIE_Wang_Duan.pdf}.#' 
 #'
 #' Yamada T, Nakano R (1992). “A Genetic Algorithm Applicable to Large-Scale Job-Shop Instances.” In Männer R, Manderick B (eds.), Proceedings of Parallel Problem Solving from Nature 2 (PPSN II), September 28-30, 1992, Brussels, Belgium, 281-290.#' 
+#'
+#' Zhang C, Rao Y, Li P (2008). “An Effective Hybrid Genetic Algorithm for the Job Shop Scheduling Problem.” International Journal of Advanced Manufacturing Technology (JAMT), 39, 965-974. doi:\href{http://doi.org/10.1007/s00170-007-1354-8}{10.1007/s00170-007-1354-8}.#' 
 #'
 #' Zhang C, Shao X, Rao Y, Qiu H (2008). “Some New Results on Tabu Search Algorithm Applied to the Job-Shop Scheduling Problem.” In Jaziri W (ed.), Tabu Search. IntechOpen, London, England, UK. ISBN 978-3-902613-34-9, doi:\href{http://doi.org/10.5772/5593}{10.5772/5593}, \url{http://www.intechopen.com/books/tabu_search/some_new_results_on_tabu_search_algorithm_applied_to_the_job-shop_scheduling_problem}.#' 
 #'
