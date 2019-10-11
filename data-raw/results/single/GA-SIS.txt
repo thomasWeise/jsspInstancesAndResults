@@ -1,0 +1,3 @@
+inst.id,n.runs,best.f.min,best.f.mean,best.f.mode,best.f.med,best.f.max,best.f.sd,total.time.mean
+ft10,10,930,946.2,937,947,962,9.82966,59000
+ft20,NA,1165,NA,NA,NA,NA,NA,59000

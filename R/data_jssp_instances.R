@@ -101,6 +101,8 @@
 #'
 #' Yamada T, Nakano R (1992). “A Genetic Algorithm Applicable to Large-Scale Job-Shop Instances.” In Männer R, Manderick B (eds.), Proceedings of Parallel Problem Solving from Nature 2 (PPSN II), September 28-30, 1992, Brussels, Belgium, 281-290.#' 
 #'
+#' Yamada T, Nakano R (1997). “Genetic Algorithms for Job-Shop Scheduling Problems.” In Proceedings of Modern Heuristic for Decision Support, March18-19, 1997, London, England, UK, 67-81.#' 
+#'
 #' Zhang C, Shao X, Rao Y, Qiu H (2008). “Some New Results on Tabu Search Algorithm Applied to the Job-Shop Scheduling Problem.” In Jaziri W (ed.), Tabu Search. IntechOpen, London, England, UK. ISBN 978-3-902613-34-9, doi:\href{http://doi.org/10.5772/5593}{10.5772/5593}, \url{http://www.intechopen.com/books/tabu_search/some_new_results_on_tabu_search_algorithm_applied_to_the_job-shop_scheduling_problem}.#' 
 #'
 #'

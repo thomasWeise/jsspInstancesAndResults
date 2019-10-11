@@ -30,7 +30,6 @@
 #' \item{EA}{evolutionary algorithm}
 #' \item{FA}{Firefly Algorithm}
 #' \item{FDS}{Failure Directed Search}
-#' \item{forcing}{an improvement step that will try to move jobs in the Gantt chart to the left, if possible, first used by Nakano/Yamada}
 #' \item{GT}{Giffler and Thompson (GT) procedure}
 #' \item{GWO}{Grey wolf optimization}
 #' \item{LP}{linear programming}
@@ -47,7 +46,7 @@
 #' \item{algo.representation}{the representation used for encoding solutions, if any. Sometimes, it is not entirely clear, in which case I used what, to me, seemed to be the closest match. Thus, handle this column with special care. The following abbreviations can be used
 #' \describe{
 #' \item{CT}{the completion time of each operation, somewhat similar to OO}
-#' \item{DG}{instances are presented disjunctive graph, schedules as digraphs and/or solutions are selections of edges, improvements are often done by modifying blocks on the critical path}
+#' \item{DG}{instances are presented disjunctive graph, schedules as digraphs and/or solutions are selections of edges. The graph can be encoded as bit string and may require repairs. Improvements are often done by modifying blocks on the critical path.}
 #' \item{JB}{job-based: the jobs are assigned to machines in the order in which they occur in the string}
 #' \item{MB}{machine-based: the encoding is the order in which the machines are used as bottlenecks in a heuristic such as the Shifting Bottleneck Method}
 #' \item{OB}{operation-based: each job is represented by \code{m} genes with the same value and the chromosome is processed from front to end by assigning jobs to machines at the earliest starting times, following their occurence order. See \link{jssp.ob.to.gantt}}
@@ -59,6 +58,7 @@
 #' }}
 #' \item{algo.operator.unary}{the unary operator used in the algorithm, if any, where the following abbreviations can be used
 #' \describe{
+#' \item{active CB}{a neighborhood introduced in Yamada and Nakano (1996)}
 #' \item{insert}{extracts one value and inserts it somewhere else, shifting the other values appropriately (also called Position-based Mutation, PBM)}
 #' \item{N1}{neighborhood function N1 (Van Laarhoven et al., 1992) that performs the permutation of pairs of adjacent operations which belong to the critical path generated in the individual}
 #' \item{N4}{N4 critical operation move operator (Grabowski et al., 1988; Blazewicz et al., 1996)}
@@ -69,6 +69,7 @@
 #' \item{RWN}{random whole neighborhood: consider all permutations of lambda genes, by Cheng (1997)}
 #' \item{shift}{extracts a sub-list of values and inserts it somewhere else, shifting the other values appropriately}
 #' \item{swap}{swap two values, also known as reciprocal exchange mutation}
+#' \item{seqswap}{swap two substrings values (Shi et al., 1997, SIS1997NESFSJSPBGA)}
 #' }}
 #' \item{algo.operator.binary}{the binary operator used in the algorithm, if any, where the following abbreviations can be used
 #' \describe{
@@ -78,6 +79,7 @@
 #' \item{IR}{intermediate recombination, also known as flat crossover}
 #' \item{LCSX}{longest-common subsequence crossover (Cheng et al.,2016)}
 #' \item{LOX}{linear order crossover (Falkenauer andd Bouffouix, 1991)}
+#' \item{MSXF}{multi-step crossover fusion (Yamato and Nakano, 1997, YN1997GAFJSSP)}
 #' \item{OX}{order-based crossover}
 #' \item{PBX}{uniform or position-based crossover}
 #' \item{POX}{Precedence Operation Crossover (Zhang, Li, 2008, ZRL2008AEHGAFTJSSP)}
@@ -175,6 +177,8 @@
 #'
 #' Gao L, Li X, Wen X, Lu C, Wen F (2015). “A Hybrid Algorithm based on a New Neighborhood Structure Evaluation Method for Job Shop Scheduling Problem.” Computers & Industrial Engineering, 88, 417-429. doi:\href{http://doi.org/10.1016/j.cie.2015.08.002}{10.1016/j.cie.2015.08.002}.#' 
 #'
+#' Gen M, Tsujimura Y, Kubota E (1994). “Solving Job-Shop Scheduling Problems by Genetic Algorithm.” In Humans, Information and Technology: Proceedings of the 1994 IEEE International Conference on Systems, Man and Cybernetics, October 2-5, 1994, San Antonio, TX, USA, volume 2. ISBN 0-7803-2129-4, doi:\href{http://doi.org/10.1109/ICSMC.1994.400072}{10.1109/ICSMC.1994.400072}, \url{http://read.pudn.com/downloads151/doc/658565/00400072.pdf}.#' 
+#'
 #' Gonçalves JF, Resende MGC (2014). “An Extended Akers Graphical Method with a Biased Random-Key Genetic Algorithm for Job-Shop Scheduling.” International Transactions on Operational Research (ITOR), 21(2), 215-246. doi:\href{http://doi.org/10.1111/itor.12044}{10.1111/itor.12044}, \url{http://mauricio.resende.info/doc/brkga-jss2011.pdf}.#' 
 #'
 #' Gromicho JAS, van Hoorn JJ, Saldanha-da-Gama F, Timmer GT (2009). “Exponentially Better than Brute Force: Solving the Job-Shop Scheduling Problem Optimally by Dynamic Programming.” Technical Report 2009-56, Faculty of Economics and Business Administration, Vrije Universiteit Amsterdam, Amsterdam, The Netherlands. \url{http://degree.ubvu.vu.nl/repec/vua/wpaper/pdf/20090056.pdf}.#' 
@@ -244,6 +248,8 @@
 #' Wang X, Duan H (2014). “A Hybrid Biogeography-based Optimization Algorithm for Job Shop Scheduling Problem.” Computers & Industrial Engineering, 73, 96-114. doi:\href{http://doi.org/10.1016/j.cie.2014.04.006}{10.1016/j.cie.2014.04.006}, \url{http://hbduan.buaa.edu.cn/papers/2014CAIE_Wang_Duan.pdf}.#' 
 #'
 #' Yamada T, Nakano R (1992). “A Genetic Algorithm Applicable to Large-Scale Job-Shop Instances.” In Männer R, Manderick B (eds.), Proceedings of Parallel Problem Solving from Nature 2 (PPSN II), September 28-30, 1992, Brussels, Belgium, 281-290.#' 
+#'
+#' Yamada T, Nakano R (1997). “Genetic Algorithms for Job-Shop Scheduling Problems.” In Proceedings of Modern Heuristic for Decision Support, March18-19, 1997, London, England, UK, 67-81.#' 
 #'
 #' Zhang C, Rao Y, Li P (2008). “An Effective Hybrid Genetic Algorithm for the Job Shop Scheduling Problem.” International Journal of Advanced Manufacturing Technology (JAMT), 39, 965-974. doi:\href{http://doi.org/10.1007/s00170-007-1354-8}{10.1007/s00170-007-1354-8}.#' 
 #'

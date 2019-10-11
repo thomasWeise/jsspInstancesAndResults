@@ -33,6 +33,7 @@ EAS,FGB2013AACOAFJSSP,ACO (Elitist ACS),NA,NA,NA,NA,NA,NA,NA,NA,FALSE,NA,NA,NA,N
 FDS+LNS,VLS2015FDSFCBSDER,FDS+LNS,NA,NA,NA,Intel Core i7,1,4,8,2600,TRUE,16384,NA,NA,NA,NA,ILOG CP Optimizer 12.6.1,NA
 FSA-AKZ,AKZ2016FSAHWQFSJSSP,Fast-SA,OB,Nowicki-Smutnicky Neighborhood,NA,Intel Core 2 Quad,1,4,4,2400,FALSE,4096,NA,NA,Visual C#.NET,C#,NA,NA
 GA-GT,YN1992AGAATLSJSI,EA,CT,part of crossover,GT-crossover,Cypress CY7C601 ,1,1,1,40,FALSE,64,SunOS,NA,NA,C,NA,run on Sun SPARCstation 2
+GA-GTK,GTK1994SJSSPBGA,EA,OB,swap,sequence exchange and repair,NA,1,NA,NA,NA,FALSE,NA,NA,NA,Turbo C,C,NA,NA
 GA-JB-A,A2010RIGAFTJSPACS,EA,JB,swap+reverse+insert+shift,PMX+OX+PBX,Intel Pentium Core 2 Duo,1,2,2,2670,FALSE,512,NA,NA,NA,C++,NA,NA
 GA-JB-JPDS,JPDS2014CAODRIGAFJSSP,EA,JB,swap+reverse+insert+shift,PMX+OX+PBX,Intel Pentium 4,1,2,4,2060,FALSE,512,NA,NA,NA,NA,NA,NA
 GA-MB-A,A2010RIGAFTJSPACS,EA,MB,swap+reverse+insert+shift,PMX+OX+PBX,Intel Pentium Core 2 Duo,1,2,2,2670,FALSE,512,NA,NA,NA,C++,NA,NA
@@ -51,7 +52,7 @@ GA-RK-A,A2010RIGAFTJSPACS,EA,RK+OB,swap+reverse+insert+shift,PMX+OX+PBX,Intel Pe
 GA-tail,ODP2010STJSPWARKGAWIP,EA,RK+OO+GT,NA,UX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,with init heuristic
 GA-WTC,WTC2018AHPSAFJSSP,EA,OB,NA,NA,Intel Core i5 4460,1,4,4,3200,FALSE,8192,NA,NA,NA,NA,NA,NA
 GLS1,BV1998GLSWSBFJSS,LS,PL,interchange of critical operation pair,NA,SUN SPARCstation 330,1,1,1,30,FALSE,NA,NA,NA,NA,C,NA,experiments on SUN SPARCstation 330; but times reported as Computer-Independent CPU Time
-GP-GA,B1995AGPATJSSWGA,EA+forcing+ring structure of population,OB,NA,generalized OX,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,C,Distributed genetic optimization environment 'Parnet',NA
+GP-GA,B1995AGPATJSSWGA,EA+local improvements+ring structure of population,OB,NA,generalized OX,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,C,Distributed genetic optimization environment 'Parnet',NA
 GPSO-AK,AK2018AIPAWGANBDOFTJSSP,discrete PSO +  genetic operators,OB,NA,NA,Intel Pentium 4,1,1,2,3000,FALSE,2048,NA,NA,NA,C++,NA,NA
 gtacurve,SS2018BBOVBCACSOJSS,TS guided by logistic regression model,DG,N4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 gtacurve0001,SS2018BBOVBCACSOJSS,TS guided by logistic regression model,DG,N4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -77,6 +78,7 @@ ISO,KV2014ISAOAFJSS,LP+DES,NA,NA,NA,IntelDual Core,1,2,2,800,NA,3072,NA,NA,NA,NA
 i-TSAB,NS2005AATSAFTJSP,initial heuristic (INSA) + iteratively pick start solutions (NIS) +TS (TSAB),PL+DG,NA,NA,Intel Pentium 3,1,1,1,900,FALSE,NA,NA,NA,NA,NA,NA,NA
 LSGA,OV2004LSGAFTJSSP,EA+LS,OO,swap consecutive task on machine,taskCrossover,R10000,NA,NA,NA,180,FALSE,NA,NA,NA,NA,C,NA,SGI Origin Series Machine Model 2000
 MP-CA,RNK2012AKMBMPCATSJSS,multi-population CA+LS,PL variant,NA,NA,IntelIntel Core 2 Quad,1,4,4,2500,FALSE,8192,NA,Java 1.6.0.18,NA,Java,NA,NA
+MSXF-GA,YN1997GAFJSSP,EA+LS-Crossover,DG,LS in active CB,MSXF (LS in active CB),DEC Alpha 600 5/266 (21164-EB5),1,1,1,266,FALSE,NA,NA,NA,NA,C,NA,NA
 NIT,PPH2012AONNGAFMSITJSS,EA+Niching (niching+sharing),OB,swap,OX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,for multimodal optimization
 NPSO-AK,AK2018AIPAWGANBDOFTJSSP,discrete PSO + neighborhood-based operators,OB,NA,NA,Intel Pentium 4,1,1,2,3000,FALSE,2048,NA,NA,NA,C++,NA,NA
 PABC,SMM2018PABCPFJSSP,Parallel ABC,DG,NA,NA,Intel Core i3,1,2,4,2700,TRUE,4096,Microsoft Windows 7,NA,NA,C/C++,Code::Blocks IDE,NA

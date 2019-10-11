@@ -1,0 +1,4 @@
+inst.id,best.f.min
+ft06,55
+ft10,962
+ft20,1175
