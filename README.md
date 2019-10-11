@@ -165,9 +165,9 @@ The rows have the following meaning:
 |**dmu78**|<a href="#DMU1">DMU1</a>|50|20|**6586**|<a href="#GL">GL</a>|**6770**|<a href="#PLC">PLC</a>|
 |**dmu79**|<a href="#DMU1">DMU1</a>|50|20|**6650**|<a href="#GL">GL</a>|**6952**|<a href="#SS">SS</a>|
 |**dmu80**|<a href="#DMU1">DMU1</a>|50|20|**6459**|<a href="#GL">GL</a>|**6673**|<a href="#SS">SS</a>|
-|ft06|<a href="#FT">FT</a>|6|6|55|<a href="#FTM">FTM</a>|55|<a href="#AC">AC</a>|
-|ft10|<a href="#FT">FT</a>|10|10|930|<a href="#CP">CP</a>|930|<a href="#AC">AC</a>|
-|ft20|<a href="#FT">FT</a>|20|5|1165|<a href="#MF">MF</a>|1165|<a href="#AC">AC</a>|
+|ft06|<a href="#FT">FT</a>|6|6|55|<a href="#FTM">FTM</a>|55|<a href="#CP">CP</a>|
+|ft10|<a href="#FT">FT</a>|10|10|930|<a href="#CP">CP</a>|930|<a href="#CP">CP</a>|
+|ft20|<a href="#FT">FT</a>|20|5|1165|<a href="#MF">MF</a>|1165|<a href="#CP">CP</a>|
 |la01|<a href="#L">L</a>|10|5|666|<a href="#ABZ">ABZ</a>|666|<a href="#AC">AC</a>|
 |la02|<a href="#L">L</a>|10|5|655|<a href="#ABZ">ABZ</a>|655|<a href="#AC">AC</a>|
 |la03|<a href="#L">L</a>|10|5|597|<a href="#AC">AC</a>|597|<a href="#AC">AC</a>|

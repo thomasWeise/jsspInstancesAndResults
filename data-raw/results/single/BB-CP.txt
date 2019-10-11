@@ -1,0 +1,4 @@
+inst.id,n.runs,best.f.min,reach.best.f.min.time.min,total.time.min
+ft06,1,55,1000,1000
+ft10,1,930,3305000,17985000
+ft20,1,1165,1234000,1448000

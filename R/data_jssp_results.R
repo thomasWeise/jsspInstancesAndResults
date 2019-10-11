@@ -167,6 +167,8 @@
 #'
 #' Caldeira JP (2003). “Private Communication of Result 2869 for ta62 to Éric D. Taillard, listed on Éric Taillard's Page.” \url{http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/jobshop.dir/best_lb_up.txt}.#' 
 #'
+#' Carlier J, Pinson É (1989). “An Algorithm for Solving the Job-Shop Problem.” Management Science, 35(2), 164-176. doi:\href{http://doi.org/10.1287/mnsc.35.2.164}{10.1287/mnsc.35.2.164}, jstor: 2631909.#' 
+#'
 #' Cheng TCE, Peng B, Lü Z (2016). “A Hybrid Evolutionary Algorithm to Solve the Job Shop Scheduling Problem.” Annals of Operations Research, 242(2), 223-237. doi:\href{http://doi.org/10.1007/s10479-013-1332-5}{10.1007/s10479-013-1332-5}, The paper reports 555 as average makespan of HEA for ft20, which is an obvious typo because the other columns have 1165, which is the lower bound.#' 
 #'
 #' Cruz-Chávez MA, Cruz Rosales MH, Zavala-Díaz JC, Aguilar JAH, Rodrıguez-Leó A, Avelino JCP, Orziz MEL, Salinas OH (2019). “Hybrid Micro Genetic Multi-Population Algorithm With Collective Communication for the Job Shop Scheduling Problem.” IEEE Access, 7, 82358-82376. doi:\href{http://doi.org/10.1109/ACCESS.2019.2924218}{10.1109/ACCESS.2019.2924218}, \url{http://ieeexplore.ieee.org/document/8743353}.#' 
