@@ -23,7 +23,10 @@ stopifnot(is.character(readme.suffix),
 rm("readme.dir");
 
 stopifnot(exists("jssp.bibliography"),
-          is.data.frame(jssp.bibliography));
+          is.data.frame(jssp.bibliography),
+          exists("bib.lines"),
+          is.integer(bib.lines),
+          length(bib.lines) == nrow(jssp.bibliography));
 
 library(literatureAndResultsGen);
 
@@ -79,6 +82,7 @@ for(i in seq_along(ref.usekeys)) {
 rm("same");
 rm("n.start");
 rm("ref.years")
+rm("i")
 
 stopifnot(length(ref.usekeys) == length(ref.keys),
           length(unique(ref.usekeys)) == length(ref.usekeys),
@@ -87,6 +91,7 @@ stopifnot(length(ref.usekeys) == length(ref.keys),
           all(nchar(ref.usekeys) > 0),
           all(!is.na(ref.usekeys)));
 
+# get the short key
 .key <- function(ref) {
   i <- ref.keys == ref;
   stopifnot(sum(i) == 1L);
@@ -96,6 +101,19 @@ stopifnot(length(ref.usekeys) == length(ref.keys),
   i <- ref.usekeys[[i]];
   stopifnot(startsWith(ref, i),
             nchar(i) > 0L);
+  return(i);
+}
+
+# get the bib line
+.line <- function(ref) {
+  i <- ref.keys == ref;
+  stopifnot(sum(i) == 1L);
+  i <- which(i);
+  stopifnot(is.finite(i),
+            length(i) == 1L);
+  i <- bib.lines[[i]];
+  stopifnot(is.integer(i),
+            i > 0L);
   return(i);
 }
 
@@ -124,13 +142,29 @@ references <- make.references.text(refs=NULL,
                                                !is.na(ref));
                                      return(paste0("<dt id=\"", ref, "\">", ref, "</dt><dd>"));
                                    },
-                                   make.text.after=NULL,
+                                   make.text.after=function(ref) {
+                                     stopifnot(is.character(ref),
+                                               nchar(ref) > 0L,
+                                               length(ref) == 1L,
+                                               !is.na(ref));
+                                     line <- .line(ref);
+                                     stopifnot(is.integer(line),
+                                               !is.na(line),
+                                               is.finite(line),
+                                               line > 0L);
+                                     return(paste0(" BibTeX:[", ref,
+                                                   "](", bib.path.relative, "#LC",
+                                                   line, ")"));
+                                   },
                                    normal.line.start=NULL,
                                    normal.line.end="</li>",
                                    between.two.lines=NULL,
                                    after.first.line=NULL,
                                    sort=FALSE);
 rm("use.bib");
+rm("bib.lines");
+rm("bib.path.relative");
+rm(".line");
 stopifnot(is.character(references),
           length(references) > 0L);
 references <- unname(unlist(c(paste0("## Literature Sources"),
@@ -272,6 +306,7 @@ stopifnot(is.data.frame(.cite),
                 "```")));
 rm(".cite");
 rm(".cite.ref");
+rm("ref.keys");
 
 logger("got all readme components, now merging text.");
 text <- unname(unlist(c(readme.prefix,
@@ -303,5 +338,4 @@ stopifnot(file.exists(readme.dest),
           file.size(readme.dest) >= (length(text) + sum(nchar(text))));
 rm("text");
 rm("readme.dest");
-
 logger("finished making README.md");
