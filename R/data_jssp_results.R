@@ -70,6 +70,7 @@
 #' \item{shift}{extracts a sub-list of values and inserts it somewhere else, shifting the other values appropriately}
 #' \item{swap}{swap two values, also known as reciprocal exchange mutation}
 #' \item{seqswap}{swap two substrings values (Shi et al., 1997, SIS1997NESFSJSPBGA)}
+#' \item{swapJoM}{swap jobs on the same machine (Mui et al., 2012, MHT2012APGAFTJSSP)}
 #' }}
 #' \item{algo.operator.binary}{the binary operator used in the algorithm, if any, where the following abbreviations can be used
 #' \describe{
@@ -204,6 +205,8 @@
 #' Maqsood S, Noor S, Khan MK, Wood A (2012). “Hybrid Genetic Algorithm (GA) for Job Shop Scheduling Problems and its Sensitivity Analysis.” International Journal of Intelligent Systems Technologies and Applications (IJISTA), 11(1/2), 49-62. doi:\href{http://doi.org/10.1504/IJISTA.2012.046543}{10.1504/IJISTA.2012.046543}.#' 
 #'
 #' Miller-Todd J, Steinhöfel K, Veenstra P (2018). “Firefly-Inspired Algorithm for Job Shop Scheduling.” In Böckenhauer H, Komm D, Unger W (eds.), Adventures Between Lower Bounds and Higher Altitudes - Essays Dedicated to Juraj Hromkovič on the Occasion of His 60th Birthday, volume 11011 series Lecture Notes in Computer Science (LNCS), 423-433. Springer. ISBN 978-3-319-98354-7, doi:\href{http://doi.org/10.1007/978-3-319-98355-4_24}{10.1007/978-3-319-98355-4_24}.#' 
+#'
+#' Mui NH, Hoa VD, Tuyen LT (2012). “A Parallel Genetic Algorithm for the Job Shop Scheduling Problem.” In Proceedings of the IEEE International Symposium on Signal Processing and Information Technology (ISSPIT'12), December 12-15, 2012, Ho Chi Minh City, Vietnam, 19-24. ISBN 978-1-4673-5604-6, doi:\href{http://doi.org/10.1109/ISSPIT.2012.6621254}{10.1109/ISSPIT.2012.6621254}.#' 
 #'
 #' Narendhar S, Amudha T (2012). “A Hybrid Bacterial Foraging Algorithm For Solving Job Shop Scheduling Problems.” International Journal of Programming Languages and Applications (IJPLA), 2(4), 1-11. doi:\href{http://doi.org/10.5121/ijpla.2012.2401}{10.5121/ijpla.2012.2401}, Also available via Computing Research Repository (CoRR) abs/1211.4971 at arXiv:1211.4971v1 [cs.NE], \url{https://arxiv.org/pdf/1211.4971.pdf}.#' 
 #'

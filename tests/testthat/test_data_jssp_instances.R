@@ -26,10 +26,18 @@ data("jssp.bibliography");
 test_that("Test the instances meta-data", {
   expect_true(is.data.frame(jssp.instances));
   expect_gt(nrow(jssp.instances), 0L);
-  expect_identical(ncol(jssp.instances), 8L);
-  expect_identical(colnames(jssp.instances), c("inst.id", "inst.ref", "inst.jobs", "inst.machines",
-                                               "inst.opt.bound.lower", "inst.opt.bound.lower.ref",
-                                               "inst.bks", "inst.bks.ref"));
+  expect_identical(ncol(jssp.instances), 10L);
+  expect_identical(colnames(jssp.instances),
+                   c("inst.id",
+                     "inst.ref",
+                     "inst.jobs",
+                     "inst.machines",
+                     "inst.opt.bound.lower",
+                     "inst.opt.bound.lower.ref",
+                     "inst.bks",
+                     "inst.bks.ref",
+                     "inst.bks.time",
+                     "inst.bks.time.ref"));
   expect_type(jssp.instances[, 1L], "character");
   expect_type(jssp.instances[, 2L], "character");
   expect_type(jssp.instances[, 3L], "integer");
@@ -38,6 +46,8 @@ test_that("Test the instances meta-data", {
   expect_type(jssp.instances[, 6L], "character");
   expect_type(jssp.instances[, 7L], "integer");
   expect_type(jssp.instances[, 8L], "character");
+  expect_type(jssp.instances[, 9L], "integer");
+  expect_type(jssp.instances[, 10L], "character");
   expect_true(all(nchar(jssp.instances$inst.id) > 0L));
   expect_length(unique(jssp.instances$inst.id), nrow(jssp.instances));
   expect_true(all(nchar(jssp.instances$inst.ref) > 0L));
@@ -59,4 +69,9 @@ test_that("Test the instances meta-data", {
   expect_true(all(jssp.instances$inst.opt.bound.lower <= jssp.instances$inst.bks));
   expect_true(all(nchar(jssp.instances$inst.bks.ref) > 0L));
   .check.bib(jssp.instances$inst.bks.ref, TRUE);
+
+  .check.bib(jssp.instances$inst.bks.time.ref[!is.na(jssp.instances$inst.bks.time.ref)]);
+  expect_true(all(is.na(jssp.instances$inst.bks.time) | (jssp.instances$inst.bks.time >= 0L)));
+  expect_true(all(is.na(jssp.instances$inst.bks.time) == is.na(jssp.instances$inst.bks.time.ref)));
+  expect_true(all(is.na(jssp.instances$inst.bks.time.ref) | (nchar(jssp.instances$inst.bks.time.ref) > 0L)));
 })

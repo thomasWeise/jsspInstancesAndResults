@@ -92,6 +92,7 @@ cols.more <- create.columns(columns=list(
                                       "\\item{shift}{extracts a sub-list of values and inserts it somewhere else, shifting the other values appropriately}\n#' ",
                                       "\\item{swap}{swap two values, also known as reciprocal exchange mutation}\n#' ",
                                       "\\item{seqswap}{swap two substrings values (Shi et al., 1997, SIS1997NESFSJSPBGA)}\n#' ",
+                                      "\\item{swapJoM}{swap jobs on the same machine (Mui et al., 2012, MHT2012APGAFTJSSP)}\n#' ",
                                       "}"),
                                "character"),
                  create.column("algo.operator.binary",

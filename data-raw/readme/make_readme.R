@@ -172,17 +172,36 @@ table <- vapply(seq_len(nrow(jssp.instances)),
                     fix <- "";
                   }
 
-                  return(paste0("|", fix, row$inst.id, fix, "|",
+                  .line <- (paste0("|", fix, row$inst.id, fix, "|",
                                 ref.fun(row$inst.ref), "|",
                                 row$inst.jobs, "|",
                                 row$inst.machines, "|",
-                                fix,  row$inst.opt.bound.lower, fix, "|",
+                                fix, row$inst.opt.bound.lower, fix, "|",
                                 ref.fun(row$inst.opt.bound.lower.ref),
                                 "|",
                                 fix, row$inst.bks, fix,
                                 "|",
                                 ref.fun(row$inst.bks.ref),
                                 "|"));
+
+                  t <- row$inst.bks.time;
+                  if(is.na(t)) {
+                    return(paste0(.line, "||"));
+                  }
+
+                  t <- t/1000L;
+                  if(as.integer(t) == t) {
+                    t <- as.integer(t);
+                  }
+                  t <- format(t, big.mark = "'", drop0trailing = TRUE);
+                  stopifnot(is.character(t),
+                            nchar(t) > 0L);
+                  r <- row$inst.bks.time.ref;
+                  stopifnot(!is.na(r),
+                            is.character(r),
+                            nchar(r) > 0L);
+                  return(paste0(.line, fix, t, fix,
+                                "|", ref.fun(r), "|"));
                 }, NA_character_);
 
 rm("ref.fun");
@@ -207,10 +226,19 @@ table <- unname(unlist(c(
   "- `lb` the lower bound for the makespan of any solution for the instance",
   "- `lb ref` the reference to the earliest publication (in this survey) that mentioned this lower bound",
   "- `bks` the makespan of the best-known solution (in terms of the makespan), based on this survey",
-  "- `bks ref` the reference to the earliest publication(s) in this survey that mentioned the bks",
+  "- `bks ref` the reference(s) to the earliest publication(s) in this survey that mentioned the bks",
+  "- `t(bks)` the fast time reported (in seconds), by any of the references in the study, for reaching `bks`",
+  "- `t(bks) ref` the reference(s) of the publications reporting `t(bks)`",
   "",
-  "|id|ref|jobs|machines|lb|lb ref|bks|bks ref|",
-  "|---:|:---:|---:|---:|---:|:---:|---:|:---:|",
+  "Please, pleast take the column `t(bks)` with many grains of salt.",
+  "First, we just report the time, regardless of which computer was used to obtain the result or even whether parallelism was applied or not.",
+  "Second sometimes a minimum time to reach the best result of the run is given in a paper, sometimes we just have the maximum runtime used, sometimes we have a buget &ndash; and some publications do not report a runtime at all.",
+  "Hence, our data here is very incomplete and unreliable and for some instances, we may not have any proper runtime value at all",
+  "Therefore, this column is not to be understood as a normative a reliable information, more as a very rough guide regarding where we are standing right now.",
+  "And, needless to say, it is only populated with the information extracted from the papers used in this study, so it may not even be representative.",
+  "",
+  "|id|ref|jobs|machines|lb|lb ref|bks|bks ref|t(bks)|t(bks) ref|",
+  "|---:|:---:|---:|---:|---:|:---:|---:|:---:|---:|:---:|",
   table)));
 
 logger("making 'cite as' text");

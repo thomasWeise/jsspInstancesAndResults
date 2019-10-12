@@ -7,7 +7,8 @@ stopifnot(is.data.frame(jssp.instances),
 
 logger("now computing and attaching best-known solutions to instance frame");
 jssp.instances <- append.bks.to.instance.frame(jssp.instances, jssp.results,
-                                               are.objective.values.ints = TRUE);
+                                               are.objective.values.ints = TRUE,
+                                               is.time.int = TRUE);
 logger("done computing and attaching best-known solutions to instance frame");
 
 stopifnot(is.data.frame(jssp.instances),
@@ -25,7 +26,10 @@ if(file.exists(jssp.instances.bks.file)) {
 }
 stopifnot(!file.exists(jssp.instances.bks.file));
 
-write.csv(x=jssp.instances, file=jssp.instances.bks.file, quote = FALSE, row.names = FALSE);
+write.csv(x=jssp.instances,
+          file=jssp.instances.bks.file,
+          quote = FALSE,
+          row.names = FALSE);
 stopifnot(file.exists(jssp.instances.bks.file),
           file.size(jssp.instances.bks.file) > (nrow(jssp.instances) * (1L + ncol(jssp.instances))));
 
@@ -47,9 +51,16 @@ writeLines(text=unname(unlist(c(
   "#' Here we provide baseline data about the benchmark instances that are commonly used in research",
   "#' on the Job Shop Scheduling Problem.",
   "#' Data on the lower bounds has in particular been taken from van Hoorn's great website \\url{http://jobshop.jjvh.nl}.",
-  "#' The data on the best-known solutions (BKS) has automatically been extracted from the per-instance results, see \\link{jssp.results}.",
+  "#' The data on the best-known solutions (\\code{inst.bks}) has automatically been extracted from the per-instance results, see \\link{jssp.results}.",
   "#' All literature referenced, on the other hand, can be found in \\link{jssp.bibliography}.",
   "#' The benchmark instances themselves are provided in \\link{jssp.instance.data}.",
+  "#' We also try to provide the fastest runtime that was reported in any of our referenced papers for finding \\code{inst.bks}.",
+  "#' But please, please, take the corresponding \\code{inst.bks.time} column with many grains of salt!",
+  "#' First, we just report the time, regardless of which computer was used to obtain the result or even whether parallelism was applied or not.",
+  "#' Second sometimes a minimum time to reach the best result of the run is given in a paper, sometimes we just have the maximum runtime used, sometimes we have a buget &ndash; and some publications do not report a runtime at all.",
+  "#' Hence, our data here is very incomplete and unreliable and for some instances, we may not have any proper runtime value at all",
+  "#' Therefore, this column is not to be understood as a normative a reliable information, more as a very rough guide regarding where we are standing right now.",
+  "#' And, needless to say, it is only populated with the information extracted from the papers used in this study, so it may not even be representative.",
   "#'",
   "#' @docType data",
   "#'",
@@ -65,6 +76,8 @@ writeLines(text=unname(unlist(c(
   "#'   \\item{inst.opt.bound.lower.ref}{the id of the reference of the source where this lower bound has been published, which points into a row of \\code{jssp.bibliography}}",
   "#'   \\item{inst.bks}{the best-known solution for the instance \\emph{within any paper cited in this study} (or NA if none of the paper has one)}",
   "#'   \\item{inst.bks.ref}{the reference(s) for the best-known for the instance \\emph{within any paper cited in this study}, only considering references from the earliest year the bks was found in this study, separated by ';' if multiple, NA if none}",
+  "#'   \\item{inst.bks.time}{the fasted time (in milliseconds) recorded within the papers cited in this study within which the best-known solution \\code{inst.bks} was found, \\emph{regardless of the computer used}. Not all studies provide runtimes and if they do, the measurements may not be very precise. For some instances, we can therefore only not \\code{NA} and when a value is given, it may be very unreliable. While I tried to be conservative here, consider this column merely as a general guide to get some impression about where we are standing, take it with a grain of salt, and do not consider it as ground truth.}",
+  "#'   \\item{inst.bks.time.ref}{the earliest publication reporting the time for discovering the best-known solution.}",
   "#'}",
   "#'",
   "#' @keywords Job Shop Scheduling, JSSP, instances",
