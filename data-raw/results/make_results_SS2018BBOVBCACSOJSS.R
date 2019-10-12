@@ -213,7 +213,9 @@ stopifnot(all(!is.na(keep.s)),
 .sd <- function(x) {
   stopifnot(length(x) > 0L);
   if(length(x) <= 1L) { return(0L); }
-  return(sd(x));
+  r <- sd(x);
+  stopifnot(is.finite(r), r >= 0);
+  return(r);
 }
 
 # load a single file and return measurements at the interesting points as well
