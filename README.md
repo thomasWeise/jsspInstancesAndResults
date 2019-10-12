@@ -80,7 +80,7 @@ The rows have the following meaning:
 - `t(bks) in s` the fast time reported (in seconds), by any of the references in the study, for reaching `bks`
 - `t(bks) ref` the reference(s) of the publications reporting `t(bks)`
 
-Please, pleast take the column `t(bks)` with many grains of salt.
+Please, please take the column `t(bks)` with many grains of salt.
 First, we just report the time, regardless of which computer was used to obtain the result or even whether parallelism was applied or not.
 Second sometimes a minimum time to reach the best result of the run is given in a paper, sometimes we just have the maximum runtime used, sometimes we have a buget &ndash; and some publications do not report a runtime at all.
 Hence, our data here is very incomplete and unreliable and for some instances, we may not have any proper runtime value at all
