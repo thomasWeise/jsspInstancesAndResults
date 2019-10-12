@@ -193,7 +193,7 @@ table <- vapply(seq_len(nrow(jssp.instances)),
                   if(as.integer(t) == t) {
                     t <- as.integer(t);
                   }
-                  t <- format(t, big.mark = "'", drop0trailing = TRUE);
+                  t <- format(t, drop0trailing = TRUE);
                   stopifnot(is.character(t),
                             nchar(t) > 0L);
                   r <- row$inst.bks.time.ref;
@@ -227,7 +227,7 @@ table <- unname(unlist(c(
   "- `lb ref` the reference to the earliest publication (in this survey) that mentioned this lower bound",
   "- `bks` the makespan of the best-known solution (in terms of the makespan), based on this survey",
   "- `bks ref` the reference(s) to the earliest publication(s) in this survey that mentioned the bks",
-  "- `t(bks)` the fast time reported (in seconds), by any of the references in the study, for reaching `bks`",
+  "- `t(bks) in s` the fast time reported (in seconds), by any of the references in the study, for reaching `bks`",
   "- `t(bks) ref` the reference(s) of the publications reporting `t(bks)`",
   "",
   "Please, pleast take the column `t(bks)` with many grains of salt.",
@@ -237,7 +237,7 @@ table <- unname(unlist(c(
   "Therefore, this column is not to be understood as a normative a reliable information, more as a very rough guide regarding where we are standing right now.",
   "And, needless to say, it is only populated with the information extracted from the papers used in this study, so it may not even be representative.",
   "",
-  "|id|ref|jobs|machines|lb|lb ref|bks|bks ref|t(bks)|t(bks) ref|",
+  "|id|ref|jobs|machines|lb|lb ref|bks|bks ref|t(bks) in s|t(bks) ref|",
   "|---:|:---:|---:|---:|---:|:---:|---:|:---:|---:|:---:|",
   table)));
 
