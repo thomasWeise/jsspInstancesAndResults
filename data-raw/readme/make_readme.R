@@ -152,9 +152,9 @@ references <- make.references.text(refs=NULL,
                                                !is.na(line),
                                                is.finite(line),
                                                line > 0L);
-                                     return(paste0(" BibTeX:[", ref,
-                                                   "](", bib.path.relative, "#LC",
-                                                   line, ")"));
+                                     return(paste0(" BibTeX:<a href=\"",
+                                                   bib.path.relative, "#LC",
+                                                   line, "\">", ref, "</a>"));
                                    },
                                    normal.line.start=NULL,
                                    normal.line.end="</li>",
