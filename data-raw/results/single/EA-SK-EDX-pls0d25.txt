@@ -1,0 +1,3 @@
+inst.id,n.runs,best.f.mean,last.improvement.time.mean,best.f.min,reach.best.f.min.runs,budget.fes
+ft10,30,930.53,126100,930,28,500000
+abz5,30,1234.46,202490,1234,24,500000
