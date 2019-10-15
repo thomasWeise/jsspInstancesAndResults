@@ -1,0 +1,2 @@
+inst.id,n.runs,budget.fes,best.f.mean,best.f.min,best.f.max
+la38,5,10000000,1207.7,1201,1213

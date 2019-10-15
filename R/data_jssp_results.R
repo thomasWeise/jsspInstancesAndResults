@@ -35,6 +35,7 @@
 #' \item{LP}{linear programming}
 #' \item{LNS}{large neighborhood search}
 #' \item{LS}{a local search}
+#' \item{ANN}{artificial neural network}
 #' \item{PSO}{particle swarm optimization}
 #' \item{SA}{simulated annealing}
 #' \item{SE}{seach economics}
@@ -47,7 +48,7 @@
 #' \item{algo.representation}{the representation used for encoding solutions, if any. Sometimes, it is not entirely clear, in which case I used what, to me, seemed to be the closest match. Thus, handle this column with special care. The following abbreviations can be used
 #' \describe{
 #' \item{CT}{the completion time of each operation, somewhat similar to OO}
-#' \item{DG}{instances are presented disjunctive graph, schedules as digraphs and/or solutions are selections of edges. The graph can be encoded as bit string and may require repairs. Improvements are often done by modifying blocks on the critical path.}
+#' \item{DG}{instances are presented disjunctive graph, schedules as digraphs and/or solutions are selections of edges. The selection can be encoded as bit string and may require repairs. Improvements are often done by modifying blocks on the critical path.}
 #' \item{JB}{job-based: the jobs are assigned to machines in the order in which they occur in the string}
 #' \item{MB}{machine-based: the encoding is the order in which the machines are used as bottlenecks in a heuristic such as the Shifting Bottleneck Procedure (SBP)}
 #' \item{OB}{operation-based: each job is represented by \code{m} genes with the same value and the chromosome is processed from front to end by assigning jobs to machines at the earliest starting times, following their occurence order. See \link{jssp.ob.to.gantt}}
@@ -60,6 +61,7 @@
 #' \item{algo.operator.unary}{the unary operator used in the algorithm, if any, where the following abbreviations can be used
 #' \describe{
 #' \item{active CB}{a neighborhood introduced in Yamada and Nakano (1996)}
+#' \item{bit flip}{a single bit is flipped (may be used in conjunction with DG representation)}
 #' \item{insert}{extracts one value and inserts it somewhere else, shifting the other values appropriately (also called Position-based Mutation, PBM)}
 #' \item{JBSC}{Job-order based Shift Change (Ono et al., 1996)}
 #' \item{N1}{neighborhood function N1 (Van Laarhoven et al., 1992) that performs the permutation of pairs of adjacent operations which belong to the critical path generated in the individual}
@@ -165,6 +167,8 @@
 #'
 #' Asadzadeh L (2015). “A Local Search Genetic Algorithm for the Job Shop Scheduling Problem with Intelligent Agents.” Computers & Industrial Engineering, 85, 376-383. doi:\href{http://doi.org/10.1016/j.cie.2015.04.006}{10.1016/j.cie.2015.04.006}.
 #'
+#' Aydin ME, Fogarty TC (2002). “Modular Simulated Annealing for Job Shop Scheduling running on Distributed Resource Machine (DRM).” London South Bank University, Faculty of Business, Computing and Information Management, London, England, UK. \url{http://www.soc.napier.ac.uk/~benp/dream/dreampaper6a.pdf}.
+#'
 #' Balas E, Vazacopoulos A (1998). “Guided Local Search with Shifting Bottleneck for Job Shop Scheduling.” Management Science, 44(2), 262-275. doi:\href{http://doi.org/10.1287/mnsc.44.2.262}{10.1287/mnsc.44.2.262}, reports 307 as makespan for orb07, probably a typo, as the lower bound is 397.
 #'
 #' Beck JC, Feng TK, Watson J (2011). “Combining Constraint Programming and Local Search for Job-Shop Scheduling.” INFORMS Journal on Computing, 23(1), 1-14. doi:\href{http://doi.org/10.1287/ijoc.1100.0388}{10.1287/ijoc.1100.0388}, \url{http://cfwebprod.sandia.gov/cfdocs/CompResearch/docs/ists-sgmpcs.pdf}.
@@ -206,6 +210,8 @@
 #' Li L, Weng W, Fujimura S (2017). “An Improved Teaching-Learning-based Optimization Algorithm to Solve Job Shop Scheduling Problems.” In Zhu G, Yao S, Cui X, Xu S (eds.), 16th IEEE/ACIS International Conference on Computer and Information Science (ICIS'17), May 24-26, 2017, Wuhan, China, 797-801. ISBN 978-1-5090-5507-4, doi:\href{http://doi.org/10.1109/ICIS.2017.7960101}{10.1109/ICIS.2017.7960101}.
 #'
 #' Magalhães-Mendes J (2013). “A Comparative Study of Crossover Operators for Genetic Algorithms to Solve the Job Shop Scheduling Problem.” WSEAS Transactions on Computers, 12(4), 164-173. \url{http://www.wseas.org/multimedia/journals/computers/2013/5705-156.pdf}.
+#'
+#' Mahapatra DK (2012). “Bachelor's Thesis: Job Shop Scheduling using Artificial Immune System.” guided by Prof. S. S. Mahapatra, \url{http://pdfs.semanticscholar.org/a350/070a2612d046d11feb33e64d1ab58cd8870d.pdf}.
 #'
 #' Maqsood S, Noor S, Khan MK, Wood A (2012). “Hybrid Genetic Algorithm (GA) for Job Shop Scheduling Problems and its Sensitivity Analysis.” International Journal of Intelligent Systems Technologies and Applications (IJISTA), 11(1/2), 49-62. doi:\href{http://doi.org/10.1504/IJISTA.2012.046543}{10.1504/IJISTA.2012.046543}.
 #'
@@ -260,6 +266,8 @@
 #' Wang S, Tsai C, Chiang M (2018). “A High Performance Search Algorithm for Job-Shop Scheduling Problem.” In Shakshuki EM, Yasar A (eds.), The 9th International Conference on Emerging Ubiquitous Systems and Pervasive Networks (EUSPN'18) / The 8th International Conference on Current and Future Trends of Information and Communication Technologies in Healthcare (ICTH'18) / Affiliated Workshops, November 5-8, 2018, Leuven, Belgium, volume 141 series Procedia Computer Science, 119-126. doi:\href{http://doi.org/10.1016/j.procs.2018.10.157}{10.1016/j.procs.2018.10.157}.
 #'
 #' Wang X, Duan H (2014). “A Hybrid Biogeography-based Optimization Algorithm for Job Shop Scheduling Problem.” Computers & Industrial Engineering, 73, 96-114. doi:\href{http://doi.org/10.1016/j.cie.2014.04.006}{10.1016/j.cie.2014.04.006}, \url{http://hbduan.buaa.edu.cn/papers/2014CAIE_Wang_Duan.pdf}.
+#'
+#' Weckman GR, Ganduri CV, Koonce DA (2008). “A Neural Network Job-Shop Scheduler.” Journal of Intelligent Manufacturing, 19, 191-201. doi:\href{http://doi.org/10.1007/s10845-008-0073-9}{10.1007/s10845-008-0073-9}.
 #'
 #' Yamada T, Nakano R (1992). “A Genetic Algorithm Applicable to Large-Scale Job-Shop Instances.” In Männer R, Manderick B (eds.), Proceedings of Parallel Problem Solving from Nature 2 (PPSN II), September 28-30, 1992, Brussels, Belgium, 281-290.
 #'

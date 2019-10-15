@@ -1,6 +1,7 @@
 algo.id,ref.id,algo.desc,algo.representation,algo.operator.unary,algo.operator.binary,system.cpu.name,system.cpu.n,system.cpu.cores,system.cpu.threads,system.cpu.mhz,system.runs.are.parallel,system.memory.mb,system.os.name,system.vm.name,system.compiler.name,system.programming.language.name,system.external.tools.list,notes
 ABC-ASS,ASS2014ABCAAFTJSSP,ABC,OO,NA,NA,NA,NA,NA,NA,NA,FALSE,NA,NA,NA,NA,NA,NA,NA
 ACO-SA,AMCS2014UMHDICPREPDJSS,ACO+SA+TS,OO,NA,NA,Intel Core i3,1,2,4,2270,FALSE,3072,NA,NA,NA,Octave,NA,NA
+AIS-M,M2012JSSUAIS,AIS,OB,reverse+swap,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,devC++,C++,NA,NA
 AIS-PSO-hybrid,QL2014AABHAFSSSP,AIS+PSO+LS,OB,reverse+swap+PSO,NA,Intel Core 2 Quad Q9400,1,4,4,2660,FALSE,2048,Microsoft Windows XP Professional,NA,NA,NA,NA,NA
 Alg5,PSV2010SJSSPUTPOBABV,SA,NA,N4+N1,NA,Intel Pentium,1,1,1,2800,FALSE,512,NA,NA,NA,C,NA,NA
 AlgFix,PSV2010SJSSPUTPOBABV,SA,NA,N4+N2,NA,Intel Pentium,1,1,1,2800,FALSE,512,NA,NA,NA,C,NA,NA
@@ -27,6 +28,7 @@ CRO-WTC,WTC2018AHPSAFJSSP,CRO,OB,NA,NA,Intel Core i5 4460,1,4,4,3200,FALSE,8192,
 Delta-t1-R1,NZJT2013ACSORIGPTED,heuristic,NA,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,Java,NA,heuristics synthesized via GP running in ECJ20
 Delta-t1-R3,NZJT2013ACSORIGPTED,heuristic,NA,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,Java,NA,heuristics synthesized via GP running in ECJ20
 Delta-t2-R2,NZJT2013ACSORIGPTED,heuristic,NA,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,Java,NA,heuristics synthesized via GP running in ECJ20
+diverseMSA,AF2002MSAFJSSRODRMD,EA+SA,DG,bit flip,none,Intel Pentium 3,1,1,1,NA,FALSE,NA,NA,NA,NA,NA,NA,NA
 DP,GvHSGT2009,DP,NA,NA,NA,NA,1,NA,NA,2660,NA,8192,Microsoft Windows 64bit,NA,NA,C++,NA,these are exact solutions
 EA+SS,H2002PJSSP,EA+(SS via N1),DG+OB,N1+N2+N3+N4,APX,Intel Pentium 3,1,1,1,1000,FALSE,NA,NA,NA,NA,C,Glib 1.2,NA
 EA+SS-or-TS,H2002PJSSP,EA+((SS via N1) OR  (TS via N5)),DG+OB,N1+N2+N3+N4,APX,Intel Pentium 3,1,1,1,1000,FALSE,NA,NA,NA,NA,C,Glib 1.2,NA
@@ -95,8 +97,11 @@ LSGA,OV2004LSGAFTJSSP,EA+LS,OO,swap consecutive task on machine,taskCrossover,R1
 MP-CA,RNK2012AKMBMPCATSJSS,multi-population CA+LS,PL variant,NA,NA,IntelIntel Core 2 Quad,1,4,4,2500,FALSE,8192,NA,Java 1.6.0.18,NA,Java,NA,NA
 MSXF-GA,YN1997GAFJSSP,EA+LS-Crossover,DG,LS in active CB,MSXF (LS in active CB),DEC Alpha 600 5/266 (21164-EB5),1,1,1,266,FALSE,NA,NA,NA,NA,C,NA,NA
 NIT,PPH2012AONNGAFMSITJSS,EA+Niching (niching+sharing),OB,swap,OX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,for multimodal optimization
+NN-WGK,WGK2008ANNJSS,MLP trained on EA results,OB,NA,NA,NA,NA,NA,NA,NA,FALSE,NA,NA,NA,NA,NA,NA,NA
 NPSO-AK,AK2018AIPAWGANBDOFTJSSP,discrete PSO+neighborhood-based operators,OB,NA,NA,Intel Pentium 4,1,1,2,3000,FALSE,2048,NA,NA,NA,C++,NA,NA
+ordinaryMSA,AF2002MSAFJSSRODRMD,EA+SA,DG,bit flip,none,Intel Pentium 3,1,1,1,NA,FALSE,NA,NA,NA,NA,NA,NA,NA
 PABC,SMM2018PABCPFJSSP,Parallel ABC,DG,NA,NA,Intel Core i3,1,2,4,2700,TRUE,4096,Microsoft Windows 7,NA,NA,C/C++,Code::Blocks IDE,NA
+parallelMSA,AF2002MSAFJSSRODRMD,EA+SA,DG,bit flip,none,Intel Pentium 3,5,1,1,NA,TRUE,NA,NA,NA,NA,NA,NA,NA
 parAntGenSA+CR,HRSCVGBTVMR2019AHSAFJSSP,ACS+SA,DG,NA,yes,Intel Xeon,1,NA,NA,2300,TRUE,65536,CentOS,NA,NA,C,OpenMP,NA
 parAntGenSA-CR,HRSCVGBTVMR2019AHSAFJSSP,ACS+SA,DG,NA,none,Intel Xeon,1,NA,NA,2300,TRUE,65536,CentOS,NA,NA,C,OpenMP,NA
 PBA,DPNP2018PBAFOMIJSSP,parallel BA,RK+OB,NA,NA,NA,1,NA,NA,NA,TRUE,NA,NA,NA,NA,NA,NA,NA
