@@ -64,6 +64,7 @@
 \item{N4}{N4 critical operation move operator (Grabowski et al., 1988; Blazewicz et al., 1996)}
 \item{N5}{N5 critical path-based move operator (Nowicki and Smutnicki, 1996, NS1996AFTSAFTJSP)}
 \item{N7}{N7 neightborhood (Zhang et al., 2008, ZLRG2008AVFTAFTJSSP)}
+\item{none}{if no unary operation is applied, e.g., in cases where only binary operators are used, maybe in cases of memetic algorithms where the output of two local searches becomes the input of the binary operator, whose output then again goes into a local search}
 \item{reverse}{reverse the order of a sub-sequence of values}
 \item{RRN}{random reverse neighborhood: select multiple pairs of operations and reverse them}
 \item{RWN}{random whole neighborhood: consider all permutations of lambda genes, by Cheng (1997)}
@@ -79,6 +80,7 @@
 \item{EDX}{Extrapolation Directed Crossover (Sakuma and Kobayashi, 2000, SK2000EDCFJSSPCCWJ)}
 \item{JBX}{job-based crossover (Braune et al., 2005)}
 \item{IR}{intermediate recombination, also known as flat crossover}
+\item{KX}{a crossover operator that takes jobs behind a vertical cut through the Gantt chart of one parent and then fills in the missing solutions in the order in which they occur in the other parent, as by Kolonko, 1999 (K1999SNROSAATTJSSP)}
 \item{JOX}{Inter-machine Job-based Order Crossover}
 \item{LCSX}{longest-common subsequence crossover (Cheng et al.,2016)}
 \item{LOX}{linear order crossover (Falkenauer andd Bouffouix, 1991)}
@@ -210,6 +212,8 @@ Hernández-Ramírez L, Solis JF, Castilla-Valdez G, González-Barbosa JJ, Terán
 Jiang T, Zhang C (2018). “Application of Grey Wolf Optimization for Solving Combinatorial Problems: Job Shop and Flexible Job Shop Scheduling Cases.” IEEE Access, 6, 26231-26240. doi:\href{http://doi.org/10.1109/ACCESS.2018.2833552}{10.1109/ACCESS.2018.2833552}, \url{http://ieeexplore.ieee.org/document/8355479}.
 
 Jorapur V, Puranik VS, Deshpande AS, Sharma MR (2014). “Comparative Study of Different Representations in Genetic Algorithms for Job Shop Scheduling Problem.” Journal of Software Engineering and Applications (JSEA), 7(7), 571-580. doi:\href{http://doi.org/10.4236/jsea.2014.77053}{10.4236/jsea.2014.77053}, \url{http://www.scirp.org/journal/paperinformation.aspx?paperid=46670}.
+
+Kolonko M (1999). “Some New Results on Simulated Annealing Applied to the Job Shop Scheduling Problem.” European Journal of Operational Research (EJOR), 113(1), 123-136. doi:\href{http://doi.org/10.1016/S0377-2217(97}{10.1016/S0377-2217(97)00420-7}00420-7).
 
 Kulkarni K, Venkateswaran J (2014). “Iterative Simulation and Optimization Approach for Job Shop Scheduling.” In Buckley SJ, Miller JA (eds.), Proceedings of the 2014 Winter Simulation Conference, December 7-10, 2014, Savannah, GA, USA, 1620-1631. doi:\href{http://doi.org/10.1109/WSC.2014.7020013}{10.1109/WSC.2014.7020013}, \url{https://www.anylogic.com/upload/iblock/5aa/5aa2987b839049668eeef8a21c811e6b.pdf}.
 

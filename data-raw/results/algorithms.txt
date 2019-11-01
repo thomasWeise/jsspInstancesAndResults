@@ -113,6 +113,8 @@ RaR,ZHZ2016AHFTJSSP,LS,NA,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,NA,Siemens progr
 RCS,PPH2012AONNGAFMSITJSS,EA+Niching (Restricted Competition Selection Method),OB,swap,OX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,for multimodal optimization
 RCS_PSM,PPH2012AONNGAFMSITJSS,EA+Niching (Restricted Competition Selection with Pattern Search Method),OB,swap,OX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,for multimodal optimization
 SAFA,MTSV2018FIAFJSS,SA+FA,DG,edge flip,NA,Intel Dual-Core,1,2,NA,NA,TRUE,7680,NA,NA,NA,NA,NA,run on a cloud server
+SAGen-P120,K1999SNROSAATTJSSP,SA+EA,PL,none,KX,Intel Pentium,1,1,1,120,FALSE,NA,NA,NA,NA,NA,NA,NA
+SAGen-P166,K1999SNROSAATTJSSP,SA+EA,PL,none,KX,Intel Pentium,1,1,1,166,FALSE,NA,NA,NA,NA,NA,NA,NA
 SB-GLS1,BV1998GLSWSBFJSS,Shifting Bottleneck using Guided LS,DG,interchange of critical operation pair,NA,SUN SPARCstation 331,1,1,1,30,FALSE,NA,NA,NA,NA,C,NA,experiments on SUN SPARCstation 330; but times reported as Computer-Independent CPU Time
 SB-GLS2,BV1998GLSWSBFJSS,Shifting Bottleneck using Guided LS,DG,interchange of critical operation pair,NA,SUN SPARCstation 332,1,1,1,30,FALSE,NA,NA,NA,NA,C,NA,experiments on SUN SPARCstation 330; but times reported as Computer-Independent CPU Time
 SB-RGLS1,BV1998GLSWSBFJSS,Shifting Bottleneck using Guided LS,DG,interchange of critical operation pair,NA,SUN SPARCstation 334,1,1,1,30,FALSE,NA,NA,NA,NA,C,NA,experiments on SUN SPARCstation 330; but times reported as Computer-Independent CPU Time
