@@ -6,19 +6,19 @@ The original data of these instances stem from:
 - Éric Taillard's Page (http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html) [the ta* instaces]
 
 o abz5-abz9 are from
-   Adams J, Balas E, Zawack D (1988). “The Shifting Bottleneck Procedure for Job Shop Scheduling.” Management Science, 34(3), 391-401. doi: 10.1287/mnsc.34.3.391 (URL: http://doi.org/10.1287/mnsc.34.3.391).
+   Adams J, Balas E, Zawack D (1988). “The Shifting Bottleneck Procedure for Job Shop Scheduling.” Management Science, 34(3), 391-401. doi: 10.1287/mnsc.34.3.391 (URL: https://doi.org/10.1287/mnsc.34.3.391).
 o dmu01-dmu80 are from
-   Demirkol E, Mehta SV, Uzsoy R (1998). “Benchmarks for Shop Scheduling Problems.” European Journal of Operational Research (EJOR), 109(1), 137-141. doi: 10.1016/S0377-2217(97)00019-2 (URL: http://doi.org/10.1016/S0377-2217(97)00019-2).
+   Demirkol E, Mehta SV, Uzsoy R (1998). “Benchmarks for Shop Scheduling Problems.” European Journal of Operational Research (EJOR), 109(1), 137-141. doi: 10.1016/S0377-2217(97)00019-2 (URL: https://doi.org/10.1016/S0377-2217(97)00019-2).
 o ft06-ft20 are from
    Fisher H, Thompson GL (1963). “Probabilistic Learning Combinations of Local Job-Shop Scheduling Rules.” In Muth JF, Thompson GL (eds.), Industrial Scheduling, 225-251. Prentice-Hall, Englewood Cliffs, NJ, USA.
 o la01-la40 are from
-   Lawrence SR (1984). Resource Constrained Project Scheduling: An Experimental Investigation of Heuristic Scheduling Techniques (Supplement). PhD thesis, Graduate School of Industrial Administration (GSIA), Carnegie-Mellon University, Pittsburgh, PA, USA.
+   Lawrence SR (1984). Resource Constrained Project Scheduling: An Experimental Investigation of Heuristic Scheduling Techniques (Supplement). Ph.D. thesis, Graduate School of Industrial Administration (GSIA), Carnegie-Mellon University, Pittsburgh, PA, USA.
 o orb01-orb10 are from
-   Applegate DL, Cook WJ (1991). “A Computational Study of the Job-Shop Scheduling Problem.” ORSA Journal on Computing, 3(2), 149-156. doi: 10.1287/ijoc.3.2.149 (URL: http://doi.org/10.1287/ijoc.3.2.149), the JSSP instances used were generated in Bonn in 1986.
+   Applegate DL, Cook WJ (1991). “A Computational Study of the Job-Shop Scheduling Problem.” ORSA Journal on Computing, 3(2), 149-156. doi: 10.1287/ijoc.3.2.149 (URL: https://doi.org/10.1287/ijoc.3.2.149), the JSSP instances used were generated in Bonn in 1986.
 o swv01-swv20 are from
-   Storer RH, Wu SD, Vaccari R (1992). “New Search Spaces for Sequencing Problems with Application to Job Shop Scheduling.” Management Science, 38(10), 1495-1509. doi: 10.1287/mnsc.38.10.1495 (URL: http://doi.org/10.1287/mnsc.38.10.1495).
+   Storer RH, Wu SD, Vaccari R (1992). “New Search Spaces for Sequencing Problems with Application to Job Shop Scheduling.” Management Science, 38(10), 1495-1509. doi: 10.1287/mnsc.38.10.1495 (URL: https://doi.org/10.1287/mnsc.38.10.1495).
 o ta01-ta80 are from
-   Taillard ÉD (1993). “Benchmarks for Basic Scheduling Problems.” European Journal of Operational Research (EJOR), 64(2), 278-285. doi: 10.1016/0377-2217(93)90182-M (URL: http://doi.org/10.1016/0377-2217(93)90182-M).
+   Taillard ÉD (1993). “Benchmarks for Basic Scheduling Problems.” European Journal of Operational Research (EJOR), 64(2), 278-285. doi: 10.1016/0377-2217(93)90182-M (URL: https://doi.org/10.1016/0377-2217(93)90182-M).
 o yn1-yn4 are from
    Yamada T, Nakano R (1992). “A Genetic Algorithm Applicable to Large-Scale Job-Shop Instances.” In Männer R, Manderick B (eds.), Proceedings of Parallel Problem Solving from Nature 2 (PPSN II), September 28-30, 1992, Brussels, Belgium, 281-290.
 

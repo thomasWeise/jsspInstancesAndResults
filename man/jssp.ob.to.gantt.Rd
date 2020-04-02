@@ -4,8 +4,12 @@
 \alias{jssp.ob.to.gantt}
 \title{Transform a Solution Represented in Form \code{OB} to a Gantt Chart}
 \usage{
-jssp.ob.to.gantt(data.ob, inst.id, min.job.id = 1L,
-  get.inst.data = jssp.get.instance.data)
+jssp.ob.to.gantt(
+  data.ob,
+  inst.id,
+  min.job.id = 1L,
+  get.inst.data = jssp.get.instance.data
+)
 }
 \arguments{
 \item{data.ob}{the operation-based representation of the solution}

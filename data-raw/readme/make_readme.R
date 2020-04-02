@@ -261,7 +261,7 @@ table <- unname(unlist(c(
   "- `lb ref` the reference to the earliest publication (in this survey) that mentioned this lower bound",
   "- `bks` the makespan of the best-known solution (in terms of the makespan), based on this survey",
   "- `bks ref` the reference(s) to the earliest publication(s) in this survey that mentioned the bks",
-  "- `t(bks) in s` the fast time reported (in seconds), by any of the references in the study, for reaching `bks`",
+  "- `t(bks) in s` the fastest time reported (in seconds), by any of the references in the study, for reaching `bks`",
   "- `t(bks) ref` the reference(s) of the publications reporting `t(bks)`",
   "",
   "Please, please take the column `t(bks)` with many grains of salt.",

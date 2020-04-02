@@ -5,8 +5,7 @@
 \title{Check, Evaluate, and Canonicalize a Gantt Chart, i.e., A Candidate
   Solution for a Given JSSP Instance}
 \usage{
-jssp.evaluate.gantt(gantt, inst.id,
-  get.inst.data = jssp.get.instance.data)
+jssp.evaluate.gantt(gantt, inst.id, get.inst.data = jssp.get.instance.data)
 }
 \arguments{
 \item{gantt}{the gantt chart: a list that contains one sub-list for each

@@ -5,8 +5,12 @@
 \title{Transform a Solution Represented in the van-Hoorn Solution-Start
   Method to a Gantt Chart}
 \usage{
-jssp.solution.start.to.gantt(data.solution.start, inst.id,
-  min.job.id = 1L, get.inst.data = jssp.get.instance.data)
+jssp.solution.start.to.gantt(
+  data.solution.start,
+  inst.id,
+  min.job.id = 1L,
+  get.inst.data = jssp.get.instance.data
+)
 }
 \arguments{
 \item{data.solution.start}{the solution-start representation}

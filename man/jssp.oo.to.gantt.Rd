@@ -5,8 +5,12 @@
 \title{Transform a Solution Represented in the van-Hoorn Version of \code{OO}
   to a Gantt Chart}
 \usage{
-jssp.oo.to.gantt(data.oo, inst.id, min.job.id = 1L,
-  get.inst.data = jssp.get.instance.data)
+jssp.oo.to.gantt(
+  data.oo,
+  inst.id,
+  min.job.id = 1L,
+  get.inst.data = jssp.get.instance.data
+)
 }
 \arguments{
 \item{data.oo}{the overall-order based representation of the solution}

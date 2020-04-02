@@ -5,8 +5,12 @@
 \title{Transform a Solution Represented in the \code{PL} Representation to a
   Gantt Chart}
 \usage{
-jssp.pl.to.gantt(data.pl, inst.id, min.job.id = 1L,
-  get.inst.data = jssp.get.instance.data)
+jssp.pl.to.gantt(
+  data.pl,
+  inst.id,
+  min.job.id = 1L,
+  get.inst.data = jssp.get.instance.data
+)
 }
 \arguments{
 \item{data.pl}{the pl representation}
