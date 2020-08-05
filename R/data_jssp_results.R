@@ -229,6 +229,8 @@
 #'
 #' Narendhar S, Amudha T (2012). “A Hybrid Bacterial Foraging Algorithm For Solving Job Shop Scheduling Problems.” International Journal of Programming Languages and Applications (IJPLA), 2(4), 1-11. doi:\href{https://doi.org/10.5121/ijpla.2012.2401}{10.5121/ijpla.2012.2401}, Also available via Computing Research Repository (CoRR) abs/1211.4971 at arXiv:1211.4971v1 [cs.NE], \url{https://arxiv.org/pdf/1211.4971.pdf}.
 #'
+#' Nazif H (2015). “Solving Job Shop Scheduling Problem Using an Ant Colony Algorithm.” Journal of Asian Scientific Research, 5(5), 261-268. doi:\href{https://doi.org/10.18488/journal.2/2015.5.5/2.5.261.268}{10.18488/journal.2/2015.5.5/2.5.261.268}, \url{http://www.aessweb.com/pdf-files/jasr-2015-5(5)-261-268.pdf}.
+#'
 #' Nguyen S, Zhang M, Johnston M, Tan KC (2013). “A Computational Study of Representations in Genetic Programming to Evolve Dispatching Rules for the Job Shop Scheduling Problem.” IEEE Transactions on Evolutionary Computation (TEVC), 17(5), 621-639. doi:\href{https://doi.org/10.1109/TEVC.2012.2227326}{10.1109/TEVC.2012.2227326}.
 #'
 #' Nowicki E, Smutnicki C (1996). “A Fast Taboo Search Algorithm for the Job Shop Problem.” Management Science, 42(6), 783-938. doi:\href{https://doi.org/10.1287/mnsc.42.6.797}{10.1287/mnsc.42.6.797}, jstor: 2634595, \url{http://pacciarelli.inf.uniroma3.it/CORSI/MSP/NowickiSmutnicki96.pdf}.

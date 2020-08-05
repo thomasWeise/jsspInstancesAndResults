@@ -1,5 +1,6 @@
 algo.id,ref.id,algo.desc,algo.representation,algo.operator.unary,algo.operator.binary,system.cpu.name,system.cpu.n,system.cpu.cores,system.cpu.threads,system.cpu.mhz,system.runs.are.parallel,system.memory.mb,system.os.name,system.vm.name,system.compiler.name,system.programming.language.name,system.external.tools.list,notes
 ABC-ASS,ASS2014ABCAAFTJSSP,ABC,OO,NA,NA,NA,NA,NA,NA,NA,FALSE,NA,NA,NA,NA,NA,NA,NA
+ACA,N2015SJSSPUAACO,ACO+LS,NA,NA,NA,Intel Core 2 Duo,1,2,2,2000,FALSE,2048,Microsoft Windows,NA,Visual C++,C++,NA,NA
 ACO-SA,AMCS2014UMHDICPREPDJSS,ACO+SA+TS,OO,NA,NA,Intel Core i3,1,2,4,2270,FALSE,3072,NA,NA,NA,Octave,NA,NA
 AIS-M,M2012JSSUAIS,AIS,OB,reverse+swap,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,devC++,C++,NA,NA
 AIS-PSO-hybrid,QL2014AABHAFSSSP,AIS+PSO+LS,OB,reverse+swap+PSO,NA,Intel Core 2 Quad Q9400,1,4,4,2660,FALSE,2048,Microsoft Windows XP Professional,NA,NA,NA,NA,NA
