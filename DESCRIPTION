@@ -16,7 +16,7 @@ Remotes: github::thomasWeise/literatureAndResultsGen
 Depends: R (>= 3.5.0)
 ByteCompile: true
 LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
 Collate: 
     'data_jssp_bibliography.R'
     'data_jssp_instance_data.R'

@@ -1,7 +1,14 @@
 # try to automatically download and build the results from paper SS2018BBOVBCACSOJSS
 old.options <- options(warn=2);
 
-library(literatureAndResultsGen);
+if(!require("literatureAndResultsGen")) {
+  if(!require("devtools")) {
+    install.packages("devtools");
+  }
+  library("devtools");
+  devtools::install_github("thomasWeise/literatureAndResultsGen");
+}
+library("literatureAndResultsGen");
 
 if(exists("logger")) {
   del.logger <- FALSE;

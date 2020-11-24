@@ -4,7 +4,8 @@
 \name{jssp.results}
 \alias{jssp.results}
 \title{Result Data from the Literature for Common JSSP Benchmark Instances}
-\format{A data frame with the result data sets
+\format{
+A data frame with the result data sets
 \describe{
 \item{algo.id}{the ID or short name of the algorithm used to solve the problem instance}
 \item{algo.desc}{a short description of the algorithm, where the following abbreviations can be used
@@ -12,35 +13,37 @@
 \item{ABC}{Artificial Bee Colony algorithm}
 \item{ACO}{Ant Colony Optimization}
 \item{AIS}{Artificial Immune System}
+\item{ANN}{Artificial Neural Network}
 \item{BA}{Bat Algorithm}
 \item{BB}{Branch and Bound (an exact anytime algorithm)}
 \item{BBO}{Biogeography-based optimization}
 \item{BFO}{Bacterial Foraging Algorithm}
 \item{BS}{Beam Search}
 \item{CA}{Cultural Algorithm}
-\item{CP}{constraint programming}
+\item{CNN}{Convolutional Neural Network}
+\item{CP}{Constraint Programming}
 \item{CRO}{Coral Reef Optimization}
-\item{DES}{discrete event simulation}
-\item{DP}{dynamic programming, an exact method}
-\item{EA}{evolutionary algorithm}
+\item{DES}{Discrete Event Simulation}
+\item{DP}{Dynamic Programming, an exact method}
+\item{EA}{Evolutionary Algorithm}
 \item{FA}{Firefly Algorithm}
 \item{FDS}{Failure Directed Search}
 \item{GT}{Giffler and Thompson (GT) procedure}
 \item{GWO}{Grey wolf optimization}
 \item{LF}{Lévy flight}
-\item{LP}{linear programming}
-\item{LNS}{large neighborhood search}
-\item{LS}{a local search}
-\item{ANN}{artificial neural network}
-\item{PSO}{particle swarm optimization}
-\item{SA}{simulated annealing}
-\item{SE}{seach economics}
-\item{SBP}{shifting bottleneck procedure}
-\item{SS}{sidestep algorithm: deterministic local search allowing to move to solutions of same objective value}
-\item{TLBO}{teaching-learning based optimization}
-\item{TS}{tabu search}
-\item{VNS}{variable neighborhood search}
-\item{WOA}{whale optimization algorithm}
+\item{LP}{Linear Programming}
+\item{LNS}{Large Neighborhood Search}
+\item{LS}{a Local Search}
+\item{PSO}{Particle Swarm Optimization}
+\item{RL}{Reinforcement Learning}
+\item{SA}{Simulated Annealing}
+\item{SE}{Search Economics}
+\item{SBP}{Shifting Bottleneck Procedure}
+\item{SS}{Sidestep Algorithm: deterministic local search allowing to move to solutions of same objective value}
+\item{TLBO}{Teaching-Learning based Optimization}
+\item{TS}{Tabu Search}
+\item{VNS}{Variable Neighborhood Search}
+\item{WOA}{Whale Optimization Algorithm}
 }}
 \item{algo.representation}{the representation used for encoding solutions, if any. Sometimes, it is not entirely clear, in which case I used what, to me, seemed to be the closest match. Thus, handle this column with special care. The following abbreviations can be used
 \describe{
@@ -146,7 +149,8 @@
 \item{reach.best.f.min.time.sd}{the standard deviation of the time needed by the runs which discovered the best solution among all runs (best.f.min) until they reached said solution, measured in milliseconds}
 \item{budget.fes}{the maximum number of function evaluations a run was allowed to perform until forceful termination}
 \item{budget.time}{the maximum time granted to a run until forceful termination, measured in milliseconds}
-}}
+}
+}
 \usage{
 data(jssp.results)
 }
@@ -207,6 +211,8 @@ Gonçalves JF, Resende MGC (2014). “An Extended Akers Graphical Method with a 
 
 Gromicho JAS, van Hoorn JJ, Saldanha-da-Gama F, Timmer GT (2009). “Exponentially Better than Brute Force: Solving the Job-Shop Scheduling Problem Optimally by Dynamic Programming.” Research Memorandum 2009-56, Faculty of Economics and Business Administration, Vrije Universiteit Amsterdam, Amsterdam, The Netherlands. \url{http://degree.ubvu.vu.nl/repec/vua/wpaper/pdf/20090056.pdf}.
 
+Han B, Yang J (2020). “Research on Adaptive Job Shop Scheduling Problems Based on Dueling Double DQN.” IEEE Access, 8, 186474-186495. doi:\href{https://doi.org/10.1109/ACCESS.2020.3029868}{10.1109/ACCESS.2020.3029868}.
+
 Henning A (2002). Praktische Job-Shop Scheduling-Probleme. Ph.D. thesis, Friedrich-Schiller-Universität Jena, Jena, Germany. alternate url: https://nbn-resolving.org/urn:nbn:de:gbv:27-20060809-115700-4, \url{http://www.db-thueringen.de/servlets/DocumentServlet?id=873}.
 
 Hernández-Ramírez L, Solis JF, Castilla-Valdez G, González-Barbosa JJ, Terán-Villanueva D, Morales-Rodríguez ML (2019). “A Hybrid Simulated Annealing for Job Shop Scheduling Problem.” International Journal of Combinatorial Optimization Problems and Informatics (IJCOPI), 10(1), 6-15. published 2018-08-10, \url{http://ijcopi.org/index.php/ojs/article/view/111}.
@@ -223,7 +229,7 @@ Kurdi M (2015). “A New Hybrid Island Model Genetic Algorithm for Job Shop Sche
 
 Li L, Weng W, Fujimura S (2017). “An Improved Teaching-Learning-based Optimization Algorithm to Solve Job Shop Scheduling Problems.” In Zhu G, Yao S, Cui X, Xu S (eds.), 16th IEEE/ACIS International Conference on Computer and Information Science (ICIS'17), May 24-26, 2017, Wuhan, China, 797-801. ISBN 978-1-5090-5507-4, doi:\href{https://doi.org/10.1109/ICIS.2017.7960101}{10.1109/ICIS.2017.7960101}.
 
-Liu M, Yao X, Li Y (2020). “Hybrid Whale Optimization Algorithm Enhanced with Lévy Flight and Differential Evolution for Job Shop Scheduling Problems.” Applied Soft Computing Journal (ASOC), 87, 105954. doi:\href{https://doi.org/10.1016/j.asoc.2019.105954}{10.1016/j.asoc.2019.105954}, The paper has two typos in the results. It reports an average result (918.4) for WSO-LFDE on la20, which is worse than the worst result (902) it reports. We therefore ignore the worst reported result for that algorithm on that instance, since it was probably accidentally copy-pasted from the best result. On instance la23, the lower bound is 1032 but the result 1023 is reported, which is clearly an accidental typo.
+Liu M, Yao X, Li Y (2020). “Hybrid Whale Optimization Algorithm Enhanced with Lévy Flight and Differential Evolution for Job Shop Scheduling Problems.” Applied Soft Computing Journal (ASOC), 87, 105954. doi:\href{https://doi.org/10.1016/j.asoc.2019.105954}{10.1016/j.asoc.2019.105954}, Originally, the paper had two typos in the results. It reports an average result (918.4) for WSO-LFDE on la20, which is worse than the worst result (902) it reports. We therefore ignore the worst reported result for that algorithm on that instance, since it was probably accidentally copy-pasted from the best result. On instance la23, the lower bound is 1032 but the result 1023 is reported, which is clearly an accidental typo. These typos are currently fixed in an erratum process.
 
 Magalhães-Mendes J (2013). “A Comparative Study of Crossover Operators for Genetic Algorithms to Solve the Job Shop Scheduling Problem.” WSEAS Transactions on Computers, 12(4), 164-173. \url{http://www.wseas.org/multimedia/journals/computers/2013/5705-156.pdf}.
 
@@ -236,6 +242,8 @@ Miller-Todd J, Steinhöfel K, Veenstra P (2018). “Firefly-Inspired Algorithm f
 Mui NH, Hoa VD, Tuyen LT (2012). “A Parallel Genetic Algorithm for the Job Shop Scheduling Problem.” In Proceedings of the IEEE International Symposium on Signal Processing and Information Technology (ISSPIT'12), December 12-15, 2012, Ho Chi Minh City, Vietnam, 19-24. ISBN 978-1-4673-5604-6, doi:\href{https://doi.org/10.1109/ISSPIT.2012.6621254}{10.1109/ISSPIT.2012.6621254}.
 
 Narendhar S, Amudha T (2012). “A Hybrid Bacterial Foraging Algorithm For Solving Job Shop Scheduling Problems.” International Journal of Programming Languages and Applications (IJPLA), 2(4), 1-11. doi:\href{https://doi.org/10.5121/ijpla.2012.2401}{10.5121/ijpla.2012.2401}, Also available via Computing Research Repository (CoRR) abs/1211.4971 at arXiv:1211.4971v1 [cs.NE], \url{https://arxiv.org/pdf/1211.4971.pdf}.
+
+Nazif H (2015). “Solving Job Shop Scheduling Problem Using an Ant Colony Algorithm.” Journal of Asian Scientific Research, 5(5), 261-268. doi:\href{https://doi.org/10.18488/journal.2/2015.5.5/2.5.261.268}{10.18488/journal.2/2015.5.5/2.5.261.268}, \url{http://www.aessweb.com/pdf-files/jasr-2015-5(5)-261-268.pdf}.
 
 Nguyen S, Zhang M, Johnston M, Tan KC (2013). “A Computational Study of Representations in Genetic Programming to Evolve Dispatching Rules for the Job Shop Scheduling Problem.” IEEE Transactions on Evolutionary Computation (TEVC), 17(5), 621-639. doi:\href{https://doi.org/10.1109/TEVC.2012.2227326}{10.1109/TEVC.2012.2227326}.
 

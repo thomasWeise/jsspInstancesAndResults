@@ -1,6 +1,13 @@
 logger("beginning to try to load the instance data.");
 
-library(literatureAndResultsGen);
+if(!require("literatureAndResultsGen")) {
+  if(!require("devtools")) {
+    install.packages("devtools");
+  }
+  library("devtools");
+  devtools::install_github("thomasWeise/literatureAndResultsGen");
+}
+library("literatureAndResultsGen");
 
 stopifnot(exists("jssp.instances"),
           is.data.frame(jssp.instances),

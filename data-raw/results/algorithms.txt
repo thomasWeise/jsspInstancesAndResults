@@ -26,6 +26,7 @@ BS-b5-f5,SB1999JSSWBS,BS,NA,NA,NA,micro SPARC 8,1,1,1,60,FALSE,1024,NA,NA,NA,C,N
 C-EA-TS,C2003PCOR2FTTETLOETP,EA+TS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 CM,PPH2012AONNGAFMSITJSS,EA+Niching (classical clearing),OB,swap,OX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,for multimodal optimization
 CRO-WTC,WTC2018AHPSAFJSSP,CRO,OB,NA,NA,Intel Core i5 4460,1,4,4,3200,FALSE,8192,NA,NA,NA,NA,NA,NA
+DDDQNPR,HY2020ROAJSSPBODDD,RL+CNN,NA,NA,NA,Intel Core i7,1,4,8,1600,TRUE,16384,Microsoft Windows 10 (64 bit),NA,NA,NA,Adam optimizer; TensorFlow2.0,dueling double Deep Q-network with prioritized replay (DDDQNPR)
 Delta-t1-R1,NZJT2013ACSORIGPTED,heuristic,NA,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,Java,NA,heuristics synthesized via GP running in ECJ20
 Delta-t1-R3,NZJT2013ACSORIGPTED,heuristic,NA,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,Java,NA,heuristics synthesized via GP running in ECJ20
 Delta-t2-R2,NZJT2013ACSORIGPTED,heuristic,NA,NA,NA,NA,1,NA,NA,NA,FALSE,NA,NA,NA,NA,Java,NA,heuristics synthesized via GP running in ECJ20

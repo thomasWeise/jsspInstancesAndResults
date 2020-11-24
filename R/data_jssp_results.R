@@ -17,35 +17,37 @@
 #' \item{ABC}{Artificial Bee Colony algorithm}
 #' \item{ACO}{Ant Colony Optimization}
 #' \item{AIS}{Artificial Immune System}
+#' \item{ANN}{Artificial Neural Network}
 #' \item{BA}{Bat Algorithm}
 #' \item{BB}{Branch and Bound (an exact anytime algorithm)}
 #' \item{BBO}{Biogeography-based optimization}
 #' \item{BFO}{Bacterial Foraging Algorithm}
 #' \item{BS}{Beam Search}
 #' \item{CA}{Cultural Algorithm}
-#' \item{CP}{constraint programming}
+#' \item{CNN}{Convolutional Neural Network}
+#' \item{CP}{Constraint Programming}
 #' \item{CRO}{Coral Reef Optimization}
-#' \item{DES}{discrete event simulation}
-#' \item{DP}{dynamic programming, an exact method}
-#' \item{EA}{evolutionary algorithm}
+#' \item{DES}{Discrete Event Simulation}
+#' \item{DP}{Dynamic Programming, an exact method}
+#' \item{EA}{Evolutionary Algorithm}
 #' \item{FA}{Firefly Algorithm}
 #' \item{FDS}{Failure Directed Search}
 #' \item{GT}{Giffler and Thompson (GT) procedure}
 #' \item{GWO}{Grey wolf optimization}
 #' \item{LF}{Lévy flight}
-#' \item{LP}{linear programming}
-#' \item{LNS}{large neighborhood search}
-#' \item{LS}{a local search}
-#' \item{ANN}{artificial neural network}
-#' \item{PSO}{particle swarm optimization}
-#' \item{SA}{simulated annealing}
-#' \item{SE}{seach economics}
-#' \item{SBP}{shifting bottleneck procedure}
-#' \item{SS}{sidestep algorithm: deterministic local search allowing to move to solutions of same objective value}
-#' \item{TLBO}{teaching-learning based optimization}
-#' \item{TS}{tabu search}
-#' \item{VNS}{variable neighborhood search}
-#' \item{WOA}{whale optimization algorithm}
+#' \item{LP}{Linear Programming}
+#' \item{LNS}{Large Neighborhood Search}
+#' \item{LS}{a Local Search}
+#' \item{PSO}{Particle Swarm Optimization}
+#' \item{RL}{Reinforcement Learning}
+#' \item{SA}{Simulated Annealing}
+#' \item{SE}{Search Economics}
+#' \item{SBP}{Shifting Bottleneck Procedure}
+#' \item{SS}{Sidestep Algorithm: deterministic local search allowing to move to solutions of same objective value}
+#' \item{TLBO}{Teaching-Learning based Optimization}
+#' \item{TS}{Tabu Search}
+#' \item{VNS}{Variable Neighborhood Search}
+#' \item{WOA}{Whale Optimization Algorithm}
 #' }}
 #' \item{algo.representation}{the representation used for encoding solutions, if any. Sometimes, it is not entirely clear, in which case I used what, to me, seemed to be the closest match. Thus, handle this column with special care. The following abbreviations can be used
 #' \describe{
@@ -198,6 +200,8 @@
 #' Gonçalves JF, Resende MGC (2014). “An Extended Akers Graphical Method with a Biased Random-Key Genetic Algorithm for Job-Shop Scheduling.” International Transactions on Operational Research (ITOR), 21(2), 215-246. doi:\href{https://doi.org/10.1111/itor.12044}{10.1111/itor.12044}, \url{http://mauricio.resende.info/doc/brkga-jss2011.pdf}.
 #'
 #' Gromicho JAS, van Hoorn JJ, Saldanha-da-Gama F, Timmer GT (2009). “Exponentially Better than Brute Force: Solving the Job-Shop Scheduling Problem Optimally by Dynamic Programming.” Research Memorandum 2009-56, Faculty of Economics and Business Administration, Vrije Universiteit Amsterdam, Amsterdam, The Netherlands. \url{http://degree.ubvu.vu.nl/repec/vua/wpaper/pdf/20090056.pdf}.
+#'
+#' Han B, Yang J (2020). “Research on Adaptive Job Shop Scheduling Problems Based on Dueling Double DQN.” IEEE Access, 8, 186474-186495. doi:\href{https://doi.org/10.1109/ACCESS.2020.3029868}{10.1109/ACCESS.2020.3029868}.
 #'
 #' Henning A (2002). Praktische Job-Shop Scheduling-Probleme. Ph.D. thesis, Friedrich-Schiller-Universität Jena, Jena, Germany. alternate url: https://nbn-resolving.org/urn:nbn:de:gbv:27-20060809-115700-4, \url{http://www.db-thueringen.de/servlets/DocumentServlet?id=873}.
 #'

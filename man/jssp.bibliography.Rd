@@ -4,14 +4,16 @@
 \name{jssp.bibliography}
 \alias{jssp.bibliography}
 \title{The Literature References from which we obtained the Results for the Job Shop Scheduling Problem}
-\format{A data frame with the bibliographic references
+\format{
+A data frame with the bibliographic references
 \describe{
   \item{ref.id}{the reference id}
   \item{ref.type}{the bibtex-based type}
   \item{ref.year}{the year when the publication was created}
   \item{ref.as.bibtex}{the bibtex representation of the reference}
   \item{ref.as.text}{the textual representation of the reference}
-}}
+}
+}
 \usage{
 data(jssp.bibliography)
 }

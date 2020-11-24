@@ -28,7 +28,14 @@ stopifnot(exists("jssp.bibliography"),
           is.integer(bib.lines),
           length(bib.lines) == nrow(jssp.bibliography));
 
-library(literatureAndResultsGen);
+if(!require("literatureAndResultsGen")) {
+  if(!require("devtools")) {
+    install.packages("devtools");
+  }
+  library("devtools");
+  devtools::install_github("thomasWeise/literatureAndResultsGen");
+}
+library("literatureAndResultsGen");
 
 # make short ref keys
 ref.keys <- as.character(unname(unlist(jssp.bibliography$ref.id)));

@@ -29,7 +29,7 @@ if(!require("devtools")) {
   install.packages("devtools");
   library("devtools");
 }
- install_github("thomasWeise/jsspInstancesAndResults")
+install_github("thomasWeise/jsspInstancesAndResults")
 ```
 
 ## Provided Data

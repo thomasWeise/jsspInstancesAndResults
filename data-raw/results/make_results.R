@@ -4,7 +4,14 @@ jssp.results.dir <- file.path(dir.data.raw, "results");
 jssp.results.dir <- normalizePath(jssp.results.dir, mustWork=TRUE);
 stopifnot(dir.exists(jssp.results.dir));
 
-library(literatureAndResultsGen);
+if(!require("literatureAndResultsGen")) {
+  if(!require("devtools")) {
+    install.packages("devtools");
+  }
+  library("devtools");
+  devtools::install_github("thomasWeise/literatureAndResultsGen");
+}
+library("literatureAndResultsGen");
 
 jssp.results.loader.autogen <- tempfile(fileext = ".R");
 logger("First auto-generating loader code to '", jssp.results.loader.autogen, "'.");
@@ -33,35 +40,37 @@ col <- create.column(col$title,
                             "\\item{ABC}{Artificial Bee Colony algorithm}\n#' ",
                             "\\item{ACO}{Ant Colony Optimization}\n#' ",
                             "\\item{AIS}{Artificial Immune System}\n#' ",
+                            "\\item{ANN}{Artificial Neural Network}\n#' ",
                             "\\item{BA}{Bat Algorithm}\n#' ",
                             "\\item{BB}{Branch and Bound (an exact anytime algorithm)}\n#' ",
                             "\\item{BBO}{Biogeography-based optimization}\n#' ",
                             "\\item{BFO}{Bacterial Foraging Algorithm}\n#' ",
                             "\\item{BS}{Beam Search}\n#' ",
                             "\\item{CA}{Cultural Algorithm}\n#' ",
-                            "\\item{CP}{constraint programming}\n#' ",
+                            "\\item{CNN}{Convolutional Neural Network}\n#' ",
+                            "\\item{CP}{Constraint Programming}\n#' ",
                             "\\item{CRO}{Coral Reef Optimization}\n#' ",
-                            "\\item{DES}{discrete event simulation}\n#' ",
-                            "\\item{DP}{dynamic programming, an exact method}\n#' ",
-                            "\\item{EA}{evolutionary algorithm}\n#' ",
+                            "\\item{DES}{Discrete Event Simulation}\n#' ",
+                            "\\item{DP}{Dynamic Programming, an exact method}\n#' ",
+                            "\\item{EA}{Evolutionary Algorithm}\n#' ",
                             "\\item{FA}{Firefly Algorithm}\n#' ",
                             "\\item{FDS}{Failure Directed Search}\n#' ",
                             "\\item{GT}{Giffler and Thompson (GT) procedure}\n#' ",
                             "\\item{GWO}{Grey wolf optimization}\n#' ",
                             "\\item{LF}{L\u00E9vy flight}\n#' ",
-                            "\\item{LP}{linear programming}\n#' ",
-                            "\\item{LNS}{large neighborhood search}\n#' ",
-                            "\\item{LS}{a local search}\n#' ",
-                            "\\item{ANN}{artificial neural network}\n#' ",
-                            "\\item{PSO}{particle swarm optimization}\n#' ",
-                            "\\item{SA}{simulated annealing}\n#' ",
-                            "\\item{SE}{seach economics}\n#' ",
-                            "\\item{SBP}{shifting bottleneck procedure}\n#' ",
-                            "\\item{SS}{sidestep algorithm: deterministic local search allowing to move to solutions of same objective value}\n#' ",
-                            "\\item{TLBO}{teaching-learning based optimization}\n#' ",
-                            "\\item{TS}{tabu search}\n#' ",
-                            "\\item{VNS}{variable neighborhood search}\n#' ",
-                            "\\item{WOA}{whale optimization algorithm}\n#' ",
+                            "\\item{LP}{Linear Programming}\n#' ",
+                            "\\item{LNS}{Large Neighborhood Search}\n#' ",
+                            "\\item{LS}{a Local Search}\n#' ",
+                            "\\item{PSO}{Particle Swarm Optimization}\n#' ",
+                            "\\item{RL}{Reinforcement Learning}\n#' ",
+                            "\\item{SA}{Simulated Annealing}\n#' ",
+                            "\\item{SE}{Search Economics}\n#' ",
+                            "\\item{SBP}{Shifting Bottleneck Procedure}\n#' ",
+                            "\\item{SS}{Sidestep Algorithm: deterministic local search allowing to move to solutions of same objective value}\n#' ",
+                            "\\item{TLBO}{Teaching-Learning based Optimization}\n#' ",
+                            "\\item{TS}{Tabu Search}\n#' ",
+                            "\\item{VNS}{Variable Neighborhood Search}\n#' ",
+                            "\\item{WOA}{Whale Optimization Algorithm}\n#' ",
                             "}"),
                      col$type);
 cols.meta$columns[[index]] <- col;

@@ -4,7 +4,8 @@
 \name{jssp.instances}
 \alias{jssp.instances}
 \title{The Instance Meta-Data for the Common Benchmark Instances of the Job Shop Scheduling Problem}
-\format{A data frame with the basic information about the JSSP instances
+\format{
+A data frame with the basic information about the JSSP instances
 \describe{
   \item{inst.id}{the unique id identifying the instance}
   \item{inst.ref}{the id of the reference of the paper proposing the instance, which points into a row of \code{jssp.bibliography}}
@@ -16,7 +17,8 @@
   \item{inst.bks.ref}{the reference(s) for the best-known for the instance \emph{within any paper cited in this study}, only considering references from the earliest year the bks was found in this study, separated by ';' if multiple, NA if none}
   \item{inst.bks.time}{the fasted time (in milliseconds) recorded within the papers cited in this study within which the best-known solution \code{inst.bks} was found, \emph{regardless of the computer used}. Not all studies provide runtimes and if they do, the measurements may not be very precise. For some instances, we can therefore only not \code{NA} and when a value is given, it may be very unreliable. While I tried to be conservative here, consider this column merely as a general guide to get some impression about where we are standing, take it with a grain of salt, and do not consider it as ground truth.}
   \item{inst.bks.time.ref}{the earliest publication reporting the time for discovering the best-known solution.}
-}}
+}
+}
 \usage{
 data(jssp.instances)
 }

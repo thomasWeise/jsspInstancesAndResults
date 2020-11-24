@@ -1,6 +1,13 @@
 logger("beginning to try to load bibliography.");
 
-library(literatureAndResultsGen);
+if(!require("literatureAndResultsGen")) {
+  if(!require("devtools")) {
+    install.packages("devtools");
+  }
+  library("devtools");
+  devtools::install_github("thomasWeise/literatureAndResultsGen");
+}
+library("literatureAndResultsGen");
 
 bib.path <- file.path(dir.data.raw, "bibliography", "bibliography.bib");
 bib.path <- normalizePath(bib.path, mustWork = TRUE);

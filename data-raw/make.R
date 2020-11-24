@@ -7,9 +7,16 @@ logger <- function(...) {
   invisible(TRUE);
 }
 
-logger("loading required libraries.");
-library(usethis);
-library(utils);
+logger("loading required libraries (installing them if necessary).");
+if(!require("usethis")) {
+  install.packages("usethis");
+}
+library("usethis");
+
+if(!require("utils")) {
+  install.packages("utils");
+}
+library("utils");
 
 # setup directories
 logger("setting up directories.");
